@@ -32,7 +32,7 @@
         <div class="flex items-center gap-3">
           <span class="px-2.5 py-1 text-xs font-bold rounded-md bg-sky-500/10 text-sky-400 border border-sky-500/20 tracking-wider uppercase">Master Earnings Hub</span>
           <span class="inline-flex items-center gap-1 text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> 27 Verified Filings
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> 28 Verified Filings
           </span>
         </div>
         <h1 class="text-2xl md:text-3xl font-extrabold text-white mt-2 tracking-tight">Institutional Earnings & Say-to-Do Audit Dashboard</h1>
@@ -55,7 +55,7 @@
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
       <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
         <div class="text-xs font-medium text-slate-400">Total Scanned Results</div>
-        <div class="text-2xl font-black text-white mt-1" id="stat-total">27</div>
+        <div class="text-2xl font-black text-white mt-1" id="stat-total">28</div>
         <div class="text-[11px] text-sky-400 mt-1">100% extracted from PDF filings</div>
       </div>
       <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
@@ -82,16 +82,17 @@
       <!-- Search Input -->
       <div class="relative flex-1">
         <svg class="w-4 h-4 absolute left-3.5 top-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-        <input type="text" id="searchInput" oninput="renderDashboard()" placeholder="Search 27 stocks by name, ticker (e.g. SGFIN, SONACOMS, MARSONS), or keyword..." class="w-full bg-slate-900 border border-slate-700 text-white text-sm rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:border-sky-500 transition">
+        <input type="text" id="searchInput" oninput="renderDashboard()" placeholder="Search 28 stocks by name, ticker (e.g. SGFIN, SONACOMS, MARSONS), or keyword..." class="w-full bg-slate-900 border border-slate-700 text-white text-sm rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:border-sky-500 transition">
       </div>
 
       <!-- Sector Filter Tabs -->
       <div class="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0 text-xs">
-        <button onclick="setSectorFilter('ALL')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-sky-600 text-white transition whitespace-nowrap">All (27)</button>
+        <button onclick="setSectorFilter('ALL')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-sky-600 text-white transition whitespace-nowrap">All (28)</button>
         <button onclick="setSectorFilter('Power & Transformers')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Transformers &amp; Cables</button>
         <button onclick="setSectorFilter('Auto & EV Tech')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Auto &amp; EV</button>
         <button onclick="setSectorFilter('Heavy Engineering & Castings')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Heavy Eng &amp; Cranes</button>
         <button onclick="setSectorFilter('Defence & Aerospace')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Defence</button>
+        <button onclick="setSectorFilter('EMS & Semiconductors')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">EMS &amp; Semicon</button>
         <button onclick="setSectorFilter('Sensors & EV Tech')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Sensors &amp; EV</button>
         <button onclick="setSectorFilter('Fintech & NBFC')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Fintech</button>
         <button onclick="setSectorFilter('Agri & Chemicals')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Agri &amp; Chemicals</button>
@@ -1181,6 +1182,50 @@
         ],
         positives: ["Steady demand for pressure vessels and cryogenic storage", "Modest revenue expansion"],
         watchouts: ["Microcap scale with limited pricing leverage against steel raw materials"]
+      },
+      {
+        ticker: "KAYNES",
+        name: "Kaynes Technology India Limited",
+        sector: "EMS & Semiconductors",
+        score: 5.5,
+        grade: "Grade C+ (Caution / Capex Transition)",
+        say_to_do: 68.0,
+        say_to_do_status: "Lagging / Margin Miss",
+        revenue_q2: "₹952.5 Cr",
+        revenue_yoy: "+4.4%",
+        revenue_qoq: "+0.7%",
+        revenue_h1: "₹1,898.7 Cr",
+        pat_q2: "₹39.8 Cr",
+        pat_yoy: "-65.6%",
+        pat_qoq: "-12.3%",
+        pat_h1: "₹85.2 Cr",
+        ebitda_margin: "13.19%",
+        margin_diff: "Contracted (-323 bps YoY)",
+        filePath: "file:///C:/Users/admin/Downloads/32e938f1-a9e8-4747-b689-93dbd2177efb.pdf",
+        pillars: {
+          topline: { score: 1.3, max: 2.0, label: "Topline: Revenue growth slowed to +4.4% YoY (₹952.5 Cr); flat QoQ" },
+          bottomline: { score: 0.8, max: 2.0, label: "Bottomline: PAT collapsed -65.6% YoY to ₹39.8 Cr; H1 OCF negative ₹-278 Cr" },
+          margin: { score: 0.7, max: 2.0, label: "Operating Margin (ex-other inc): 13.19% (-323 bps YoY contraction on employee & factory costs)" },
+          solvency: { score: 1.2, max: 2.0, label: "Solvency: Debt expanded to ₹1,810 Cr; finance costs jumped +191% YoY; NWC 169 days" },
+          catalysts: { score: 1.5, max: 2.0, label: "Order Book: Record ₹10,564 Cr backlog; Sanand OSAT & PCB capex underway" }
+        },
+        guidance_records: [
+          { vector: "Revenue Growth", promise: "Maintain 30-40% top-line growth trajectory", reported: "Revenue grew only +4.4% YoY to ₹952.5 Cr; flat QoQ (+0.7%)", status: "MISSED" },
+          { vector: "Margin & PAT", promise: "Maintain ~14-15% EBITDA margin and ~10% PAT margin", reported: "Operating margin contracted -323 bps to 13.19%; PAT plunged -65.6% YoY to ₹39.8 Cr (4.2% margin)", status: "MISSED" },
+          { vector: "Order Inflow", promise: "Expand backlog across industrial and auto electronics", reported: "Order book reached milestone ₹10,564 Cr (+30.4% YoY)", status: "BEAT" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Ramp up dispatches against ₹10,564 Cr order book and compress working capital days from 169 days" },
+          { horizon: "FY28 Capex", stmt: "Commercialize Sanand Semiconductor OSAT plant and Chamarajanagar high-density PCB line" }
+        ],
+        positives: [
+          "Record Order Backlog: Order book crossed ₹10,564 Cr (+30.4% YoY), providing massive multi-year revenue visibility",
+          "Transformative Semiconductor OSAT Capex: Ongoing establishment of Sanand (Gujarat) packaging plant and domestic PCB facility"
+        ],
+        watchouts: [
+          "Severe Profitability Collapse: Q2 PAT plummeted -65.6% YoY to ₹39.8 Cr due to triple headwinds: operating margin contraction (-323 bps), surge in finance costs (+191%), and higher depreciation (+74%)",
+          "Working Capital & Debt Stress: Borrowings expanded to ₹1,810 Cr; Net Working Capital days lengthened to 169 days; H1 Operating Cash Flow negative at ₹(278) Cr"
+        ]
       },
       {
         ticker: "523309",
