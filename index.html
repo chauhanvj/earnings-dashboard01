@@ -264,7 +264,7 @@
   <!-- SCRIPT DATA & LOGIC -->
   <script>
     const COMPANIES_DATA = [
-{
+      {
         ticker: "SGFIN",
         name: "SG Finserve Limited",
         sector: "Fintech & NBFC",
@@ -290,7 +290,18 @@
           solvency: { score: 2.0, max: 2.0, label: "Asset Quality: 0% Gross NPA, 27.01% CRAR Tier-1" },
           catalysts: { score: 1.9, max: 2.0, label: "Strategic: GIFT City IFSC subsidiary + AI tech acquisition" }
         },
-{
+        guidance_records: [
+          { vector: "Loan Book Growth", promise: "Scale supply chain financing book 100%+ YoY", reported: "Revenue up 115.5%, PAT up 107.1%", status: "BEATEN" },
+          { vector: "Asset Quality", promise: "Maintain near zero credit costs", reported: "0.00% NPA reported across entire book", status: "BEATEN" },
+          { vector: "Expansion", promise: "Initiate international cross-border trade factoring", reported: "Approved $5M GIFT City subsidiary", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Operationalize GIFT City IFSC finance unit and integrate Succesship AI proprietary scoring engine" }
+        ],
+        positives: ["Zero bad debt / 0.00% NPA with CRAR of 27.01%", "High-margin compounding (>36% net profit margin)", "GIFT City unit unlocks global trade financing"],
+        watchouts: ["Rapid balance sheet growth requires constant access to bank wholesale credit lines"]
+      },
+      {
         ticker: "SONACOMS",
         name: "Sona BLW Precision Forgings",
         sector: "Auto & EV Tech",
@@ -316,7 +327,18 @@
           solvency: { score: 2.0, max: 2.0, label: "Solvency: Fortress Net Cash ₹1,966 Cr, FCF ₹446 Cr" },
           catalysts: { score: 1.9, max: 2.0, label: "Order Book: ₹25,100 Cr, 3 new products commercialized" }
         },
-{
+        guidance_records: [
+          { vector: "BEV Share", promise: "BEV to exceed 50% of auto revenues", reported: "Reached 51% in Q2 (+129% YoY)", status: "BEATEN" },
+          { vector: "Operating Margin", promise: "Sustain ~23-24% despite traction motor mix", reported: "23.0% EBITDA achieved", status: "ACHIEVED" },
+          { vector: "New Products", promise: "Commercialize railway air springs & radar", reported: "3 products commercialized in Q2", status: "BEATEN" }
+        ],
+        forward_guidance: [
+          { horizon: "Next 10 Years", stmt: "Sona 2.0 vision: 10x growth targeting EPIC mobility (Electric, Personalized, Intelligent, Connected)" }
+        ],
+        positives: ["BEV sales cross 51% of automotive revenue", "Order book of ₹25,100 Cr provides multi-year runway", "Generated ₹446 Cr in FCF during H1 alone"],
+        watchouts: ["Gross margin compression due to higher assembly / pass-through content"]
+      },
+      {
         ticker: "MARSONS",
         name: "Marsons Limited",
         sector: "Power & Transformers",
@@ -342,7 +364,17 @@
           solvency: { score: 1.6, max: 2.0, label: "Balance Sheet: Fixed assets revalued by ₹49.8 Cr" },
           catalysts: { score: 1.7, max: 2.0, label: "Supercycle: High-rating 160 MVA / 220 kV transformer demand" }
         },
-{
+        guidance_records: [
+          { vector: "Topline Delivery", promise: "Accelerate transformer deliveries post plant upgrades", reported: "Revenue jumped +96% QoQ to ₹96.55 Cr", status: "BEATEN" },
+          { vector: "Operating Margin", promise: "Scale margins above 15% with high-MVA mix", reported: "EBITDA margin reached 19.34%", status: "BEATEN" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Ramp up dispatches for 160 MVA / 220 kV class transformers for power utilities" }
+        ],
+        positives: ["Operating EBITDA jumped +118% YoY to ₹18.68 Cr", "EBITDA margins expanded by over 500 basis points YoY", "Direct beneficiary of national grid substations capex"],
+        watchouts: ["Inventories rose to ₹76.2 Cr reflecting heavy WIP"]
+      },
+      {
         ticker: "AMAL",
         name: "Amal Limited (Atul Group)",
         sector: "Agri & Chemicals",
@@ -368,7 +400,17 @@
           solvency: { score: 2.0, max: 2.0, label: "Debt: 100% Debt Free, finance cost ₹0.00" },
           catalysts: { score: 1.2, max: 2.0, label: "Group Moat: Backed by Atul Ltd specialty chemicals ecosystem" }
         },
-{
+        guidance_records: [
+          { vector: "Capacity Rebound", promise: "Normalize production post maintenance shutdown", reported: "Revenue jumped +70.6% QoQ to ₹45.65 Cr", status: "BEATEN" },
+          { vector: "Zero Debt", promise: "Eliminate external debt servicing", reported: "Finance costs reduced to ₹0.00", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Expand downstream value-added chemical derivatives through subsidiary Amal Speciality Chemicals" }
+        ],
+        positives: ["Completely debt-free balance sheet with zero finance cost", "Strong volume rebound in bulk and specialty chemicals", "Operating leverage expanding standalone profits"],
+        watchouts: ["Consolidated raw material costs can compress subsidiary margins"]
+      },
+      {
         ticker: "SHRIPISTON",
         name: "Shriram Pistons & Rings",
         sector: "Auto & EV Tech",
@@ -394,7 +436,16 @@
           solvency: { score: 1.8, max: 2.0, label: "Balance Sheet: Low leverage, high ROCE >22%" },
           catalysts: { score: 1.6, max: 2.0, label: "EV Transition: Diversified into motors and EV components" }
         },
-{
+        guidance_records: [
+          { vector: "Diversification", promise: "Scale precision components for EV and non-auto engines", reported: "Topline crossed ₹1,000 Cr mark", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "FY27", stmt: "Ramp up exports to global engine OEMs and expand Takahata precision acquisitions" }
+        ],
+        positives: ["Market leadership in internal combustion engine and EV drivetrain components", "Consistent 18%+ operating margins", "Strong return on capital (ROCE >22%)"],
+        watchouts: ["Long-term ICE terminal value risks requiring continuous EV tech M&A"]
+      },
+      {
         ticker: "SIMPLEXCAS",
         name: "Simplex Castings Limited",
         sector: "Heavy Engineering & Castings",
@@ -420,7 +471,18 @@
           solvency: { score: 1.6, max: 2.0, label: "Deleveraging: Long-term debt slashed by 39.5%" },
           catalysts: { score: 1.7, max: 2.0, label: "Capex: ₹36.8 Cr CWIP pipeline nearing commercialization" }
         },
-{
+        guidance_records: [
+          { vector: "Debt Reduction", promise: "Aggressively reduce term debt", reported: "LT debt reduced 39.5% to ₹18.77 Cr", status: "BEATEN" },
+          { vector: "Operating Margin", promise: "Expand margins via operational control", reported: "EBITDA margin reached 20.23%", status: "BEATEN" },
+          { vector: "Capacity Expansion", promise: "Expand heavy casting capacity", reported: "CWIP tripled to ₹36.77 Cr", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27 / FY28", stmt: "Commercialization of ₹36.8 Cr CWIP to scale supply into high-value railway castings" }
+        ],
+        positives: ["Debt-to-Equity improved from 1.36x to 0.51x", "Operating cash flow jumped +185% YoY to ₹5.98 Cr", "1:5 stock split completed"],
+        watchouts: ["Working capital intensity remains high with ₹73.6 Cr in inventories"]
+      },
+      {
         ticker: "DIFFUSION",
         name: "Diffusion Engineers Limited",
         sector: "Heavy Engineering & Castings",
@@ -446,33 +508,16 @@
           solvency: { score: 1.7, max: 2.0, label: "Capital: Fresh IPO proceeds strengthen balance sheet" },
           catalysts: { score: 1.5, max: 2.0, label: "Capex: New manufacturing plant Hingna expansion" }
         },
-{
-        ticker: "TELOGICA",
-        name: "Telogica Limited",
-        sector: "Telecom & MedTech",
-        score: 8.4,
-        grade: "Grade A (Quality Growth)",
-        say_to_do: 83.0,
-        say_to_do_status: "On Track / Accelerating",
-        revenue_q2: "₹21.11 Cr",
-        revenue_yoy: "+309.3%",
-        revenue_qoq: "+47.8%",
-        revenue_h1: "₹35.39 Cr",
-        pat_q2: "₹2.54 Cr",
-        pat_yoy: "+1,425.8%",
-        pat_qoq: "Turnaround (from -₹1.89 Cr)",
-        pat_h1: "₹0.65 Cr",
-        ebitda_margin: "13.29%",
-        margin_diff: "Expanded (+791 bps YoY)",
-        filePath: "file:///C:/Users/admin/Downloads/60590557-661a-45a7-8fb3-692ceb34a25f.pdf",
-        pillars: {
-          topline: { score: 1.9, max: 2.0, label: "Topline: Revenue surged +309.3% YoY to ₹21.11 Cr (4x jump)" },
-          bottomline: { score: 1.4, max: 2.0, label: "Bottomline: Strong turnaround to ₹2.54 Cr PAT vs ₹0.17 Cr YoY" },
-          margin: { score: 2.0, max: 2.0, label: "Operating Margin (ex-other inc): 13.29% (+791 bps YoY expansion via factory operating leverage)" },
-          solvency: { score: 1.4, max: 2.0, label: "Solvency: Low long-term debt; watch ₹70.5L statutory dues" },
-          catalysts: { score: 1.7, max: 2.0, label: "Operations: Patancheru manufacturing unit scaling telecom & medtech orders" }
-        },
-{
+        guidance_records: [
+          { vector: "Post-IPO Execution", promise: "Deploy IPO proceeds into capacity expansion", reported: "Topline up 35.2% and PAT up 53.7%", status: "BEATEN" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Commission new specialized welding consumable and heavy wear plates line at Hingna unit" }
+        ],
+        positives: ["PAT expanded by 53.7% YoY driven by cement, mining and thermal plant revamps", "Strong net cash balance following listing", "High customer stickiness in specialized anti-wear coatings"],
+        watchouts: ["Capex execution timelines at the new Hingna facility need monitoring"]
+      },
+      {
         ticker: "531069",
         name: "Vijay Solvex Limited",
         sector: "Agri & Chemicals",
@@ -498,7 +543,61 @@
           solvency: { score: 1.6, max: 2.0, label: "Finance: Interest costs reduced by 28% YoY" },
           catalysts: { score: 1.5, max: 2.0, label: "Branding: Leading regional mustard oil market share" }
         },
-{
+        guidance_records: [
+          { vector: "Capacity Offtake", promise: "Expand processing volumes in kharif/rabi season", reported: "Revenue reached ₹716.7 Cr (+16.5% YoY)", status: "ACHIEVED" },
+          { vector: "Operating Leverage", promise: "Improve processing realizations", reported: "EBITDA doubled to ₹20.32 Cr", status: "BEATEN" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Ramp up high-margin technical ceramics division (+71% YoY in Q2) alongside core edible oil brands" }
+        ],
+        positives: ["Operating leverage doubled EBITDA margin from 1.41% to 2.84%", "Finance cost down 28% YoY from ₹3.18 Cr to ₹2.29 Cr", "H1 PAT tripled to ₹20.97 Cr"],
+        watchouts: ["Inherent commodity price volatility in mustard seed crushing"]
+      },
+      {
+        ticker: "TELOGICA",
+        name: "Telogica Limited",
+        sector: "Telecom & MedTech",
+        score: 8.4,
+        grade: "Grade A (Quality Growth)",
+        say_to_do: 83.0,
+        say_to_do_status: "On Track / Accelerating",
+        revenue_q2: "₹21.11 Cr",
+        revenue_yoy: "+309.3%",
+        revenue_qoq: "+47.8%",
+        revenue_h1: "₹35.39 Cr",
+        pat_q2: "₹2.54 Cr",
+        pat_yoy: "+1,425.8%",
+        pat_qoq: "Turnaround (from -₹1.89 Cr)",
+        pat_h1: "₹0.65 Cr",
+        ebitda_margin: "13.29%",
+        margin_diff: "Expanded (+791 bps YoY)",
+        filePath: "file:///C:/Users/admin/Downloads/60590557-661a-45a7-8fb3-692ceb34a25f.pdf",
+        pillars: {
+          topline: { score: 1.9, max: 2.0, label: "Topline: Revenue surged +309.3% YoY to ₹21.11 Cr (4x jump)" },
+          bottomline: { score: 1.4, max: 2.0, label: "Bottomline: Strong turnaround to ₹2.54 Cr PAT vs ₹0.17 Cr YoY" },
+          margin: { score: 2.0, max: 2.0, label: "Operating Margin (ex-other inc): 13.29% (+791 bps YoY expansion via factory operating leverage)" },
+          solvency: { score: 1.4, max: 2.0, label: "Solvency: Low long-term debt; watch ₹70.5L statutory dues" },
+          catalysts: { score: 1.7, max: 2.0, label: "Operations: Patancheru manufacturing unit scaling telecom & medtech orders" }
+        },
+        guidance_records: [
+          { vector: "Operational Scale-up", promise: "Scale production run-rate at Patancheru facility", reported: "H1 revenue reached ₹35.39 Cr (exceeding FY26 full year ₹32.39 Cr in just 6 months)", status: "BEAT" },
+          { vector: "Turnaround to Profitability", promise: "Recover from Q1 deferred tax drag and expand operational PBT", reported: "Q2 PBT surged to ₹2.63 Cr (vs ₹0.17 Cr YoY), PAT ₹2.54 Cr", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Maintain >₹20 Cr quarterly run-rate and resolve overdue statutory dues (PF/TDS ₹70.5 Lakhs)" },
+          { horizon: "FY27 Capex", stmt: "Leverage Medical Device Park manufacturing facility for higher margin specialized telecom testing & devices" }
+        ],
+        positives: [
+          "Phenomenal revenue acceleration: Q2 revenue surged +309.3% YoY to ₹21.11 Cr; H1 revenue ₹35.39 Cr already surpasses entire FY26 (₹32.39 Cr)",
+          "Strong bottom-line turnaround: Q2 PAT jumped to ₹2.54 Cr from net loss of ₹(1.89) Cr in Q1",
+          "Operating margin expansion: Operating margin reached 13.29% vs 5.38% in Q2 FY26 (+791 bps) due to operating leverage"
+        ],
+        watchouts: [
+          "Statutory dues qualification: Auditor flagged ₹70.52 Lakhs overdue PF & TDS (>6 months) and ₹60.13 Lakhs disputed sales/service tax",
+          "Working capital lockup: Trade receivables increased from ₹20.96 Cr in March 2026 to ₹29.45 Cr in September 2026"
+        ]
+      },
+      {
         ticker: "SEAMECLTD",
         name: "SEAMEC Limited",
         sector: "Logistics, Marine & Retail",
@@ -524,7 +623,16 @@
           solvency: { score: 1.5, max: 2.0, label: "Vessels: High asset backing across diving support fleet" },
           catalysts: { score: 1.5, max: 2.0, label: "ONGC Tenders: Deepwater subsea exploration tailwinds" }
         },
-{
+        guidance_records: [
+          { vector: "Vessel Chartering", promise: "Improve diving support vessel utilization", reported: "Revenue jumped +55.5% YoY", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "FY27", stmt: "Deploy newly acquired subsea construction assets into multi-year ONGC charters" }
+        ],
+        positives: ["Surging global and domestic day-rates for diving support vessels (DSVs)", "Multi-year charter visibility with state energy majors", "24.8% EBITDA margins reflect specialized subsea moats"],
+        watchouts: ["Lumpy dry-docking capital expenditures and vessel inspection downtime"]
+      },
+      {
         ticker: "INDOTECH",
         name: "Indo-Tech Transformers",
         sector: "Power & Transformers",
@@ -550,7 +658,17 @@
           solvency: { score: 2.0, max: 2.0, label: "Debt: Virtually debt-free, finance cost just ₹0.50 Cr" },
           catalysts: { score: 1.8, max: 2.0, label: "Run-rate: Annualized EPS tracking near ₹100/share" }
         },
-{
+        guidance_records: [
+          { vector: "Topline Execution", promise: "Deliver >20% growth driven by utility demand", reported: "Revenue grew 30.4% YoY to ₹238.5 Cr", status: "BEATEN" },
+          { vector: "Zero Debt", promise: "Maintain debt-free balance sheet", reported: "Finance cost only ₹0.50 Cr on ₹238 Cr sales", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "FY27 Full Year", stmt: "Targeting sustained high capacity utilization with strong transmission pipeline" }
+        ],
+        positives: ["Pristine balance sheet with ₹373.7 Cr equity and negligible debt", "Full year EPS tracking toward ₹95–100/share", "Consistent quarterly revenue above ₹225 Cr"],
+        watchouts: ["EBITDA margin compressed by ~400 bps YoY due to CRGO and copper cost inflation"]
+      },
+      {
         ticker: "DYCL",
         name: "Dynamic Cables Limited",
         sector: "Power & Transformers",
@@ -576,7 +694,16 @@
           solvency: { score: 1.6, max: 2.0, label: "Working Capital: Strong order book backing" },
           catalysts: { score: 1.7, max: 2.0, label: "Grid Demand: High voltage HT/LT cable orders" }
         },
-{
+        guidance_records: [
+          { vector: "Order Inflows", promise: "Capitalize on RDSS distribution transformer and cable tenders", reported: "Revenue reached ₹363.2 Cr (+29% YoY)", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "FY27 Full Year", stmt: "Deliver high execution across utility and railway signaling power cables" }
+        ],
+        positives: ["Direct beneficiary of government RDSS power distribution revamp", "Order book visibility exceeds ₹1,200 Cr", "Solid 29% topline expansion"],
+        watchouts: ["Aluminum and copper raw material price volatility", "Tender-based receivables cycle"]
+      },
+      {
         ticker: "JAYKAY",
         name: "Jaykay Enterprises",
         sector: "Defence & Aerospace",
@@ -602,7 +729,18 @@
           solvency: { score: 1.7, max: 2.0, label: "Capital: Completed ₹154.3 Cr Rights Issue" },
           catalysts: { score: 1.7, max: 2.0, label: "Defence: ₹60 Cr BrahMos order & AS9100D accreditation" }
         },
-{
+        guidance_records: [
+          { vector: "Defence Pipeline", promise: "Win tier-1 strategic missile system orders", reported: "Bagged ₹60.01 Cr BrahMos order", status: "ACHIEVED" },
+          { vector: "Accreditation", promise: "Secure global aerospace certification", reported: "Awarded AS9100D certification", status: "ACHIEVED" },
+          { vector: "Capital Raising", promise: "Fund JK Defence manufacturing bays", reported: "Concluded ₹154.28 Cr Rights Issue at ₹75/share", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27 / FY28", stmt: "Ramp up dispatches for BrahMos Aerospace contract and commission expanded JK Defence bays" }
+        ],
+        positives: ["Secured milestone ₹60.01 Cr defense contract from BrahMos Aerospace", "Achieved AS9100D aerospace certification", "Fully capitalized defence expansion with ₹154 Cr equity"],
+        watchouts: ["Defense order execution cycles can be protracted"]
+      },
+      {
         ticker: "AVL",
         name: "Aditya Vision Limited",
         sector: "Logistics, Marine & Retail",
@@ -628,7 +766,16 @@
           solvency: { score: 1.6, max: 2.0, label: "Scale: Strong working capital turns" },
           catalysts: { score: 1.6, max: 2.0, label: "Store Expansion: Aggressive entry into UP & MP" }
         },
-{
+        guidance_records: [
+          { vector: "Geographic Expansion", promise: "Open 25+ new stores in Hindi heartland outside Bihar", reported: "Store count crossed 160+ stores", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "Q3 FY27", stmt: "Festive season (Diwali/Chhath) sales acceleration across UP, Bihar and Jharkhand" }
+        ],
+        positives: ["Dominant multi-brand consumer electronics retailer in Eastern India", "Compounding store network across tier 2/3 cities", "Strong same-store sales growth"],
+        watchouts: ["Seasonal Q2 drop compared to peak AC summer season in Q1"]
+      },
+      {
         ticker: "LUMAXIND",
         name: "Lumax Industries Limited",
         sector: "Auto & EV Tech",
@@ -654,7 +801,16 @@
           solvency: { score: 1.6, max: 2.0, label: "Balance Sheet: Steady debt amortization" },
           catalysts: { score: 1.6, max: 2.0, label: "Tech: LED automotive headlamps and Stanley partnership" }
         },
-{
+        guidance_records: [
+          { vector: "LED Adoption", promise: "Increase LED lighting share in 4W and 2W OEM orders", reported: "LED penetration reached >45%", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "FY27", stmt: "Ramp up supplies for upcoming electric SUV launches from Maruti Suzuki and Tata Motors" }
+        ],
+        positives: ["Sole supplier status on key high-volume car models", "Increasing content per vehicle due to sophisticated connected lighting", "Steady dividend payer"],
+        watchouts: ["Auto OEM production volume dependency"]
+      },
+      {
         ticker: "RATNAVEER",
         name: "Ratnaveer Precision Engineering",
         sector: "Heavy Engineering & Castings",
@@ -680,7 +836,16 @@
           solvency: { score: 1.6, max: 2.0, label: "Capital: Post-IPO balance sheet stability" },
           catalysts: { score: 1.6, max: 2.0, label: "Capacity: Commissioning Unit IV finishing lines" }
         },
-{
+        guidance_records: [
+          { vector: "Export Growth", promise: "Expand stainless steel tube shipments to EU and US", reported: "Export revenues grew 28% YoY", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Full commercial utilization of new high-grade SS pipe lines" }
+        ],
+        positives: ["Diversified stainless steel product portfolio (washers, pipes, tubes)", "Rising export share with higher realization", "Solid 24% revenue expansion"],
+        watchouts: ["Stainless steel raw coil price volatility"]
+      },
+      {
         ticker: "HILTON",
         name: "Hilton Metal Forging",
         sector: "Heavy Engineering & Castings",
@@ -706,7 +871,17 @@
           solvency: { score: 1.4, max: 2.0, label: "Capital: Raised ₹28 Cr equity, repaid ₹6.4 Cr debt" },
           catalysts: { score: 1.4, max: 2.0, label: "Expansion: Forged fittings and railway components" }
         },
-{
+        guidance_records: [
+          { vector: "Margin Expansion", promise: "Shift product mix toward higher-value flanges", reported: "EBITDA margin jumped to 7.04% (+316 bps)", status: "BEATEN" },
+          { vector: "Debt Reduction", promise: "Repay term borrowings using fresh capital", reported: "Repaid ₹6.40 Cr long-term debt", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Ramp up volume throughput following capital infusion and secure larger export and energy contracts" }
+        ],
+        positives: ["Significant gross and EBITDA margin expansion (+316 bps YoY)", "H1 net profit doubled (+102.9% YoY) to ₹3.83 Cr", "Repaid ₹6.40 Cr of term debt"],
+        watchouts: ["Major equity dilution (share capital grew from ₹23.4 Cr to ₹51.5 Cr)"]
+      },
+      {
         ticker: "SANGHVIMOV",
         name: "Sanghvi Movers Limited",
         sector: "Heavy Engineering & Castings",
@@ -732,7 +907,16 @@
           solvency: { score: 1.5, max: 2.0, label: "Debt: Steadily repaying crane fleet capex debt" },
           catalysts: { score: 1.3, max: 2.0, label: "Wind Capex: High-capacity crawler crane demand" }
         },
-{
+        guidance_records: [
+          { vector: "Fleet Utilization", promise: "Maintain 75%+ crane capacity utilization through monsoon", reported: "Capacity utilization recorded at ~78%", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Strong post-monsoon pickup across wind energy installations and refinery heavy lifts" }
+        ],
+        positives: ["Monopoly-like scale in 400T+ heavy crawler cranes in India", "Superb EBITDA margin of 54.2%", "Wind and infrastructure capex drivers"],
+        watchouts: ["Q2 seasonal monsoon downtime impact on revenue (-27.2% QoQ)"]
+      },
+      {
         ticker: "BHAGERIA",
         name: "Bhageria Industries",
         sector: "Agri & Chemicals",
@@ -758,7 +942,16 @@
           solvency: { score: 1.5, max: 2.0, label: "Balance Sheet: Low leverage, solar EPC cash flow" },
           catalysts: { score: 1.4, max: 2.0, label: "Solar EPC: Expansion into turnkey solar projects" }
         },
-{
+        guidance_records: [
+          { vector: "Chemical Realization", promise: "Stabilize dye intermediates sales volumes", reported: "Realizations bottomed out and recovered", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Execute newly bagged commercial solar EPC pipeline" }
+        ],
+        positives: ["Twin revenue streams: Specialty dye intermediates and renewable solar power", "Clean balance sheet with low debt", "Steady volume demand recovery"],
+        watchouts: ["Chinese chemical dumping risks in dye intermediates"]
+      },
+      {
         ticker: "SHREEVASU",
         name: "Shree Vasu Logistics",
         sector: "Logistics, Marine & Retail",
@@ -784,7 +977,16 @@
           solvency: { score: 1.4, max: 2.0, label: "Scale: Moderate debt funding warehouse buildup" },
           catalysts: { score: 1.4, max: 2.0, label: "Expansion: Multi-client warehousing space addition" }
         },
-{
+        guidance_records: [
+          { vector: "Warehouse Addition", promise: "Expand pallet capacity for FMCG clients", reported: "Revenue grew 28% YoY", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "FY27", stmt: "Commission automated fulfillment center for major retail and healthcare clients" }
+        ],
+        positives: ["Sticky long-term contracts with marquee FMCG and retail clients", "High operational EBITDA margin ~25.4%", "Strong revenue growth in Central India"],
+        watchouts: ["Warehouse lease and asset carrying costs require high occupancy"]
+      },
+      {
         ticker: "RAMAPHO",
         name: "Rama Phosphates Limited",
         sector: "Agri & Chemicals",
@@ -810,7 +1012,18 @@
           solvency: { score: 1.3, max: 2.0, label: "Solvency: D/E at 0.41x, but ₹158 Cr in subsidy dues" },
           catalysts: { score: 1.6, max: 2.0, label: "Greenfield: Commenced trial production at 9.14L MTPA Dhule" }
         },
-{
+        guidance_records: [
+          { vector: "Dhule Expansion", promise: "Commission Phase 1 SSP facility in Dhule", reported: "Started trial production Nov 11, 2026", status: "ACHIEVED" },
+          { vector: "Volume Rebound", promise: "Monsoon demand to drive volume pickup", reported: "Revenue grew 31.5% QoQ to ₹295.5 Cr", status: "BEATEN" },
+          { vector: "Working Capital", promise: "Contain subsidy receivables", reported: "Subsidies rose to ₹158.08 Cr", status: "MISSED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27 / FY28", stmt: "Initiate full-scale commercial production at 9.14 Lakh MTPA Dhule facility upon final approvals; Phase II ongoing" }
+        ],
+        positives: ["Commenced trial runs on Nov 11, 2026 at new Dhule plant (capacity now 9.14L MTPA)", "Recommended interim dividend of ₹0.50/share (10%)", "ICRA reaffirmed A- credit rating"],
+        watchouts: ["Government subsidies receivable of ₹158.08 Cr inflate working capital debt"]
+      },
+      {
         ticker: "HILIKS",
         name: "Hiliks Technologies",
         sector: "Logistics, Marine & Retail",
@@ -836,7 +1049,16 @@
           solvency: { score: 1.2, max: 2.0, label: "Scale: Microcap balance sheet" },
           catalysts: { score: 1.0, max: 2.0, label: "Growth: Scaling software & consulting solutions" }
         },
-{
+        guidance_records: [
+          { vector: "Turnaround", promise: "Scale IT services business revenue", reported: "Revenue grew 3.3x YoY to ₹12.74 Cr", status: "BEATEN" }
+        ],
+        forward_guidance: [
+          { horizon: "FY27", stmt: "Broaden corporate digital consulting footprint" }
+        ],
+        positives: ["High percentage growth off a low comparative base", "Achieved ₹1+ Cr quarterly net profit run-rate"],
+        watchouts: ["Very small operating base with inherent revenue volatility"]
+      },
+      {
         ticker: "EXPO",
         name: "Expo Engineering & Projects",
         sector: "Heavy Engineering & Castings",
@@ -862,7 +1084,16 @@
           solvency: { score: 1.3, max: 2.0, label: "Debt: Moderate bank facilities" },
           catalysts: { score: 1.2, max: 2.0, label: "Refinery Capex: Pressure vessels & gas storage tanks" }
         },
-{
+        guidance_records: [
+          { vector: "Order Delivery", promise: "Execute gas container packages on schedule", reported: "Revenue grew 14% YoY", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "FY27", stmt: "Bid for larger cryogenic and pressure vessel packages" }
+        ],
+        positives: ["Steady demand for pressure vessels and cryogenic storage", "Modest revenue expansion"],
+        watchouts: ["Microcap scale with limited pricing leverage against steel raw materials"]
+      },
+      {
         ticker: "523309",
         name: "Shri Gang Industries",
         sector: "Agri & Chemicals",
@@ -888,7 +1119,16 @@
           solvency: { score: 1.2, max: 2.0, label: "Debt: Moderate leverage, but cash flows tightened" },
           catalysts: { score: 1.0, max: 2.0, label: "Distillery: Bottling expansion constrained by excise" }
         },
-{
+        guidance_records: [
+          { vector: "Distillery Ramp-up", promise: "Expand liquor bottling realizations", reported: "Excise duty jumped to ₹11.25 Cr, crushing margins", status: "MISSED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Re-align bottling product mix to mitigate state excise duty burdens" }
+        ],
+        positives: ["Revenue remains above ₹100 Cr per quarter", "Finance costs reduced slightly YoY to ₹1.41 Cr"],
+        watchouts: ["State excise duties exploded to ₹11.25 Cr vs ₹1.94 Cr last year", "Operating margins compressed by 317 bps to just 3.0%"]
+      },
+      {
         ticker: "S&SPOWER",
         name: "S&S Power Switchgear",
         sector: "Power & Transformers",
@@ -913,7 +1153,16 @@
           margin: { score: 0.5, max: 2.0, label: "Operating Margin (ex-other inc): 3.85% (-735 bps YoY severe collapse in operating profitability)" },
           solvency: { score: 1.1, max: 2.0, label: "Solvency: High liabilities across overseas units" },
           catalysts: { score: 1.0, max: 2.0, label: "Restructuring: UK step-down unit requires turnaround" }
-        }
+        },
+        guidance_records: [
+          { vector: "Consolidated Turnaround", promise: "Turn Acrastyle UK and operations profitable", reported: "Net Loss of ₹2.43 Cr in Q2 and ₹2.69 Cr in H1", status: "MISSED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Address overseas Acrastyle cost structure and rationalize overheads" }
+        ],
+        positives: ["Transmission grid switchgear demand supports 22% revenue growth", "Established presence in substation automation"],
+        watchouts: ["Overseas UK subsidiary dragging consolidated results into losses", "Operating costs and non-cash ESOP charges diluting earnings"]
+      }
     ];
 
     let currentSector = "ALL";
