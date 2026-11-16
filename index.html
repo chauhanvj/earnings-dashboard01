@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Earnings & Guidance Intelligence Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #0b1120;
+      color: #e2e8f0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    .badge-green { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .badge-blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+    .badge-amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .badge-red { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+    .badge-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+    
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+  </style>
+</head>
+<body class="min-h-screen p-4 md:p-6 lg:p-8">
+
+  <!-- Header Banner -->
+  <header class="max-w-7xl mx-auto mb-8">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+      <div>
+        <div class="flex items-center gap-3">
+          <span class="px-2.5 py-1 text-xs font-bold rounded-md bg-sky-500/10 text-sky-400 border border-sky-500/20 tracking-wider uppercase">Master Earnings Hub</span>
+          <span class="inline-flex items-center gap-1 text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> 24 Verified Downloads
+          </span>
+        </div>
+        <h1 class="text-2xl md:text-3xl font-extrabold text-white mt-2 tracking-tight">Institutional Earnings & Say-to-Do Audit Dashboard</h1>
+        <p class="text-sm text-slate-400 mt-1">Unified multi-factor scoring, quarterly financial trends, and management guidance execution verification across all your tracked companies.</p>
+      </div>
+
+      <div class="flex items-center gap-2 self-start md:self-auto">
+        <button onclick="switchView('table')" id="btn-table" class="px-3.5 py-2 text-xs font-semibold rounded-lg bg-sky-600 text-white transition flex items-center gap-1.5 shadow-md">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+          Table View
+        </button>
+        <button onclick="switchView('cards')" id="btn-cards" class="px-3.5 py-2 text-xs font-semibold rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 transition flex items-center gap-1.5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+          Card Grid
+        </button>
+      </div>
+    </div>
+
+    <!-- Quick Stats Bar -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+      <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
+        <div class="text-xs font-medium text-slate-400">Total Scanned Results</div>
+        <div class="text-2xl font-black text-white mt-1" id="stat-total">24</div>
+        <div class="text-[11px] text-sky-400 mt-1">100% extracted from PDF filings</div>
+      </div>
+      <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
+        <div class="text-xs font-medium text-slate-400">Average Rating Score</div>
+        <div class="text-2xl font-black text-emerald-400 mt-1">8.0 <span class="text-xs font-normal text-slate-400">/ 10.0</span></div>
+        <div class="text-[11px] text-emerald-400 mt-1">14 Grade A / A+ Leaders</div>
+      </div>
+      <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
+        <div class="text-xs font-medium text-slate-400">Top Execution Leaders</div>
+        <div class="text-lg font-bold text-white mt-1 truncate">Marsons (99%) &amp; SGFin (99%)</div>
+        <div class="text-[11px] text-purple-400 mt-1">Beaten / Accelerated guidance</div>
+      </div>
+      <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
+        <div class="text-xs font-medium text-slate-400">Sector Supercycles</div>
+        <div class="text-lg font-bold text-sky-400 mt-1 truncate">Transformers &amp; EV Tech</div>
+        <div class="text-[11px] text-slate-400 mt-1">MARSONS, INDOTECH, SONACOMS</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Filter & Search Controls -->
+  <section class="max-w-7xl mx-auto mb-6 bg-slate-800/40 border border-slate-800 p-4 rounded-xl">
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+      <!-- Search Input -->
+      <div class="relative flex-1">
+        <svg class="w-4 h-4 absolute left-3.5 top-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        <input type="text" id="searchInput" oninput="renderDashboard()" placeholder="Search 24 stocks by name, ticker (e.g. SGFIN, SONACOMS, MARSONS), or keyword..." class="w-full bg-slate-900 border border-slate-700 text-white text-sm rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:border-sky-500 transition">
+      </div>
+
+      <!-- Sector Filter Tabs -->
+      <div class="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0 text-xs">
+        <button onclick="setSectorFilter('ALL')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-sky-600 text-white transition whitespace-nowrap">All (24)</button>
+        <button onclick="setSectorFilter('Power & Transformers')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Transformers &amp; Cables</button>
+        <button onclick="setSectorFilter('Auto & EV Tech')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Auto &amp; EV</button>
+        <button onclick="setSectorFilter('Heavy Engineering & Castings')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Heavy Eng &amp; Cranes</button>
+        <button onclick="setSectorFilter('Defence & Aerospace')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Defence</button>
+        <button onclick="setSectorFilter('Fintech & NBFC')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Fintech</button>
+        <button onclick="setSectorFilter('Agri & Chemicals')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Agri &amp; Chemicals</button>
+        <button onclick="setSectorFilter('Logistics, Marine & Retail')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Logistics &amp; Retail</button>
+      </div>
+
+      <!-- Sort Filter -->
+      <div class="flex items-center gap-2 self-end lg:self-auto">
+        <span class="text-xs text-slate-400 whitespace-nowrap">Sort:</span>
+        <select id="sortSelect" onchange="renderDashboard()" class="bg-slate-900 border border-slate-700 text-slate-200 text-xs rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-sky-500">
+          <option value="score_desc">Rating Score (High to Low)</option>
+          <option value="say_to_do_desc">Say-to-Do Ratio %</option>
+          <option value="rev_growth_desc">Topline YoY Growth %</option>
+          <option value="pat_growth_desc">PAT YoY Growth %</option>
+          <option value="name_asc">Company Name (A-Z)</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main View Container -->
+  <main class="max-w-7xl mx-auto">
+    <!-- TABLE VIEW -->
+    <div id="tableView" class="overflow-x-auto bg-slate-900/60 border border-slate-800 rounded-xl shadow-xl">
+      <table class="w-full text-left text-xs text-slate-300 border-collapse">
+        <thead class="bg-slate-800/80 text-slate-400 uppercase font-semibold text-[11px] tracking-wider border-b border-slate-700/80">
+          <tr>
+            <th class="py-3.5 px-4">#</th>
+            <th class="py-3.5 px-4">Company / Ticker</th>
+            <th class="py-3.5 px-4">Sector</th>
+            <th class="py-3.5 px-4 text-center">Score (10.0)</th>
+            <th class="py-3.5 px-4 text-center">Grade</th>
+            <th class="py-3.5 px-4 text-right">Q2 Revenue</th>
+            <th class="py-3.5 px-4 text-right">Q2 PAT</th>
+            <th class="py-3.5 px-4 text-center">EBITDA / NPM</th>
+            <th class="py-3.5 px-4 text-center">Say-to-Do %</th>
+            <th class="py-3.5 px-4 text-center">Action</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody" class="divide-y divide-slate-800 font-medium">
+          <!-- Dynamically populated -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CARDS VIEW (Hidden by default) -->
+    <div id="cardsView" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Dynamically populated -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="emptyState" class="hidden text-center py-16 bg-slate-900/40 rounded-xl border border-slate-800 mt-4">
+      <svg class="w-12 h-12 mx-auto text-slate-500 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      <div class="text-slate-300 font-semibold text-base">No matching results found</div>
+      <div class="text-xs text-slate-500 mt-1">Try adjusting your search terms or sector filters.</div>
+    </div>
+  </main>
+
+  <!-- Detailed Modal Slide-Over / Drawer -->
+  <div id="detailModal" class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm flex justify-end transition-opacity">
+    <div class="bg-slate-900 border-l border-slate-800 w-full max-w-2xl h-full overflow-y-auto p-6 md:p-8 flex flex-col justify-between shadow-2xl relative">
+      <!-- Modal Header -->
+      <div>
+        <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+          <div>
+            <div class="flex items-center gap-2">
+              <span id="modal-ticker" class="text-sm font-black text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded border border-sky-500/20"></span>
+              <span id="modal-sector" class="text-xs text-slate-400"></span>
+            </div>
+            <h2 id="modal-company" class="text-2xl font-black text-white mt-1"></h2>
+          </div>
+          <button onclick="closeModal()" class="text-slate-400 hover:text-white p-2 rounded-lg bg-slate-800 hover:bg-slate-700 transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+          </button>
+        </div>
+
+        <!-- Score Badge & Quick Metrics -->
+        <div class="grid grid-cols-3 gap-3 my-5">
+          <div class="bg-slate-800/80 p-3 rounded-lg border border-slate-700 text-center">
+            <div class="text-[10px] uppercase font-bold text-slate-400">5-Pillar Score</div>
+            <div id="modal-score" class="text-2xl font-black text-emerald-400 mt-0.5"></div>
+            <div id="modal-grade" class="text-[11px] font-semibold text-slate-300 mt-0.5"></div>
+          </div>
+          <div class="bg-slate-800/80 p-3 rounded-lg border border-slate-700 text-center">
+            <div class="text-[10px] uppercase font-bold text-slate-400">Say-to-Do Ratio</div>
+            <div id="modal-saytodo" class="text-2xl font-black text-purple-400 mt-0.5"></div>
+            <div class="text-[11px] font-semibold text-slate-300 mt-0.5">Execution Score</div>
+          </div>
+          <div class="bg-slate-800/80 p-3 rounded-lg border border-slate-700 text-center">
+            <div class="text-[10px] uppercase font-bold text-slate-400">Operating Margin</div>
+            <div id="modal-margin" class="text-2xl font-black text-sky-400 mt-0.5"></div>
+            <div id="modal-margin-diff" class="text-[11px] font-semibold mt-0.5"></div>
+          </div>
+        </div>
+
+        <!-- Financial Summary Table -->
+        <div class="mb-6">
+          <h3 class="text-xs uppercase tracking-wider font-bold text-slate-400 mb-2">Quarterly Financial Performance</h3>
+          <div class="overflow-x-auto border border-slate-800 rounded-lg">
+            <table class="w-full text-xs text-left">
+              <thead class="bg-slate-800 text-slate-400 text-[10px] uppercase">
+                <tr>
+                  <th class="py-2 px-3">Metric</th>
+                  <th class="py-2 px-3 text-right">Q2 FY27</th>
+                  <th class="py-2 px-3 text-right">YoY %</th>
+                  <th class="py-2 px-3 text-right">QoQ %</th>
+                  <th class="py-2 px-3 text-right">H1 FY27</th>
+                </tr>
+              </thead>
+              <tbody id="modal-fin-table" class="divide-y divide-slate-800 text-slate-300">
+                <!-- Dynamically filled -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 5-Pillar Breakdown Bars -->
+        <div class="mb-6">
+          <h3 class="text-xs uppercase tracking-wider font-bold text-slate-400 mb-3">5-Pillar Rating Engine Scoring</h3>
+          <div id="modal-pillars" class="space-y-2.5">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- Say-to-Do Execution Audit -->
+        <div class="mb-6">
+          <h3 class="text-xs uppercase tracking-wider font-bold text-purple-400 mb-2 flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Management Guidance Audit (Promises vs. Reality)
+          </h3>
+          <div id="modal-guidance-records" class="space-y-3">
+            <!-- Dynamically filled -->
+          </div>
+        </div>
+
+        <!-- Forward Guidance Watchlist -->
+        <div class="mb-6">
+          <h3 class="text-xs uppercase tracking-wider font-bold text-sky-400 mb-2 flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+            Forward Guidance Captured (Coming Quarters)
+          </h3>
+          <div id="modal-forward-guidance" class="space-y-2.5">
+            <!-- Dynamically filled -->
+          </div>
+        </div>
+
+        <!-- Positives & Watchouts -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div class="bg-emerald-950/20 border border-emerald-500/20 rounded-lg p-3.5">
+            <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-1.5">Key Positives &amp; Moat</div>
+            <ul id="modal-positives" class="text-xs text-slate-300 space-y-1 list-disc list-inside"></ul>
+          </div>
+          <div class="bg-rose-950/20 border border-rose-500/20 rounded-lg p-3.5">
+            <div class="text-xs font-bold text-rose-400 uppercase tracking-wider mb-1.5">Key Watchouts &amp; Risks</div>
+            <ul id="modal-watchouts" class="text-xs text-slate-300 space-y-1 list-disc list-inside"></ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+        <a id="modal-file-link" href="#" target="_blank" class="px-4 py-2 text-xs font-bold rounded-lg bg-sky-600 hover:bg-sky-500 text-white transition flex items-center gap-1.5">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+          Open Source PDF Filing
+        </a>
+        <button onclick="closeModal()" class="px-4 py-2 text-xs font-medium text-slate-400 hover:text-white transition">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT DATA & LOGIC -->
+  <script>
+    const COMPANIES_DATA = [
+      {
+        ticker: "SGFIN",
+        name: "SG Finserve Limited",
+        sector: "Fintech & NBFC",
+        score: 9.8,
+        grade: "Grade A+ (Compounder)",
+        say_to_do: 99.0,
+        say_to_do_status: "Beaten / Accelerated",
+        revenue_q2: "₹160.94 Cr",
+        revenue_yoy: "+115.5%",
+        revenue_qoq: "+18.2%",
+        revenue_h1: "₹297.05 Cr",
+        pat_q2: "₹58.80 Cr",
+        pat_yoy: "+107.1%",
+        pat_qoq: "+9.6%",
+        pat_h1: "₹112.48 Cr",
+        ebitda_margin: "36.54%",
+        margin_diff: "Net PAT Margin ~36.5%",
+        filePath: "file:///C:/Users/admin/Downloads/sgfin.pdf",
+        pillars: {
+          topline: { score: 2.0, max: 2.0, label: "Topline: Revenue doubled (+115.5% YoY) to ₹160.9 Cr" },
+          bottomline: { score: 2.0, max: 2.0, label: "Profitability: PAT doubled (+107% YoY) to ₹58.8 Cr" },
+          margin: { score: 1.9, max: 2.0, label: "NIM / Net Margin: Pristine 36.54% PAT margin" },
+          solvency: { score: 2.0, max: 2.0, label: "Asset Quality: 0% Gross NPA, 27.01% CRAR Tier-1" },
+          catalysts: { score: 1.9, max: 2.0, label: "Strategic: GIFT City IFSC subsidiary + AI tech acquisition" }
+        },
+        guidance_records: [
+          { vector: "Loan Book Growth", promise: "Scale supply chain financing book 100%+ YoY", reported: "Revenue up 115.5%, PAT up 107.1%", status: "BEATEN" },
+          { vector: "Asset Quality", promise: "Maintain near zero credit costs", reported: "0.00% NPA reported across entire book", status: "BEATEN" },
+          { vector: "Expansion", promise: "Initiate international cross-border trade factoring", reported: "Approved $5M GIFT City subsidiary", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Operationalize GIFT City IFSC finance unit and integrate Succesship AI proprietary scoring engine" }
+        ],
+        positives: ["Zero bad debt / 0.00% NPA with CRAR of 27.01%", "High-margin compounding (>36% net profit margin)", "GIFT City unit unlocks global trade financing"],
+        watchouts: ["Rapid balance sheet growth requires constant access to bank wholesale credit lines"]
+      },
+      {
+        ticker: "SONACOMS",
+        name: "Sona BLW Precision Forgings",
+        sector: "Auto & EV Tech",
+        score: 9.3,
+        grade: "Grade A+ (Strong Outperform)",
+        say_to_do: 97.0,
+        say_to_do_status: "Beaten / Accelerated",
+        revenue_q2: "₹1,546.0 Cr",
+        revenue_yoy: "+35.0%",
+        revenue_qoq: "+18.0%",
+        revenue_h1: "₹2,857.0 Cr",
+        pat_q2: "₹223.0 Cr",
+        pat_yoy: "+29.0%",
+        pat_qoq: "+23.2%",
+        pat_h1: "₹404.0 Cr",
+        ebitda_margin: "23.00%",
+        margin_diff: "-230 bps YoY",
+        filePath: "file:///C:/Users/admin/Downloads/SonaComstar-call-transcript.pdf",
+        pillars: {
+          topline: { score: 2.0, max: 2.0, label: "Topline: BEV revenue jumped +129% YoY, crossing 51% share" },
+          bottomline: { score: 1.9, max: 2.0, label: "PAT: Up +29% YoY to record ₹223 Cr" },
+          margin: { score: 1.5, max: 2.0, label: "EBITDA Margin: Landed at 23.0% on product mix transition" },
+          solvency: { score: 2.0, max: 2.0, label: "Solvency: Fortress Net Cash ₹1,966 Cr, FCF ₹446 Cr" },
+          catalysts: { score: 1.9, max: 2.0, label: "Order Book: ₹25,100 Cr, 3 new products commercialized" }
+        },
+        guidance_records: [
+          { vector: "BEV Share", promise: "BEV to exceed 50% of auto revenues", reported: "Reached 51% in Q2 (+129% YoY)", status: "BEATEN" },
+          { vector: "EBITDA Margin", promise: "Sustain ~23-24% despite traction motor mix", reported: "23.0% EBITDA achieved", status: "ACHIEVED" },
+          { vector: "New Products", promise: "Commercialize railway air springs & radar", reported: "3 products commercialized in Q2", status: "BEATEN" }
+        ],
+        forward_guidance: [
+          { horizon: "Next 10 Years", stmt: "Sona 2.0 vision: 10x growth targeting EPIC mobility (Electric, Personalized, Intelligent, Connected)" }
+        ],
+        positives: ["BEV sales cross 51% of automotive revenue", "Order book of ₹25,100 Cr provides multi-year runway", "Generated ₹446 Cr in FCF during H1 alone"],
+        watchouts: ["Gross margin compression due to higher assembly / pass-through content"]
+      },
+      {
+        ticker: "MARSONS",
+        name: "Marsons Limited",
+        sector: "Power & Transformers",
+        score: 8.9,
+        grade: "Grade A (High Momentum Compounder)",
+        say_to_do: 99.0,
+        say_to_do_status: "Beaten / Accelerated",
+        revenue_q2: "₹96.55 Cr",
+        revenue_yoy: "+61.5%",
+        revenue_qoq: "+96.0%",
+        revenue_h1: "₹145.82 Cr",
+        pat_q2: "₹13.31 Cr",
+        pat_yoy: "+44.7%",
+        pat_qoq: "+124.4%",
+        pat_h1: "₹19.23 Cr",
+        ebitda_margin: "19.34%",
+        margin_diff: "+501 bps YoY",
+        filePath: "file:///C:/Users/admin/Downloads/Marsons.pdf",
+        pillars: {
+          topline: { score: 1.9, max: 2.0, label: "Topline: Revenue doubled QoQ (+96%) to ₹96.6 Cr" },
+          bottomline: { score: 1.8, max: 2.0, label: "Bottomline: PAT surged +124% QoQ to ₹13.3 Cr" },
+          margin: { score: 1.9, max: 2.0, label: "Margins: EBITDA margin expanded by +501 bps to 19.34%" },
+          solvency: { score: 1.6, max: 2.0, label: "Balance Sheet: Fixed assets revalued by ₹49.8 Cr" },
+          catalysts: { score: 1.7, max: 2.0, label: "Supercycle: High-rating 160 MVA / 220 kV transformer demand" }
+        },
+        guidance_records: [
+          { vector: "Topline Delivery", promise: "Accelerate transformer deliveries post plant upgrades", reported: "Revenue jumped +96% QoQ to ₹96.55 Cr", status: "BEATEN" },
+          { vector: "Operating Margin", promise: "Scale margins above 15% with high-MVA mix", reported: "EBITDA margin reached 19.34%", status: "BEATEN" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Ramp up dispatches for 160 MVA / 220 kV class transformers for power utilities" }
+        ],
+        positives: ["Operating EBITDA jumped +118% YoY to ₹18.68 Cr", "EBITDA margins expanded by over 500 basis points YoY", "Direct beneficiary of national grid substations capex"],
+        watchouts: ["Inventories rose to ₹76.2 Cr reflecting heavy WIP"]
+      },
+      {
+        ticker: "INDOTECH",
+        name: "Indo-Tech Transformers",
+        sector: "Power & Transformers",
+        score: 8.6,
+        grade: "Grade A (Strong Outperform)",
+        say_to_do: 85.0,
+        say_to_do_status: "On Track / Met",
+        revenue_q2: "₹238.48 Cr",
+        revenue_yoy: "+30.4%",
+        revenue_qoq: "+4.7%",
+        revenue_h1: "₹466.37 Cr",
+        pat_q2: "₹26.13 Cr",
+        pat_yoy: "+5.5%",
+        pat_qoq: "+1.7%",
+        pat_h1: "₹51.83 Cr",
+        ebitda_margin: "12.87%",
+        margin_diff: "-405 bps YoY",
+        filePath: "file:///C:/Users/admin/Downloads/Indotech.pdf",
+        pillars: {
+          topline: { score: 1.8, max: 2.0, label: "Topline: Revenue grew +30.4% YoY to ₹238.5 Cr" },
+          bottomline: { score: 1.6, max: 2.0, label: "Bottomline: H1 PAT up +17.9% YoY to ₹51.8 Cr" },
+          margin: { score: 1.4, max: 2.0, label: "Margins: Diluted to 12.87% on copper cost inflation" },
+          solvency: { score: 2.0, max: 2.0, label: "Debt: Virtually debt-free, finance cost just ₹0.50 Cr" },
+          catalysts: { score: 1.8, max: 2.0, label: "Run-rate: Annualized EPS tracking near ₹100/share" }
+        },
+        guidance_records: [
+          { vector: "Topline Execution", promise: "Deliver >20% growth driven by utility demand", reported: "Revenue grew 30.4% YoY to ₹238.5 Cr", status: "BEATEN" },
+          { vector: "Zero Debt", promise: "Maintain debt-free balance sheet", reported: "Finance cost only ₹0.50 Cr on ₹238 Cr sales", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "FY27 Full Year", stmt: "Targeting sustained high capacity utilization with strong transmission pipeline" }
+        ],
+        positives: ["Pristine balance sheet with ₹373.7 Cr equity and negligible debt", "Full year EPS tracking toward ₹95–100/share", "Consistent quarterly revenue above ₹225 Cr"],
+        watchouts: ["EBITDA margin compressed by ~400 bps YoY due to CRGO and copper cost inflation"]
+      },
+      {
+        ticker: "AMAL",
+        name: "Amal Limited (Atul Group)",
+        sector: "Agri & Chemicals",
+        score: 8.5,
+        grade: "Grade A (Turnaround Outperform)",
+        say_to_do: 92.0,
+        say_to_do_status: "Beaten / Accelerated",
+        revenue_q2: "₹45.65 Cr",
+        revenue_yoy: "+145.7%",
+        revenue_qoq: "+70.6%",
+        revenue_h1: "₹72.40 Cr",
+        pat_q2: "₹4.01 Cr",
+        pat_yoy: "+267.4%",
+        pat_qoq: "+65.3%",
+        pat_h1: "₹6.44 Cr",
+        ebitda_margin: "11.26%",
+        margin_diff: "+290 bps YoY",
+        filePath: "file:///C:/Users/admin/Downloads/AMAL.pdf",
+        pillars: {
+          topline: { score: 1.9, max: 2.0, label: "Topline: Revenue up +145.7% YoY, +70.6% QoQ" },
+          bottomline: { score: 1.8, max: 2.0, label: "Bottomline: PAT surged +267% YoY to ₹4.01 Cr" },
+          margin: { score: 1.6, max: 2.0, label: "Margins: PAT margin expanded +290 bps to 8.78%" },
+          solvency: { score: 2.0, max: 2.0, label: "Debt: 100% Debt Free, finance cost ₹0.00" },
+          catalysts: { score: 1.2, max: 2.0, label: "Group Moat: Backed by Atul Ltd specialty chemicals ecosystem" }
+        },
+        guidance_records: [
+          { vector: "Capacity Rebound", promise: "Normalize production post maintenance shutdown", reported: "Revenue jumped +70.6% QoQ to ₹45.65 Cr", status: "BEATEN" },
+          { vector: "Zero Debt", promise: "Eliminate external debt servicing", reported: "Finance costs reduced to ₹0.00", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Expand downstream value-added chemical derivatives through subsidiary Amal Speciality Chemicals" }
+        ],
+        positives: ["Completely debt-free balance sheet with zero finance cost", "Strong volume rebound in bulk and specialty chemicals", "Operating leverage expanding standalone profits"],
+        watchouts: ["Consolidated raw material costs can compress subsidiary margins"]
+      },
+      {
+        ticker: "SHRIPISTON",
+        name: "Shriram Pistons & Rings",
+        sector: "Auto & EV Tech",
+        score: 8.5,
+        grade: "Grade A (Quality Compounder)",
+        say_to_do: 90.0,
+        say_to_do_status: "Beaten / Accelerated",
+        revenue_q2: "₹1,050.0 Cr",
+        revenue_yoy: "+17.0%",
+        revenue_qoq: "+9.1%",
+        revenue_h1: "₹2,012.7 Cr",
+        pat_q2: "₹115.0 Cr",
+        pat_yoy: "+21.0%",
+        pat_qoq: "+10.5%",
+        pat_h1: "₹219.0 Cr",
+        ebitda_margin: "18.20%",
+        margin_diff: "+85 bps YoY",
+        filePath: "file:///C:/Users/admin/Downloads/SPR-Auto-tech.pdf",
+        pillars: {
+          topline: { score: 1.7, max: 2.0, label: "Topline: Surpassed ₹1,000 Cr quarterly run-rate" },
+          bottomline: { score: 1.7, max: 2.0, label: "Bottomline: PAT up +21% YoY to ₹115 Cr" },
+          margin: { score: 1.7, max: 2.0, label: "Margins: Sustained healthy 18.2% EBITDA margin" },
+          solvency: { score: 1.8, max: 2.0, label: "Balance Sheet: Low leverage, high ROCE >22%" },
+          catalysts: { score: 1.6, max: 2.0, label: "EV Transition: Diversified into motors and EV components" }
+        },
+        guidance_records: [
+          { vector: "Diversification", promise: "Scale precision components for EV and non-auto engines", reported: "Topline crossed ₹1,000 Cr mark", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "FY27", stmt: "Ramp up exports to global engine OEMs and expand Takahata precision acquisitions" }
+        ],
+        positives: ["Market leadership in internal combustion engine and EV drivetrain components", "Consistent 18%+ operating margins", "Strong return on capital (ROCE >22%)"],
+        watchouts: ["Long-term ICE terminal value risks requiring continuous EV tech M&A"]
+      },
+      {
+        ticker: "SIMPLEXCAS",
+        name: "Simplex Castings Limited",
+        sector: "Heavy Engineering & Castings",
+        score: 8.4,
+        grade: "Grade A (Strong Buy)",
+        say_to_do: 90.7,
+        say_to_do_status: "Beaten / Accelerated",
+        revenue_q2: "₹63.01 Cr",
+        revenue_yoy: "+13.7%",
+        revenue_qoq: "+3.4%",
+        revenue_h1: "₹123.96 Cr",
+        pat_q2: "₹7.64 Cr",
+        pat_yoy: "+37.0%",
+        pat_qoq: "+11.4%",
+        pat_h1: "₹14.50 Cr",
+        ebitda_margin: "20.23%",
+        margin_diff: "+282 bps YoY",
+        filePath: "file:///C:/Users/admin/Downloads/869a7955-d2b4-4e32-a8f9-633ca0d6a6b1.pdf",
+        pillars: {
+          topline: { score: 1.5, max: 2.0, label: "Topline: Steady +13.7% YoY, +23.2% in H1" },
+          bottomline: { score: 1.8, max: 2.0, label: "Bottomline: PAT surged +37.0% YoY to ₹7.64 Cr" },
+          margin: { score: 1.8, max: 2.0, label: "Margins: Operating EBITDA margin reached 20.23%" },
+          solvency: { score: 1.6, max: 2.0, label: "Deleveraging: Long-term debt slashed by 39.5%" },
+          catalysts: { score: 1.7, max: 2.0, label: "Capex: ₹36.8 Cr CWIP pipeline nearing commercialization" }
+        },
+        guidance_records: [
+          { vector: "Debt Reduction", promise: "Aggressively reduce term debt", reported: "LT debt reduced 39.5% to ₹18.77 Cr", status: "BEATEN" },
+          { vector: "Operating Margin", promise: "Expand margins via operational control", reported: "EBITDA margin reached 20.23%", status: "BEATEN" },
+          { vector: "Capacity Expansion", promise: "Expand heavy casting capacity", reported: "CWIP tripled to ₹36.77 Cr", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27 / FY28", stmt: "Commercialization of ₹36.8 Cr CWIP to scale supply into high-value railway castings" }
+        ],
+        positives: ["Debt-to-Equity improved from 1.36x to 0.51x", "Operating cash flow jumped +185% YoY to ₹5.98 Cr", "1:5 stock split completed"],
+        watchouts: ["Working capital intensity remains high with ₹73.6 Cr in inventories"]
+      },
+      {
+        ticker: "DIFFUSION",
+        name: "Diffusion Engineers Limited",
+        sector: "Heavy Engineering & Castings",
+        score: 8.4,
+        grade: "Grade A (Strong Outperform)",
+        say_to_do: 88.0,
+        say_to_do_status: "On Track / Met",
+        revenue_q2: "₹108.14 Cr",
+        revenue_yoy: "+35.2%",
+        revenue_qoq: "+14.8%",
+        revenue_h1: "₹202.30 Cr",
+        pat_q2: "₹15.24 Cr",
+        pat_yoy: "+53.7%",
+        pat_qoq: "+22.5%",
+        pat_h1: "₹27.68 Cr",
+        ebitda_margin: "18.50%",
+        margin_diff: "+140 bps YoY",
+        filePath: "file:///C:/Users/admin/Downloads/51ce702f-44be-43c5-a1dc-a03b2f7948c5.pdf",
+        pillars: {
+          topline: { score: 1.7, max: 2.0, label: "Topline: Revenue up +35.2% YoY on wear-plate demand" },
+          bottomline: { score: 1.8, max: 2.0, label: "Bottomline: PAT surged +53.7% YoY to ₹15.24 Cr" },
+          margin: { score: 1.7, max: 2.0, label: "Margins: Sustained healthy 18.5% EBITDA margin" },
+          solvency: { score: 1.7, max: 2.0, label: "Capital: Fresh IPO proceeds strengthen balance sheet" },
+          catalysts: { score: 1.5, max: 2.0, label: "Capex: New manufacturing plant Hingna expansion" }
+        },
+        guidance_records: [
+          { vector: "Post-IPO Execution", promise: "Deploy IPO proceeds into capacity expansion", reported: "Topline up 35.2% and PAT up 53.7%", status: "BEATEN" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Commission new specialized welding consumable and heavy wear plates line at Hingna unit" }
+        ],
+        positives: ["PAT expanded by 53.7% YoY driven by cement, mining and thermal plant revamps", "Strong net cash balance following listing", "High customer stickiness in specialized anti-wear coatings"],
+        watchouts: ["Capex execution timelines at the new Hingna facility need monitoring"]
+      },
+      {
+        ticker: "SEAMECLTD",
+        name: "SEAMEC Limited",
+        sector: "Logistics, Marine & Retail",
+        score: 8.3,
+        grade: "Grade A (Offshore Supercycle)",
+        say_to_do: 89.0,
+        say_to_do_status: "On Track / Met",
+        revenue_q2: "₹73.62 Cr",
+        revenue_yoy: "+55.5%",
+        revenue_qoq: "+34.5%",
+        revenue_h1: "₹128.33 Cr",
+        pat_q2: "₹12.20 Cr",
+        pat_yoy: "+48.0%",
+        pat_qoq: "+28.4%",
+        pat_h1: "₹21.70 Cr",
+        ebitda_margin: "24.80%",
+        margin_diff: "+180 bps YoY",
+        filePath: "file:///C:/Users/admin/Downloads/195f067f-26a8-46f7-b3ce-5cabd7e1742e.pdf",
+        pillars: {
+          topline: { score: 1.8, max: 2.0, label: "Topline: Revenue up +55.5% YoY to ₹73.6 Cr" },
+          bottomline: { score: 1.7, max: 2.0, label: "Bottomline: PAT up +48.0% YoY to ₹12.2 Cr" },
+          margin: { score: 1.8, max: 2.0, label: "Margins: High fleet day-rates drive 24.8% EBITDA" },
+          solvency: { score: 1.5, max: 2.0, label: "Vessels: High asset backing across diving support fleet" },
+          catalysts: { score: 1.5, max: 2.0, label: "ONGC Tenders: Deepwater subsea exploration tailwinds" }
+        },
+        guidance_records: [
+          { vector: "Vessel Chartering", promise: "Improve diving support vessel utilization", reported: "Revenue jumped +55.5% YoY", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "FY27", stmt: "Deploy newly acquired subsea construction assets into multi-year ONGC charters" }
+        ],
+        positives: ["Surging global and domestic day-rates for diving support vessels (DSVs)", "Multi-year charter visibility with state energy majors", "24.8% EBITDA margins reflect specialized subsea moats"],
+        watchouts: ["Lumpy dry-docking capital expenditures and vessel inspection downtime"]
+      },
+      {
+        ticker: "531069",
+        name: "Vijay Solvex Limited",
+        sector: "Agri & Chemicals",
+        score: 8.2,
+        grade: "Grade A- (Strong Outperform)",
+        say_to_do: 88.0,
+        say_to_do_status: "On Track / Met",
+        revenue_q2: "₹716.71 Cr",
+        revenue_yoy: "+16.5%",
+        revenue_qoq: "+15.1%",
+        revenue_h1: "₹1,339.21 Cr",
+        pat_q2: "₹15.39 Cr",
+        pat_yoy: "+156.8%",
+        pat_qoq: "+175.7%",
+        pat_h1: "₹20.97 Cr",
+        ebitda_margin: "2.84%",
+        margin_diff: "+143 bps YoY (Doubled)",
+        filePath: "file:///C:/Users/admin/Downloads/8843bcc6-ba8f-4da9-894a-2814ebb527b8.pdf",
+        pillars: {
+          topline: { score: 1.6, max: 2.0, label: "Topline: Revenue up +16.5% YoY to ₹716.7 Cr" },
+          bottomline: { score: 1.9, max: 2.0, label: "Bottomline: PAT jumped 2.6x to ₹15.39 Cr" },
+          margin: { score: 1.6, max: 2.0, label: "Margins: Operating EBITDA margin doubled to 2.84%" },
+          solvency: { score: 1.6, max: 2.0, label: "Finance: Interest costs reduced by 28% YoY" },
+          catalysts: { score: 1.5, max: 2.0, label: "Branding: Leading regional mustard oil market share" }
+        },
+        guidance_records: [
+          { vector: "Capacity Offtake", promise: "Expand processing volumes in kharif/rabi season", reported: "Revenue reached ₹716.7 Cr (+16.5% YoY)", status: "ACHIEVED" },
+          { vector: "Operating Leverage", promise: "Improve processing realizations", reported: "EBITDA doubled to ₹20.32 Cr", status: "BEATEN" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Ramp up high-margin technical ceramics division (+71% YoY in Q2) alongside core edible oil brands" }
+        ],
+        positives: ["Operating leverage doubled EBITDA margin from 1.41% to 2.84%", "Finance cost down 28% YoY from ₹3.18 Cr to ₹2.29 Cr", "H1 PAT tripled to ₹20.97 Cr"],
+        watchouts: ["Inherent commodity price volatility in mustard seed crushing"]
+      },
+      {
+        ticker: "DYCL",
+        name: "Dynamic Cables Limited",
+        sector: "Power & Transformers",
+        score: 8.1,
+        grade: "Grade A- (Infrastructure Play)",
+        say_to_do: 86.0,
+        say_to_do_status: "On Track / Met",
+        revenue_q2: "₹363.19 Cr",
+        revenue_yoy: "+29.0%",
+        revenue_qoq: "+4.0%",
+        revenue_h1: "₹712.29 Cr",
+        pat_q2: "₹14.80 Cr",
+        pat_yoy: "+22.4%",
+        pat_qoq: "+3.5%",
+        pat_h1: "₹29.10 Cr",
+        ebitda_margin: "9.20%",
+        margin_diff: "+40 bps YoY",
+        filePath: "file:///C:/Users/admin/Downloads/538521dd-f494-4f5b-9d05-45773ff89765.pdf",
+        pillars: {
+          topline: { score: 1.7, max: 2.0, label: "Topline: Revenue grew +29.0% YoY to ₹363.2 Cr" },
+          bottomline: { score: 1.6, max: 2.0, label: "Bottomline: PAT up +22.4% YoY to ₹14.8 Cr" },
+          margin: { score: 1.5, max: 2.0, label: "Margins: Sustained stable ~9.2% operating margin" },
+          solvency: { score: 1.6, max: 2.0, label: "Working Capital: Strong order book backing" },
+          catalysts: { score: 1.7, max: 2.0, label: "Grid Demand: High voltage HT/LT cable orders" }
+        },
+        guidance_records: [
+          { vector: "Order Inflows", promise: "Capitalize on RDSS distribution transformer and cable tenders", reported: "Revenue reached ₹363.2 Cr (+29% YoY)", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "FY27 Full Year", stmt: "Deliver high execution across utility and railway signaling power cables" }
+        ],
+        positives: ["Direct beneficiary of government RDSS power distribution revamp", "Order book visibility exceeds ₹1,200 Cr", "Solid 29% topline expansion"],
+        watchouts: ["Aluminum and copper raw material price volatility", "Tender-based receivables cycle"]
+      },
+      {
+        ticker: "JAYKAY",
+        name: "Jaykay Enterprises",
+        sector: "Defence & Aerospace",
+        score: 8.0,
+        grade: "Grade A- (Turnaround Play)",
+        say_to_do: 93.3,
+        say_to_do_status: "Beaten / Accelerated",
+        revenue_q2: "₹93.30 Cr",
+        revenue_yoy: "+47.9%",
+        revenue_qoq: "+15.0%",
+        revenue_h1: "₹192.95 Cr",
+        pat_q2: "₹8.66 Cr",
+        pat_yoy: "+18.0%",
+        pat_qoq: "+25.0%",
+        pat_h1: "₹13.18 Cr",
+        ebitda_margin: "11.50%",
+        margin_diff: "Stable Turnaround",
+        filePath: "file:///C:/Users/admin/Downloads/Jaykay.pdf",
+        pillars: {
+          topline: { score: 1.7, max: 2.0, label: "Topline: Total Income up +68.9% YoY to ₹116.2 Cr" },
+          bottomline: { score: 1.5, max: 2.0, label: "Bottomline: H1 Net Profit ₹13.18 Cr" },
+          margin: { score: 1.4, max: 2.0, label: "Margins: Operating EBITDA stabilized at ~11.5%" },
+          solvency: { score: 1.7, max: 2.0, label: "Capital: Completed ₹154.3 Cr Rights Issue" },
+          catalysts: { score: 1.7, max: 2.0, label: "Defence: ₹60 Cr BrahMos order & AS9100D accreditation" }
+        },
+        guidance_records: [
+          { vector: "Defence Pipeline", promise: "Win tier-1 strategic missile system orders", reported: "Bagged ₹60.01 Cr BrahMos order", status: "ACHIEVED" },
+          { vector: "Accreditation", promise: "Secure global aerospace certification", reported: "Awarded AS9100D certification", status: "ACHIEVED" },
+          { vector: "Capital Raising", promise: "Fund JK Defence manufacturing bays", reported: "Concluded ₹154.28 Cr Rights Issue at ₹75/share", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27 / FY28", stmt: "Ramp up dispatches for BrahMos Aerospace contract and commission expanded JK Defence bays" }
+        ],
+        positives: ["Secured milestone ₹60.01 Cr defense contract from BrahMos Aerospace", "Achieved AS9100D aerospace certification", "Fully capitalized defence expansion with ₹154 Cr equity"],
+        watchouts: ["Defense order execution cycles can be protracted"]
+      },
+      {
+        ticker: "AVL",
+        name: "Aditya Vision Limited",
+        sector: "Logistics, Marine & Retail",
+        score: 8.0,
+        grade: "Grade A- (Consumer Retail)",
+        say_to_do: 87.0,
+        say_to_do_status: "On Track / Met",
+        revenue_q2: "₹586.00 Cr",
+        revenue_yoy: "+27.9%",
+        revenue_qoq: "-50.9%",
+        revenue_h1: "₹1,779.0 Cr",
+        pat_q2: "₹12.50 Cr",
+        pat_yoy: "+21.4%",
+        pat_qoq: "-80.0%",
+        pat_h1: "₹75.20 Cr",
+        ebitda_margin: "6.80%",
+        margin_diff: "+30 bps YoY",
+        filePath: "file:///C:/Users/admin/Downloads/d82450ce-e298-4548-a45c-def78fbf5a48.pdf",
+        pillars: {
+          topline: { score: 1.7, max: 2.0, label: "Topline: Revenue up +27.9% YoY to ₹586 Cr" },
+          bottomline: { score: 1.6, max: 2.0, label: "Bottomline: PAT up +21.4% YoY to ₹12.5 Cr" },
+          margin: { score: 1.5, max: 2.0, label: "Margins: Sustained healthy 6.8% retail margin" },
+          solvency: { score: 1.6, max: 2.0, label: "Scale: Strong working capital turns" },
+          catalysts: { score: 1.6, max: 2.0, label: "Store Expansion: Aggressive entry into UP & MP" }
+        },
+        guidance_records: [
+          { vector: "Geographic Expansion", promise: "Open 25+ new stores in Hindi heartland outside Bihar", reported: "Store count crossed 160+ stores", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "Q3 FY27", stmt: "Festive season (Diwali/Chhath) sales acceleration across UP, Bihar and Jharkhand" }
+        ],
+        positives: ["Dominant multi-brand consumer electronics retailer in Eastern India", "Compounding store network across tier 2/3 cities", "Strong same-store sales growth"],
+        watchouts: ["Seasonal Q2 drop compared to peak AC summer season in Q1"]
+      },
+      {
+        ticker: "LUMAXIND",
+        name: "Lumax Industries Limited",
+        sector: "Auto & EV Tech",
+        score: 7.9,
+        grade: "Grade B+ (Auto Ancillary)",
+        say_to_do: 84.0,
+        say_to_do_status: "On Track / Met",
+        revenue_q2: "₹725.00 Cr",
+        revenue_yoy: "+16.0%",
+        revenue_qoq: "+5.1%",
+        revenue_h1: "₹1,415.0 Cr",
+        pat_q2: "₹32.00 Cr",
+        pat_yoy: "+19.0%",
+        pat_qoq: "+8.5%",
+        pat_h1: "₹61.50 Cr",
+        ebitda_margin: "9.80%",
+        margin_diff: "+40 bps YoY",
+        filePath: "file:///C:/Users/admin/Downloads/LumaxInd.pdf",
+        pillars: {
+          topline: { score: 1.6, max: 2.0, label: "Topline: Revenue grew +16% YoY to ₹725 Cr" },
+          bottomline: { score: 1.6, max: 2.0, label: "Bottomline: PAT up +19% YoY to ₹32 Cr" },
+          margin: { score: 1.5, max: 2.0, label: "Margins: Stable ~9.8% EBITDA on LED mix shift" },
+          solvency: { score: 1.6, max: 2.0, label: "Balance Sheet: Steady debt amortization" },
+          catalysts: { score: 1.6, max: 2.0, label: "Tech: LED automotive headlamps and Stanley partnership" }
+        },
+        guidance_records: [
+          { vector: "LED Adoption", promise: "Increase LED lighting share in 4W and 2W OEM orders", reported: "LED penetration reached >45%", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "FY27", stmt: "Ramp up supplies for upcoming electric SUV launches from Maruti Suzuki and Tata Motors" }
+        ],
+        positives: ["Sole supplier status on key high-volume car models", "Increasing content per vehicle due to sophisticated connected lighting", "Steady dividend payer"],
+        watchouts: ["Auto OEM production volume dependency"]
+      },
+      {
+        ticker: "RATNAVEER",
+        name: "Ratnaveer Precision Engineering",
+        sector: "Heavy Engineering & Castings",
+        score: 7.8,
+        grade: "Grade B+ (Precision Tubes)",
+        say_to_do: 82.0,
+        say_to_do_status: "On Track / Met",
+        revenue_q2: "₹185.00 Cr",
+        revenue_yoy: "+24.0%",
+        revenue_qoq: "+6.3%",
+        revenue_h1: "₹359.00 Cr",
+        pat_q2: "₹8.20 Cr",
+        pat_yoy: "+18.5%",
+        pat_qoq: "+7.2%",
+        pat_h1: "₹15.85 Cr",
+        ebitda_margin: "9.50%",
+        margin_diff: "-20 bps YoY",
+        filePath: "file:///C:/Users/admin/Downloads/7ec2e2af-d7a7-4646-992d-3413fd18aa0e.pdf",
+        pillars: {
+          topline: { score: 1.6, max: 2.0, label: "Topline: Revenue grew +24% YoY to ₹185 Cr" },
+          bottomline: { score: 1.6, max: 2.0, label: "Bottomline: PAT up +18.5% YoY to ₹8.2 Cr" },
+          margin: { score: 1.4, max: 2.0, label: "Margins: EBITDA margin held at 9.5%" },
+          solvency: { score: 1.6, max: 2.0, label: "Capital: Post-IPO balance sheet stability" },
+          catalysts: { score: 1.6, max: 2.0, label: "Capacity: Commissioning Unit IV finishing lines" }
+        },
+        guidance_records: [
+          { vector: "Export Growth", promise: "Expand stainless steel tube shipments to EU and US", reported: "Export revenues grew 28% YoY", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Full commercial utilization of new high-grade SS pipe lines" }
+        ],
+        positives: ["Diversified stainless steel product portfolio (washers, pipes, tubes)", "Rising export share with higher realization", "Solid 24% revenue expansion"],
+        watchouts: ["Stainless steel raw coil price volatility"]
+      },
+      {
+        ticker: "SANGHVIMOV",
+        name: "Sanghvi Movers Limited",
+        sector: "Heavy Engineering & Castings",
+        score: 7.5,
+        grade: "Grade B+ (Heavy Crane Rental)",
+        say_to_do: 81.0,
+        say_to_do_status: "On Track / Met",
+        revenue_q2: "₹147.84 Cr",
+        revenue_yoy: "+8.3%",
+        revenue_qoq: "-27.2%",
+        revenue_h1: "₹350.82 Cr",
+        pat_q2: "₹29.17 Cr",
+        pat_yoy: "-13.5%",
+        pat_qoq: "-31.9%",
+        pat_h1: "₹72.01 Cr",
+        ebitda_margin: "54.20%",
+        margin_diff: "High Asset Yield",
+        filePath: "file:///C:/Users/admin/Downloads/49c9a5db-0cd8-4fe0-8872-0a07c460d31b.pdf",
+        pillars: {
+          topline: { score: 1.4, max: 2.0, label: "Topline: Revenue up +8.3% YoY to ₹147.8 Cr (monsoon dip)" },
+          bottomline: { score: 1.4, max: 2.0, label: "Bottomline: Net profit of ₹29.17 Cr" },
+          margin: { score: 1.9, max: 2.0, label: "Margins: High asset EBITDA margin ~54.2%" },
+          solvency: { score: 1.5, max: 2.0, label: "Debt: Steadily repaying crane fleet capex debt" },
+          catalysts: { score: 1.3, max: 2.0, label: "Wind Capex: High-capacity crawler crane demand" }
+        },
+        guidance_records: [
+          { vector: "Fleet Utilization", promise: "Maintain 75%+ crane capacity utilization through monsoon", reported: "Capacity utilization recorded at ~78%", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Strong post-monsoon pickup across wind energy installations and refinery heavy lifts" }
+        ],
+        positives: ["Monopoly-like scale in 400T+ heavy crawler cranes in India", "Superb EBITDA margin of 54.2%", "Wind and infrastructure capex drivers"],
+        watchouts: ["Q2 seasonal monsoon downtime impact on revenue (-27.2% QoQ)"]
+      },
+      {
+        ticker: "SHREEVASU",
+        name: "Shree Vasu Logistics",
+        sector: "Logistics, Marine & Retail",
+        score: 7.4,
+        grade: "Grade B+ (3PL Logistics)",
+        say_to_do: 80.0,
+        say_to_do_status: "On Track / Met",
+        revenue_q2: "₹56.00 Cr",
+        revenue_yoy: "+28.0%",
+        revenue_qoq: "+7.5%",
+        revenue_h1: "₹108.10 Cr",
+        pat_q2: "₹1.45 Cr",
+        pat_yoy: "+42.0%",
+        pat_qoq: "+15.0%",
+        pat_h1: "₹2.71 Cr",
+        ebitda_margin: "25.40%",
+        margin_diff: "-60 bps YoY",
+        filePath: "file:///C:/Users/admin/Downloads/42158a16-4777-4c79-a208-af835798889b.pdf",
+        pillars: {
+          topline: { score: 1.5, max: 2.0, label: "Topline: Revenue grew +28% YoY to ₹56 Cr" },
+          bottomline: { score: 1.5, max: 2.0, label: "Bottomline: PAT rose +42% YoY to ₹1.45 Cr" },
+          margin: { score: 1.6, max: 2.0, label: "Margins: Maintained strong 25.4% EBITDA margin" },
+          solvency: { score: 1.4, max: 2.0, label: "Scale: Moderate debt funding warehouse buildup" },
+          catalysts: { score: 1.4, max: 2.0, label: "Expansion: Multi-client warehousing space addition" }
+        },
+        guidance_records: [
+          { vector: "Warehouse Addition", promise: "Expand pallet capacity for FMCG clients", reported: "Revenue grew 28% YoY", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "FY27", stmt: "Commission automated fulfillment center for major retail and healthcare clients" }
+        ],
+        positives: ["Sticky long-term contracts with marquee FMCG and retail clients", "High operational EBITDA margin ~25.4%", "Strong revenue growth in Central India"],
+        watchouts: ["Warehouse lease and asset carrying costs require high occupancy"]
+      },
+      {
+        ticker: "BHAGERIA",
+        name: "Bhageria Industries",
+        sector: "Agri & Chemicals",
+        score: 7.2,
+        grade: "Grade B+ (Chemicals & Solar)",
+        say_to_do: 76.0,
+        say_to_do_status: "On Track / Met",
+        revenue_q2: "₹142.00 Cr",
+        revenue_yoy: "+12.0%",
+        revenue_qoq: "+4.1%",
+        revenue_h1: "₹278.40 Cr",
+        pat_q2: "₹8.50 Cr",
+        pat_yoy: "+14.0%",
+        pat_qoq: "+6.0%",
+        pat_h1: "₹16.52 Cr",
+        ebitda_margin: "10.40%",
+        margin_diff: "+20 bps YoY",
+        filePath: "file:///C:/Users/admin/Downloads/1cbf51c4-51f1-42c1-b0c9-e1e68ebcb758.pdf",
+        pillars: {
+          topline: { score: 1.4, max: 2.0, label: "Topline: Steady +12% YoY revenue growth" },
+          bottomline: { score: 1.5, max: 2.0, label: "Bottomline: PAT up +14% YoY to ₹8.5 Cr" },
+          margin: { score: 1.4, max: 2.0, label: "Margins: Stable 10.4% EBITDA margin" },
+          solvency: { score: 1.5, max: 2.0, label: "Balance Sheet: Low leverage, solar EPC cash flow" },
+          catalysts: { score: 1.4, max: 2.0, label: "Solar EPC: Expansion into turnkey solar projects" }
+        },
+        guidance_records: [
+          { vector: "Chemical Realization", promise: "Stabilize dye intermediates sales volumes", reported: "Realizations bottomed out and recovered", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Execute newly bagged commercial solar EPC pipeline" }
+        ],
+        positives: ["Twin revenue streams: Specialty dye intermediates and renewable solar power", "Clean balance sheet with low debt", "Steady volume demand recovery"],
+        watchouts: ["Chinese chemical dumping risks in dye intermediates"]
+      },
+      {
+        ticker: "RAMAPHO",
+        name: "Rama Phosphates Limited",
+        sector: "Agri & Chemicals",
+        score: 7.1,
+        grade: "Grade B+ (Moderate Outperform)",
+        say_to_do: 82.3,
+        say_to_do_status: "On Track / Met",
+        revenue_q2: "₹295.51 Cr",
+        revenue_yoy: "+20.3%",
+        revenue_qoq: "+31.5%",
+        revenue_h1: "₹520.31 Cr",
+        pat_q2: "₹19.17 Cr",
+        pat_yoy: "+10.9%",
+        pat_qoq: "+12.3%",
+        pat_h1: "₹36.23 Cr",
+        ebitda_margin: "10.74%",
+        margin_diff: "-18 bps YoY",
+        filePath: "file:///C:/Users/admin/Downloads/b4346b5a-6ae8-4af6-9dbf-6510de8fd162.pdf",
+        pillars: {
+          topline: { score: 1.6, max: 2.0, label: "Topline: Revenue up +20.3% YoY, +31.5% QoQ" },
+          bottomline: { score: 1.4, max: 2.0, label: "Bottomline: PAT up +10.9% YoY to ₹19.17 Cr" },
+          margin: { score: 1.2, max: 2.0, label: "Margins: EBITDA margin stable at 10.74%" },
+          solvency: { score: 1.3, max: 2.0, label: "Solvency: D/E at 0.41x, but ₹158 Cr in subsidy dues" },
+          catalysts: { score: 1.6, max: 2.0, label: "Greenfield: Commenced trial production at 9.14L MTPA Dhule" }
+        },
+        guidance_records: [
+          { vector: "Dhule Expansion", promise: "Commission Phase 1 SSP facility in Dhule", reported: "Started trial production Nov 11, 2026", status: "ACHIEVED" },
+          { vector: "Volume Rebound", promise: "Monsoon demand to drive volume pickup", reported: "Revenue grew 31.5% QoQ to ₹295.5 Cr", status: "BEATEN" },
+          { vector: "Working Capital", promise: "Contain subsidy receivables", reported: "Subsidies rose to ₹158.08 Cr", status: "MISSED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27 / FY28", stmt: "Initiate full-scale commercial production at 9.14 Lakh MTPA Dhule facility upon final approvals; Phase II ongoing" }
+        ],
+        positives: ["Commenced trial runs on Nov 11, 2026 at new Dhule plant (capacity now 9.14L MTPA)", "Recommended interim dividend of ₹0.50/share (10%)", "ICRA reaffirmed A- credit rating"],
+        watchouts: ["Government subsidies receivable of ₹158.08 Cr inflate working capital debt"]
+      },
+      {
+        ticker: "HILTON",
+        name: "Hilton Metal Forging",
+        sector: "Heavy Engineering & Castings",
+        score: 7.0,
+        grade: "Grade B+ (Margin Recovery)",
+        say_to_do: 78.0,
+        say_to_do_status: "On Track / Met",
+        revenue_q2: "₹67.74 Cr",
+        revenue_yoy: "-22.7%",
+        revenue_qoq: "+14.9%",
+        revenue_h1: "₹126.70 Cr",
+        pat_q2: "₹2.03 Cr",
+        pat_yoy: "+16.4%",
+        pat_qoq: "+12.3%",
+        pat_h1: "₹3.83 Cr",
+        ebitda_margin: "7.04%",
+        margin_diff: "+316 bps YoY",
+        filePath: "file:///C:/Users/admin/Downloads/10f51318-5226-4b4b-aa21-cfd15c3f4da9.pdf",
+        pillars: {
+          topline: { score: 1.2, max: 2.0, label: "Topline: Q2 down -22.7% YoY, but +14.9% QoQ" },
+          bottomline: { score: 1.5, max: 2.0, label: "Bottomline: H1 PAT doubled to ₹3.83 Cr" },
+          margin: { score: 1.5, max: 2.0, label: "Margins: EBITDA margin expanded +316 bps to 7.04%" },
+          solvency: { score: 1.4, max: 2.0, label: "Capital: Raised ₹28 Cr equity, repaid ₹6.4 Cr debt" },
+          catalysts: { score: 1.4, max: 2.0, label: "Expansion: Forged fittings and railway components" }
+        },
+        guidance_records: [
+          { vector: "Margin Expansion", promise: "Shift product mix toward higher-value flanges", reported: "EBITDA margin jumped to 7.04% (+316 bps)", status: "BEATEN" },
+          { vector: "Debt Reduction", promise: "Repay term borrowings using fresh capital", reported: "Repaid ₹6.40 Cr long-term debt", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Ramp up volume throughput following capital infusion and secure larger export and energy contracts" }
+        ],
+        positives: ["Significant gross and EBITDA margin expansion (+316 bps YoY)", "H1 net profit doubled (+102.9% YoY) to ₹3.83 Cr", "Repaid ₹6.40 Cr of term debt"],
+        watchouts: ["Major equity dilution (share capital grew from ₹23.4 Cr to ₹51.5 Cr)"]
+      },
+      {
+        ticker: "EXPO",
+        name: "Expo Engineering & Projects",
+        sector: "Heavy Engineering & Castings",
+        score: 6.5,
+        grade: "Grade B (Process Equipment)",
+        say_to_do: 74.0,
+        say_to_do_status: "On Track / Met",
+        revenue_q2: "₹18.50 Cr",
+        revenue_yoy: "+14.0%",
+        revenue_qoq: "+6.0%",
+        revenue_h1: "₹35.90 Cr",
+        pat_q2: "₹0.92 Cr",
+        pat_yoy: "+11.0%",
+        pat_qoq: "+5.0%",
+        pat_h1: "₹1.80 Cr",
+        ebitda_margin: "8.10%",
+        margin_diff: "-15 bps YoY",
+        filePath: "file:///C:/Users/admin/Downloads/Expo.pdf",
+        pillars: {
+          topline: { score: 1.4, max: 2.0, label: "Topline: Revenue grew +14% YoY to ₹18.5 Cr" },
+          bottomline: { score: 1.3, max: 2.0, label: "Bottomline: PAT of ₹0.92 Cr" },
+          margin: { score: 1.3, max: 2.0, label: "Margins: 8.1% EBITDA margin" },
+          solvency: { score: 1.3, max: 2.0, label: "Debt: Moderate bank facilities" },
+          catalysts: { score: 1.2, max: 2.0, label: "Refinery Capex: Pressure vessels & gas storage tanks" }
+        },
+        guidance_records: [
+          { vector: "Order Delivery", promise: "Execute gas container packages on schedule", reported: "Revenue grew 14% YoY", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "FY27", stmt: "Bid for larger cryogenic and pressure vessel packages" }
+        ],
+        positives: ["Steady demand for pressure vessels and cryogenic storage", "Modest revenue expansion"],
+        watchouts: ["Microcap scale with limited pricing leverage against steel raw materials"]
+      },
+      {
+        ticker: "HILIKS",
+        name: "Hiliks Technologies",
+        sector: "Logistics, Marine & Retail",
+        score: 6.2,
+        grade: "Grade B (Microcap Growth)",
+        say_to_do: 72.0,
+        say_to_do_status: "On Track / Met",
+        revenue_q2: "₹12.74 Cr",
+        revenue_yoy: "+234.4%",
+        revenue_qoq: "+11.9%",
+        revenue_h1: "₹24.14 Cr",
+        pat_q2: "₹1.04 Cr",
+        pat_yoy: "+282.9%",
+        pat_qoq: "+2.7%",
+        pat_h1: "₹1.48 Cr",
+        ebitda_margin: "8.14%",
+        margin_diff: "+108 bps YoY",
+        filePath: "file:///C:/Users/admin/Downloads/Hiliks.pdf",
+        pillars: {
+          topline: { score: 1.6, max: 2.0, label: "Topline: Triple-digit revenue jump (+234% YoY)" },
+          bottomline: { score: 1.3, max: 2.0, label: "Bottomline: PAT quadrupled to ₹1.04 Cr" },
+          margin: { score: 1.1, max: 2.0, label: "Margins: Modest ~8.14% operating margin" },
+          solvency: { score: 1.2, max: 2.0, label: "Scale: Microcap balance sheet" },
+          catalysts: { score: 1.0, max: 2.0, label: "Growth: Scaling software & consulting solutions" }
+        },
+        guidance_records: [
+          { vector: "Turnaround", promise: "Scale IT services business revenue", reported: "Revenue grew 3.3x YoY to ₹12.74 Cr", status: "BEATEN" }
+        ],
+        forward_guidance: [
+          { horizon: "FY27", stmt: "Broaden corporate digital consulting footprint" }
+        ],
+        positives: ["High percentage growth off a low comparative base", "Achieved ₹1+ Cr quarterly net profit run-rate"],
+        watchouts: ["Very small operating base with inherent revenue volatility"]
+      },
+      {
+        ticker: "523309",
+        name: "Shri Gang Industries",
+        sector: "Agri & Chemicals",
+        score: 5.1,
+        grade: "Grade C+ (Underperform)",
+        say_to_do: 65.0,
+        say_to_do_status: "Missed / Margin Squeeze",
+        revenue_q2: "₹103.64 Cr",
+        revenue_yoy: "+18.1%",
+        revenue_qoq: "-7.6%",
+        revenue_h1: "₹215.85 Cr",
+        pat_q2: "₹0.51 Cr",
+        pat_yoy: "-69.8%",
+        pat_qoq: "-75.1%",
+        pat_h1: "₹2.57 Cr",
+        ebitda_margin: "3.03%",
+        margin_diff: "-317 bps YoY",
+        filePath: "file:///C:/Users/admin/Downloads/4378325d-bbb8-46ad-8367-8d6bc2246053.pdf",
+        pillars: {
+          topline: { score: 1.4, max: 2.0, label: "Topline: Steady +18.1% YoY, but dipped -7.6% QoQ" },
+          bottomline: { score: 0.8, max: 2.0, label: "Bottomline: PAT crashed -69.8% YoY to ₹0.51 Cr" },
+          margin: { score: 0.7, max: 2.0, label: "Margins: Operating EBITDA margin halved to 3.03%" },
+          solvency: { score: 1.2, max: 2.0, label: "Debt: Moderate leverage, but cash flows tightened" },
+          catalysts: { score: 1.0, max: 2.0, label: "Distillery: Bottling expansion constrained by excise" }
+        },
+        guidance_records: [
+          { vector: "Distillery Ramp-up", promise: "Expand liquor bottling realizations", reported: "Excise duty jumped to ₹11.25 Cr, crushing margins", status: "MISSED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Re-align bottling product mix to mitigate state excise duty burdens" }
+        ],
+        positives: ["Revenue remains above ₹100 Cr per quarter", "Finance costs reduced slightly YoY to ₹1.41 Cr"],
+        watchouts: ["State excise duties exploded to ₹11.25 Cr vs ₹1.94 Cr last year", "Operating margins compressed by 317 bps to just 3.0%"]
+      },
+      {
+        ticker: "S&SPOWER",
+        name: "S&S Power Switchgear",
+        sector: "Power & Transformers",
+        score: 4.8,
+        grade: "Grade C+ (Underperform)",
+        say_to_do: 60.0,
+        say_to_do_status: "Persistent Execution Deficit",
+        revenue_q2: "₹73.61 Cr",
+        revenue_yoy: "+22.2%",
+        revenue_qoq: "-0.6%",
+        revenue_h1: "₹146.95 Cr",
+        pat_q2: "₹-2.43 Cr",
+        pat_yoy: "Loss vs Profit",
+        pat_qoq: "Loss Expanded",
+        pat_h1: "₹-2.69 Cr",
+        ebitda_margin: "3.85%",
+        margin_diff: "Severe Contraction",
+        filePath: "file:///C:/Users/admin/Downloads/6d2b13e0-ba3a-4881-8a8a-7434468de79b.pdf",
+        pillars: {
+          topline: { score: 1.4, max: 2.0, label: "Topline: Revenue grew +22.2% YoY to ₹73.61 Cr" },
+          bottomline: { score: 0.6, max: 2.0, label: "Bottomline: Swung into consolidated net loss ₹-2.43 Cr" },
+          margin: { score: 0.7, max: 2.0, label: "Margins: Raw materials and ESOPs absorbed margins" },
+          solvency: { score: 1.1, max: 2.0, label: "Solvency: High liabilities across overseas units" },
+          catalysts: { score: 1.0, max: 2.0, label: "Restructuring: UK step-down unit requires turnaround" }
+        },
+        guidance_records: [
+          { vector: "Consolidated Turnaround", promise: "Turn Acrastyle UK and operations profitable", reported: "Net Loss of ₹2.43 Cr in Q2 and ₹2.69 Cr in H1", status: "MISSED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Address overseas Acrastyle cost structure and rationalize overheads" }
+        ],
+        positives: ["Transmission grid switchgear demand supports 22% revenue growth", "Established presence in substation automation"],
+        watchouts: ["Overseas UK subsidiary dragging consolidated results into losses", "Operating costs and non-cash ESOP charges diluting earnings"]
+      }
+    ];
+
+    let currentSector = "ALL";
+    let currentView = "table";
+
+    function setSectorFilter(sec) {
+      currentSector = sec;
+      document.querySelectorAll('.sector-btn').forEach(b => {
+        if (b.textContent.includes(sec) || (sec === 'ALL' && b.textContent.includes('All'))) {
+          b.className = "sector-btn px-3 py-1.5 rounded-lg font-medium bg-sky-600 text-white transition whitespace-nowrap shadow-sm";
+        } else {
+          b.className = "sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap";
+        }
+      });
+      renderDashboard();
+    }
+
+    function switchView(view) {
+      currentView = view;
+      if (view === 'table') {
+        document.getElementById('tableView').classList.remove('hidden');
+        document.getElementById('cardsView').classList.add('hidden');
+        document.getElementById('btn-table').className = "px-3.5 py-2 text-xs font-semibold rounded-lg bg-sky-600 text-white transition flex items-center gap-1.5 shadow-md";
+        document.getElementById('btn-cards').className = "px-3.5 py-2 text-xs font-semibold rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 transition flex items-center gap-1.5";
+      } else {
+        document.getElementById('tableView').classList.add('hidden');
+        document.getElementById('cardsView').classList.remove('hidden');
+        document.getElementById('btn-cards').className = "px-3.5 py-2 text-xs font-semibold rounded-lg bg-sky-600 text-white transition flex items-center gap-1.5 shadow-md";
+        document.getElementById('btn-table').className = "px-3.5 py-2 text-xs font-semibold rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 transition flex items-center gap-1.5";
+      }
+    }
+
+    function getFilteredData() {
+      const q = document.getElementById('searchInput').value.toLowerCase().trim();
+      const sortVal = document.getElementById('sortSelect').value;
+
+      let list = COMPANIES_DATA.filter(c => {
+        const matchesQuery = c.name.toLowerCase().includes(q) || c.ticker.toLowerCase().includes(q) || c.sector.toLowerCase().includes(q);
+        const matchesSector = currentSector === "ALL" || c.sector === currentSector;
+        return matchesQuery && matchesSector;
+      });
+
+      // Sorting
+      list.sort((a, b) => {
+        if (sortVal === 'score_desc') return b.score - a.score;
+        if (sortVal === 'say_to_do_desc') return b.say_to_do - a.say_to_do;
+        if (sortVal === 'rev_growth_desc') return parseFloat(b.revenue_yoy) - parseFloat(a.revenue_yoy);
+        if (sortVal === 'pat_growth_desc') return parseFloat(b.pat_yoy) - parseFloat(a.pat_yoy);
+        if (sortVal === 'name_asc') return a.name.localeCompare(b.name);
+        return 0;
+      });
+
+      return list;
+    }
+
+    function renderDashboard() {
+      const data = getFilteredData();
+      const emptyState = document.getElementById('emptyState');
+      const tableBody = document.getElementById('tableBody');
+      const cardsView = document.getElementById('cardsView');
+
+      if (data.length === 0) {
+        emptyState.classList.remove('hidden');
+        tableBody.innerHTML = '';
+        cardsView.innerHTML = '';
+        return;
+      }
+      emptyState.classList.add('hidden');
+
+      // 1. Populate Table View
+      tableBody.innerHTML = data.map((c, idx) => {
+        const scoreColor = c.score >= 8.5 ? "text-emerald-400 font-black" : (c.score >= 7.0 ? "text-sky-400 font-bold" : (c.score >= 6.0 ? "text-amber-400 font-bold" : "text-rose-400 font-bold"));
+        const gradeBadge = c.grade.includes("A+") ? "badge-green" : (c.grade.includes("A") ? "badge-blue" : (c.grade.includes("B") ? "badge-amber" : "badge-red"));
+        const sayToDoBadge = c.say_to_do >= 90 ? "text-emerald-400 font-bold" : (c.say_to_do >= 80 ? "text-sky-400 font-medium" : (c.say_to_do >= 70 ? "text-amber-400" : "text-rose-400 font-semibold"));
+        const revYoYColor = c.revenue_yoy.startsWith("+") ? "text-emerald-400" : "text-rose-400";
+        const patYoYColor = c.pat_yoy.startsWith("+") ? "text-emerald-400" : "text-rose-400";
+
+        return `
+          <tr class="hover:bg-slate-800/40 transition">
+            <td class="py-3 px-4 text-slate-500 font-mono text-[11px]">${idx + 1}</td>
+            <td class="py-3 px-4">
+              <div class="font-bold text-white text-[13px]">${c.name}</div>
+              <div class="text-[11px] text-slate-400 flex items-center gap-1.5 mt-0.5">
+                <span class="font-mono text-sky-400 bg-sky-500/10 px-1 py-0.2 rounded border border-sky-500/20">${c.ticker}</span>
+              </div>
+            </td>
+            <td class="py-3 px-4 text-slate-300">${c.sector}</td>
+            <td class="py-3 px-4 text-center">
+              <span class="${scoreColor} text-sm">${c.score.toFixed(1)}</span>
+              <span class="text-[10px] text-slate-500 block">/ 10.0</span>
+            </td>
+            <td class="py-3 px-4 text-center">
+              <span class="px-2 py-0.5 rounded text-[11px] font-bold ${gradeBadge}">
+                ${c.grade.split(' ')[1] || c.grade}
+              </span>
+            </td>
+            <td class="py-3 px-4 text-right">
+              <div class="font-bold text-white">${c.revenue_q2}</div>
+              <div class="text-[10px] ${revYoYColor}">${c.revenue_yoy} YoY</div>
+            </td>
+            <td class="py-3 px-4 text-right">
+              <div class="font-bold text-white">${c.pat_q2}</div>
+              <div class="text-[10px] ${patYoYColor}">${c.pat_yoy} YoY</div>
+            </td>
+            <td class="py-3 px-4 text-center font-bold text-slate-200">
+              ${c.ebitda_margin}
+            </td>
+            <td class="py-3 px-4 text-center">
+              <span class="${sayToDoBadge}">${c.say_to_do.toFixed(1)}%</span>
+            </td>
+            <td class="py-3 px-4 text-center">
+              <button onclick="openDetail('${c.ticker}')" class="px-3 py-1 text-[11px] font-semibold rounded bg-sky-500/10 text-sky-400 hover:bg-sky-500/20 border border-sky-500/30 transition">
+                Deep Dive &rarr;
+              </button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      // 2. Populate Cards View
+      cardsView.innerHTML = data.map(c => {
+        const scoreColor = c.score >= 8.5 ? "text-emerald-400" : (c.score >= 7.0 ? "text-sky-400" : (c.score >= 6.0 ? "text-amber-400" : "text-rose-400"));
+        const gradeBadge = c.grade.includes("A+") ? "badge-green" : (c.grade.includes("A") ? "badge-blue" : (c.grade.includes("B") ? "badge-amber" : "badge-red"));
+
+        return `
+          <div class="bg-slate-800/40 border border-slate-700/60 rounded-xl p-5 hover:border-sky-500/50 transition flex flex-col justify-between shadow-lg">
+            <div>
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <span class="font-mono text-xs text-sky-400 bg-sky-500/10 px-1.5 py-0.5 rounded border border-sky-500/20">${c.ticker}</span>
+                  <h3 class="text-base font-black text-white mt-1.5 truncate">${c.name}</h3>
+                  <div class="text-xs text-slate-400">${c.sector}</div>
+                </div>
+                <div class="text-right">
+                  <div class="text-xl font-black ${scoreColor}">${c.score.toFixed(1)}<span class="text-xs text-slate-500 font-normal">/10</span></div>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold ${gradeBadge}">${c.grade.split(' ')[1] || c.grade}</span>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-3 gap-2 my-4 bg-slate-900/60 p-2.5 rounded-lg border border-slate-800 text-center text-xs">
+                <div>
+                  <div class="text-[10px] text-slate-500">Q2 Revenue</div>
+                  <div class="font-bold text-white mt-0.5">${c.revenue_q2}</div>
+                  <div class="text-[10px] text-emerald-400">${c.revenue_yoy}</div>
+                </div>
+                <div>
+                  <div class="text-[10px] text-slate-500">Q2 PAT</div>
+                  <div class="font-bold text-white mt-0.5">${c.pat_q2}</div>
+                  <div class="text-[10px] text-emerald-400">${c.pat_yoy}</div>
+                </div>
+                <div>
+                  <div class="text-[10px] text-slate-500">Operating %</div>
+                  <div class="font-bold text-white mt-0.5">${c.ebitda_margin}</div>
+                  <div class="text-[10px] text-slate-400">${c.margin_diff.split(' ')[0]}</div>
+                </div>
+              </div>
+
+              <div class="text-xs bg-purple-950/20 border border-purple-500/20 p-2.5 rounded-lg mb-4 flex items-center justify-between">
+                <span class="text-purple-300 font-medium">Say-to-Do Execution:</span>
+                <span class="font-bold text-purple-400">${c.say_to_do.toFixed(1)}% (${c.say_to_do_status})</span>
+              </div>
+            </div>
+
+            <button onclick="openDetail('${c.ticker}')" class="w-full py-2 text-xs font-bold rounded-lg bg-slate-800 hover:bg-sky-600 hover:text-white text-slate-200 border border-slate-700 hover:border-sky-500 transition text-center">
+              View Detailed Audit &rarr;
+            </button>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function openDetail(ticker) {
+      const c = COMPANIES_DATA.find(x => x.ticker === ticker);
+      if (!c) return;
+
+      document.getElementById('modal-ticker').textContent = c.ticker;
+      document.getElementById('modal-sector').textContent = c.sector;
+      document.getElementById('modal-company').textContent = c.name;
+      document.getElementById('modal-score').textContent = c.score.toFixed(1) + " / 10.0";
+      document.getElementById('modal-grade').textContent = c.grade;
+      document.getElementById('modal-saytodo').textContent = c.say_to_do.toFixed(1) + "%";
+      document.getElementById('modal-margin').textContent = c.ebitda_margin;
+      document.getElementById('modal-margin-diff').textContent = c.margin_diff;
+      document.getElementById('modal-file-link').href = c.filePath;
+
+      // Table
+      const finTable = document.getElementById('modal-fin-table');
+      finTable.innerHTML = `
+        <tr>
+          <td class="py-1.5 px-3 font-semibold">Revenue from Operations</td>
+          <td class="py-1.5 px-3 text-right font-bold text-white">${c.revenue_q2}</td>
+          <td class="py-1.5 px-3 text-right text-emerald-400 font-semibold">${c.revenue_yoy}</td>
+          <td class="py-1.5 px-3 text-right text-sky-400 font-semibold">${c.revenue_qoq}</td>
+          <td class="py-1.5 px-3 text-right font-medium">${c.revenue_h1}</td>
+        </tr>
+        <tr>
+          <td class="py-1.5 px-3 font-semibold">Net Profit (PAT)</td>
+          <td class="py-1.5 px-3 text-right font-bold text-white">${c.pat_q2}</td>
+          <td class="py-1.5 px-3 text-right text-emerald-400 font-semibold">${c.pat_yoy}</td>
+          <td class="py-1.5 px-3 text-right text-sky-400 font-semibold">${c.pat_qoq}</td>
+          <td class="py-1.5 px-3 text-right font-medium">${c.pat_h1}</td>
+        </tr>
+        <tr>
+          <td class="py-1.5 px-3 font-semibold">Operating Margin</td>
+          <td class="py-1.5 px-3 text-right font-bold text-white">${c.ebitda_margin}</td>
+          <td class="py-1.5 px-3 text-right text-slate-300 font-semibold" colspan="3">${c.margin_diff}</td>
+        </tr>
+      `;
+
+      // Pillars
+      const pillarsDiv = document.getElementById('modal-pillars');
+      pillarsDiv.innerHTML = Object.keys(c.pillars).map(key => {
+        const p = c.pillars[key];
+        const pct = (p.score / p.max) * 100;
+        return `
+          <div>
+            <div class="flex justify-between text-xs mb-1">
+              <span class="text-slate-300 font-medium">${key.toUpperCase()}: ${p.label}</span>
+              <span class="font-bold text-white">${p.score.toFixed(1)} / ${p.max.toFixed(1)}</span>
+            </div>
+            <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+              <div class="h-full bg-sky-500 rounded-full" style="width: ${pct}%"></div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // Guidance records
+      const guidanceDiv = document.getElementById('modal-guidance-records');
+      guidanceDiv.innerHTML = c.guidance_records.map(g => {
+        const badge = g.status === 'BEATEN' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : (g.status === 'ACHIEVED' ? 'bg-sky-500/20 text-sky-400 border border-sky-500/30' : 'bg-rose-500/20 text-rose-400 border border-rose-500/30');
+        return `
+          <div class="bg-slate-800/60 p-3 rounded-lg border border-slate-700/60 text-xs">
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="font-bold text-white">${g.vector}</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold ${badge}">${g.status}</span>
+            </div>
+            <div class="text-slate-400 mb-1"><strong class="text-slate-300 font-semibold">Promised:</strong> "${g.promise}"</div>
+            <div class="text-slate-200"><strong class="text-slate-300 font-semibold">Delivered:</strong> ${g.reported}</div>
+          </div>
+        `;
+      }).join('');
+
+      // Forward Guidance
+      const fwdDiv = document.getElementById('modal-forward-guidance');
+      fwdDiv.innerHTML = c.forward_guidance.map(f => `
+        <div class="bg-sky-950/20 p-2.5 rounded-lg border border-sky-500/20 text-xs text-slate-300">
+          <span class="font-bold text-sky-400">[Target: ${f.horizon}]:</span> ${f.stmt}
+        </div>
+      `).join('');
+
+      // Positives & Watchouts
+      document.getElementById('modal-positives').innerHTML = c.positives.map(x => `<li class="mt-0.5">${x}</li>`).join('');
+      document.getElementById('modal-watchouts').innerHTML = c.watchouts.map(x => `<li class="mt-0.5">${x}</li>`).join('');
+
+      document.getElementById('detailModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('detailModal').classList.add('hidden');
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    renderDashboard();
+  </script>
+</body>
+</html>
