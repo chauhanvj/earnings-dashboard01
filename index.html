@@ -32,7 +32,7 @@
         <div class="flex items-center gap-3">
           <span class="px-2.5 py-1 text-xs font-bold rounded-md bg-sky-500/10 text-sky-400 border border-sky-500/20 tracking-wider uppercase">Master Earnings Hub</span>
           <span class="inline-flex items-center gap-1 text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> 24 Verified Downloads
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> 25 Verified Filings
           </span>
         </div>
         <h1 class="text-2xl md:text-3xl font-extrabold text-white mt-2 tracking-tight">Institutional Earnings & Say-to-Do Audit Dashboard</h1>
@@ -55,13 +55,13 @@
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
       <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
         <div class="text-xs font-medium text-slate-400">Total Scanned Results</div>
-        <div class="text-2xl font-black text-white mt-1" id="stat-total">24</div>
+        <div class="text-2xl font-black text-white mt-1" id="stat-total">25</div>
         <div class="text-[11px] text-sky-400 mt-1">100% extracted from PDF filings</div>
       </div>
       <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
         <div class="text-xs font-medium text-slate-400">Average Rating Score</div>
         <div class="text-2xl font-black text-emerald-400 mt-1">8.0 <span class="text-xs font-normal text-slate-400">/ 10.0</span></div>
-        <div class="text-[11px] text-emerald-400 mt-1">14 Grade A / A+ Leaders</div>
+        <div class="text-[11px] text-emerald-400 mt-1">15 Grade A / A+ Leaders</div>
       </div>
       <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
         <div class="text-xs font-medium text-slate-400">Top Execution Leaders</div>
@@ -82,12 +82,12 @@
       <!-- Search Input -->
       <div class="relative flex-1">
         <svg class="w-4 h-4 absolute left-3.5 top-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-        <input type="text" id="searchInput" oninput="renderDashboard()" placeholder="Search 24 stocks by name, ticker (e.g. SGFIN, SONACOMS, MARSONS), or keyword..." class="w-full bg-slate-900 border border-slate-700 text-white text-sm rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:border-sky-500 transition">
+        <input type="text" id="searchInput" oninput="renderDashboard()" placeholder="Search 25 stocks by name, ticker (e.g. SGFIN, SONACOMS, MARSONS), or keyword..." class="w-full bg-slate-900 border border-slate-700 text-white text-sm rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:border-sky-500 transition">
       </div>
 
       <!-- Sector Filter Tabs -->
       <div class="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0 text-xs">
-        <button onclick="setSectorFilter('ALL')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-sky-600 text-white transition whitespace-nowrap">All (24)</button>
+        <button onclick="setSectorFilter('ALL')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-sky-600 text-white transition whitespace-nowrap">All (25)</button>
         <button onclick="setSectorFilter('Power & Transformers')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Transformers &amp; Cables</button>
         <button onclick="setSectorFilter('Auto & EV Tech')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Auto &amp; EV</button>
         <button onclick="setSectorFilter('Heavy Engineering & Castings')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Heavy Eng &amp; Cranes</button>
@@ -264,6 +264,50 @@
   <!-- SCRIPT DATA & LOGIC -->
   <script>
     const COMPANIES_DATA = [
+      {
+        ticker: "TELOGICA",
+        name: "Telogica Limited",
+        sector: "Telecom & MedTech",
+        score: 8.1,
+        grade: "Grade A- (Solid Compounder)",
+        say_to_do: 83.0,
+        say_to_do_status: "On Track / Accelerating",
+        revenue_q2: "₹21.11 Cr",
+        revenue_yoy: "+309.3%",
+        revenue_qoq: "+47.8%",
+        revenue_h1: "₹35.39 Cr",
+        pat_q2: "₹2.54 Cr",
+        pat_yoy: "+1,425.8%",
+        pat_qoq: "Turnaround (from -₹1.89 Cr)",
+        pat_h1: "₹0.65 Cr",
+        ebitda_margin: "12.48%",
+        margin_diff: "PBT Margin expanded to 12.5% (+920 bps)",
+        filePath: "file:///C:/Users/admin/Downloads/60590557-661a-45a7-8fb3-692ceb34a25f.pdf",
+        pillars: {
+          topline: { score: 1.9, max: 2.0, label: "Topline: Revenue surged +309.3% YoY to ₹21.11 Cr (4x jump)" },
+          bottomline: { score: 1.4, max: 2.0, label: "Bottomline: Strong turnaround to ₹2.54 Cr PAT vs ₹0.17 Cr YoY" },
+          margin: { score: 1.7, max: 2.0, label: "Margin: PBT margin expanded sharply from 3.3% to 12.5%" },
+          solvency: { score: 1.4, max: 2.0, label: "Solvency: Low long-term debt; watch ₹70.5L statutory dues" },
+          catalysts: { score: 1.7, max: 2.0, label: "Operations: Patancheru manufacturing unit scaling telecom & medtech orders" }
+        },
+        guidance_records: [
+          { vector: "Operational Scale-up", promise: "Scale production run-rate at Patancheru facility", reported: "H1 revenue reached ₹35.39 Cr (exceeding FY26 full year ₹32.39 Cr in just 6 months)", status: "BEAT" },
+          { vector: "Turnaround to Profitability", promise: "Recover from Q1 deferred tax drag and expand operational PBT", reported: "Q2 PBT surged to ₹2.63 Cr (vs ₹0.17 Cr YoY), PAT ₹2.54 Cr", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Maintain >₹20 Cr quarterly run-rate and resolve overdue statutory dues (PF/TDS ₹70.5 Lakhs)" },
+          { horizon: "FY27 Capex", stmt: "Leverage Medical Device Park manufacturing facility for higher margin specialized telecom testing & devices" }
+        ],
+        positives: [
+          "Phenomenal revenue acceleration: Q2 revenue surged +309.3% YoY to ₹21.11 Cr; H1 revenue ₹35.39 Cr already surpasses entire FY26 (₹32.39 Cr)",
+          "Strong bottom-line turnaround: Q2 PAT jumped to ₹2.54 Cr from net loss of ₹(1.89) Cr in Q1",
+          "PBT margin expansion: PBT margin reached 12.48% vs 3.3% in Q2 FY26 due to operating leverage"
+        ],
+        watchouts: [
+          "Statutory dues qualification: Auditor flagged ₹70.52 Lakhs overdue PF & TDS (>6 months) and ₹60.13 Lakhs disputed sales/service tax",
+          "Working capital lockup: Trade receivables increased from ₹20.96 Cr in March 2026 to ₹29.45 Cr in September 2026"
+        ]
+      },
       {
         ticker: "SGFIN",
         name: "SG Finserve Limited",
