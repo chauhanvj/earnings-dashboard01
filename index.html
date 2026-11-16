@@ -32,7 +32,7 @@
         <div class="flex items-center gap-3">
           <span class="px-2.5 py-1 text-xs font-bold rounded-md bg-sky-500/10 text-sky-400 border border-sky-500/20 tracking-wider uppercase">Master Earnings Hub</span>
           <span class="inline-flex items-center gap-1 text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> 25 Verified Filings
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> 27 Verified Filings
           </span>
         </div>
         <h1 class="text-2xl md:text-3xl font-extrabold text-white mt-2 tracking-tight">Institutional Earnings & Say-to-Do Audit Dashboard</h1>
@@ -55,13 +55,13 @@
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
       <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
         <div class="text-xs font-medium text-slate-400">Total Scanned Results</div>
-        <div class="text-2xl font-black text-white mt-1" id="stat-total">25</div>
+        <div class="text-2xl font-black text-white mt-1" id="stat-total">27</div>
         <div class="text-[11px] text-sky-400 mt-1">100% extracted from PDF filings</div>
       </div>
       <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
         <div class="text-xs font-medium text-slate-400">Average Rating Score</div>
         <div class="text-2xl font-black text-emerald-400 mt-1">8.0 <span class="text-xs font-normal text-slate-400">/ 10.0</span></div>
-        <div class="text-[11px] text-emerald-400 mt-1">14 Grade A / A+ Leaders</div>
+        <div class="text-[11px] text-emerald-400 mt-1">16 Grade A / A+ Leaders</div>
       </div>
       <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
         <div class="text-xs font-medium text-slate-400">Top Execution Leaders</div>
@@ -82,16 +82,17 @@
       <!-- Search Input -->
       <div class="relative flex-1">
         <svg class="w-4 h-4 absolute left-3.5 top-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-        <input type="text" id="searchInput" oninput="renderDashboard()" placeholder="Search 25 stocks by name, ticker (e.g. SGFIN, SONACOMS, MARSONS), or keyword..." class="w-full bg-slate-900 border border-slate-700 text-white text-sm rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:border-sky-500 transition">
+        <input type="text" id="searchInput" oninput="renderDashboard()" placeholder="Search 27 stocks by name, ticker (e.g. SGFIN, SONACOMS, MARSONS), or keyword..." class="w-full bg-slate-900 border border-slate-700 text-white text-sm rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:border-sky-500 transition">
       </div>
 
       <!-- Sector Filter Tabs -->
       <div class="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0 text-xs">
-        <button onclick="setSectorFilter('ALL')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-sky-600 text-white transition whitespace-nowrap">All (25)</button>
+        <button onclick="setSectorFilter('ALL')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-sky-600 text-white transition whitespace-nowrap">All (27)</button>
         <button onclick="setSectorFilter('Power & Transformers')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Transformers &amp; Cables</button>
         <button onclick="setSectorFilter('Auto & EV Tech')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Auto &amp; EV</button>
         <button onclick="setSectorFilter('Heavy Engineering & Castings')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Heavy Eng &amp; Cranes</button>
         <button onclick="setSectorFilter('Defence & Aerospace')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Defence</button>
+        <button onclick="setSectorFilter('Sensors & EV Tech')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Sensors &amp; EV</button>
         <button onclick="setSectorFilter('Fintech & NBFC')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Fintech</button>
         <button onclick="setSectorFilter('Agri & Chemicals')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Agri &amp; Chemicals</button>
         <button onclick="setSectorFilter('Logistics, Marine & Retail')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Logistics &amp; Retail</button>
@@ -300,6 +301,50 @@
         ],
         positives: ["Zero bad debt / 0.00% NPA with CRAR of 27.01%", "High-margin compounding (>36% net profit margin)", "GIFT City unit unlocks global trade financing"],
         watchouts: ["Rapid balance sheet growth requires constant access to bank wholesale credit lines"]
+      },
+      {
+        ticker: "PERMAGNET",
+        name: "Permanent Magnets Limited",
+        sector: "Sensors & EV Tech",
+        score: 9.5,
+        grade: "Grade A+ (Compounder)",
+        say_to_do: 96.0,
+        say_to_do_status: "Beaten / Accelerated",
+        revenue_q2: "₹72.46 Cr",
+        revenue_yoy: "+47.5%",
+        revenue_qoq: "+14.6%",
+        revenue_h1: "₹135.69 Cr",
+        pat_q2: "₹7.51 Cr",
+        pat_yoy: "+216.9%",
+        pat_qoq: "+97.1%",
+        pat_h1: "₹11.32 Cr",
+        ebitda_margin: "23.60%",
+        margin_diff: "Expanded (+1,139 bps YoY)",
+        filePath: "file:///C:/Users/admin/Downloads/0c9dfbf6-3bfd-49b3-aae9-eb99180c5bfc.pdf",
+        pillars: {
+          topline: { score: 1.9, max: 2.0, label: "Topline: Revenue up +47.5% YoY to ₹72.46 Cr on smart meter sensor boom" },
+          bottomline: { score: 1.9, max: 2.0, label: "Bottomline: PAT tripled (+216.9% YoY) to ₹7.51 Cr (+97% QoQ)" },
+          margin: { score: 2.0, max: 2.0, label: "Operating Margin (ex-other inc): 23.60% (+1,139 bps YoY expansion to historic high)" },
+          solvency: { score: 1.8, max: 2.0, label: "Solvency: Robust net worth (>₹240 Cr), minimal leverage, debt-free profile" },
+          catalysts: { score: 1.9, max: 2.0, label: "Growth Drivers: Prime beneficiary of national smart metering rollout & EV charging" }
+        },
+        guidance_records: [
+          { vector: "Smart Meter Shunts", promise: "Scale capacity for current sensors & magnetic assemblies", reported: "Q2 Revenue expanded +47.5% YoY to ₹72.46 Cr; H1 reached ₹135.69 Cr (+32.2% YoY)", status: "BEAT" },
+          { vector: "Operating Leverage", promise: "Expand operating margins via product mix and automated assembly", reported: "Operating margin surged to 23.60% (+1,139 bps YoY); PAT tripled to ₹7.51 Cr", status: "BEAT" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Supply expanding shunt requirements for domestic smart meters and global meter OEMs" },
+          { horizon: "FY27 Capex", stmt: "Expand specialized sensor production capacity for renewable solar inverters and EV applications" }
+        ],
+        positives: [
+          "Spectacular margin expansion: Core operating EBITDA margin doubled to 23.60% (+1,139 bps YoY) from 12.21%",
+          "Explosive net profit tripling: Q2 PAT jumped +216.9% YoY to ₹7.51 Cr (EPS ₹8.73)",
+          "Major megatrend tailwind: Massive adoption of current sensors & shunts in RDSS smart meter rollouts nationwide"
+        ],
+        watchouts: [
+          "Customer concentration in meter OEMs: Order flow tied to regional smart meter rollout timelines",
+          "Raw material sensitivity: Copper and specialized magnetic alloy price swings require continuous hedging"
+        ]
       },
       {
         ticker: "SONACOMS",
@@ -774,6 +819,50 @@
         ],
         positives: ["Dominant multi-brand consumer electronics retailer in Eastern India", "Compounding store network across tier 2/3 cities", "Strong same-store sales growth"],
         watchouts: ["Seasonal Q2 drop compared to peak AC summer season in Q1"]
+      },
+      {
+        ticker: "BDL",
+        name: "Bharat Dynamics Limited",
+        sector: "Defence & Aerospace",
+        score: 8.0,
+        grade: "Grade A- (Solid Compounder)",
+        say_to_do: 86.0,
+        say_to_do_status: "On Track / Accelerating",
+        revenue_q2: "₹1,664.1 Cr",
+        revenue_yoy: "+45.1%",
+        revenue_qoq: "+190.8%",
+        revenue_h1: "₹2,236.4 Cr",
+        pat_q2: "₹183.5 Cr",
+        pat_yoy: "-15.0%",
+        pat_qoq: "+54.5%",
+        pat_h1: "₹302.3 Cr",
+        ebitda_margin: "6.07%",
+        margin_diff: "Contracted (-1,028 bps YoY)",
+        filePath: "file:///C:/Users/admin/Downloads/ab067869-2707-4bb1-b6ab-8ee2137e7b48.pdf",
+        pillars: {
+          topline: { score: 1.9, max: 2.0, label: "Topline: Revenue grew +45.1% YoY to ₹1,664.1 Cr (+191% QoQ)" },
+          bottomline: { score: 1.5, max: 2.0, label: "Bottomline: PAT ₹183.5 Cr (+54.5% QoQ); H1 PAT up +29% to ₹302.3 Cr" },
+          margin: { score: 0.8, max: 2.0, label: "Operating Margin (ex-other inc): 6.07% (-1,028 bps YoY contraction due to inventory WIP)" },
+          solvency: { score: 2.0, max: 2.0, label: "Solvency: Debt-free Defence PSU; ₹1,161.6 Cr massive H1 Operating Cash Flow" },
+          catalysts: { score: 1.8, max: 2.0, label: "Order Book: Heavy multi-year backlog for Akash, Astra & Konkurs missiles" }
+        },
+        guidance_records: [
+          { vector: "Production Ramp-up", promise: "Accelerate missile deliveries for Akash Weapon System and Astra BVR", reported: "H1 Revenue surged +60.3% YoY to ₹2,236 Cr; Q2 revenue jumped +45.1% YoY to ₹1,664 Cr", status: "BEAT" },
+          { vector: "Cash Inflows", promise: "Maintain strong milestone collection from Ministry of Defence", reported: "H1 Operating cash flow reached a stellar ₹1,161.6 Cr", status: "BEAT" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Fulfill key scheduled batch dispatches for Akash-NG and Astra Mk-1 programs" },
+          { horizon: "FY27-28 Capex", stmt: "Commercialize surface-to-air missile export variants and expand torpedo manufacturing infrastructure" }
+        ],
+        positives: [
+          "Outstanding top-line scale: Q2 revenue up +45.1% YoY to ₹1,664.1 Cr and up +190.8% QoQ",
+          "Phenomenal cash flow generation: H1 Operating cash flow reached ₹1,161.6 Cr from customer milestone receipts",
+          "Fortress balance sheet: Zero net debt, strong cash reserves, and multi-year defense order book"
+        ],
+        watchouts: [
+          "Operating margin contraction: Core operating EBITDA margin (ex-other income) compressed to 6.07% vs 16.35% YoY due to inventory WIP costs",
+          "Lumpy execution cycle: Quarterly deliveries heavily skew toward Q3/Q4 based on MoD testing clearances"
+        ]
       },
       {
         ticker: "LUMAXIND",
