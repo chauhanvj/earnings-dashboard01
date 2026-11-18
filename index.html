@@ -32,7 +32,7 @@
         <div class="flex items-center gap-3">
           <span class="px-2.5 py-1 text-xs font-bold rounded-md bg-sky-500/10 text-sky-400 border border-sky-500/20 tracking-wider uppercase">Master Earnings Hub</span>
           <span class="inline-flex items-center gap-1 text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> 28 Verified Filings
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> 29 Verified Filings
           </span>
         </div>
         <h1 class="text-2xl md:text-3xl font-extrabold text-white mt-2 tracking-tight">Institutional Earnings & Say-to-Do Audit Dashboard</h1>
@@ -55,13 +55,13 @@
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
       <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
         <div class="text-xs font-medium text-slate-400">Total Scanned Results</div>
-        <div class="text-2xl font-black text-white mt-1" id="stat-total">28</div>
+        <div class="text-2xl font-black text-white mt-1" id="stat-total">29</div>
         <div class="text-[11px] text-sky-400 mt-1">100% extracted from PDF filings</div>
       </div>
       <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
         <div class="text-xs font-medium text-slate-400">Average Rating Score</div>
         <div class="text-2xl font-black text-emerald-400 mt-1">8.0 <span class="text-xs font-normal text-slate-400">/ 10.0</span></div>
-        <div class="text-[11px] text-emerald-400 mt-1">16 Grade A / A+ Leaders</div>
+        <div class="text-[11px] text-emerald-400 mt-1">17 Grade A / A+ Leaders</div>
       </div>
       <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
         <div class="text-xs font-medium text-slate-400">Top Execution Leaders</div>
@@ -82,16 +82,17 @@
       <!-- Search Input -->
       <div class="relative flex-1">
         <svg class="w-4 h-4 absolute left-3.5 top-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-        <input type="text" id="searchInput" oninput="renderDashboard()" placeholder="Search 28 stocks by name, ticker (e.g. SGFIN, SONACOMS, MARSONS), or keyword..." class="w-full bg-slate-900 border border-slate-700 text-white text-sm rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:border-sky-500 transition">
+        <input type="text" id="searchInput" oninput="renderDashboard()" placeholder="Search 29 stocks by name, ticker (e.g. SGFIN, SONACOMS, MARSONS), or keyword..." class="w-full bg-slate-900 border border-slate-700 text-white text-sm rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:border-sky-500 transition">
       </div>
 
       <!-- Sector Filter Tabs -->
       <div class="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0 text-xs">
-        <button onclick="setSectorFilter('ALL')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-sky-600 text-white transition whitespace-nowrap">All (28)</button>
+        <button onclick="setSectorFilter('ALL')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-sky-600 text-white transition whitespace-nowrap">All (29)</button>
         <button onclick="setSectorFilter('Power & Transformers')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Transformers &amp; Cables</button>
         <button onclick="setSectorFilter('Auto & EV Tech')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Auto &amp; EV</button>
         <button onclick="setSectorFilter('Heavy Engineering & Castings')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Heavy Eng &amp; Cranes</button>
         <button onclick="setSectorFilter('Defence & Aerospace')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Defence</button>
+        <button onclick="setSectorFilter('Railways & Heavy Engineering')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Railways &amp; Heavy</button>
         <button onclick="setSectorFilter('EMS & Semiconductors')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">EMS &amp; Semicon</button>
         <button onclick="setSectorFilter('Sensors & EV Tech')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Sensors &amp; EV</button>
         <button onclick="setSectorFilter('Fintech & NBFC')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Fintech</button>
@@ -345,6 +346,51 @@
         watchouts: [
           "Customer concentration in meter OEMs: Order flow tied to regional smart meter rollout timelines",
           "Raw material sensitivity: Copper and specialized magnetic alloy price swings require continuous hedging"
+        ]
+      },
+      {
+        ticker: "FRONTSP",
+        name: "Frontier Springs Limited",
+        sector: "Railways & Heavy Engineering",
+        score: 9.5,
+        grade: "Grade A+ (Compounder)",
+        say_to_do: 94.0,
+        say_to_do_status: "Beaten / Accelerated",
+        revenue_q2: "₹99.73 Cr",
+        revenue_yoy: "+20.5%",
+        revenue_qoq: "+27.1%",
+        revenue_h1: "₹178.19 Cr",
+        pat_q2: "₹21.33 Cr",
+        pat_yoy: "+35.8%",
+        pat_qoq: "+77.6%",
+        pat_h1: "₹33.34 Cr",
+        ebitda_margin: "29.81%",
+        margin_diff: "Expanded (+313 bps YoY)",
+        filePath: "file:///C:/Users/admin/Downloads/22374c73-e392-4f61-bf8e-b44810b669cf.pdf",
+        pillars: {
+          topline: { score: 1.8, max: 2.0, label: "Topline: Revenue rose +20.5% YoY to ₹99.73 Cr (nearing ₹100 Cr/qtr) and +27.1% QoQ" },
+          bottomline: { score: 1.9, max: 2.0, label: "Bottomline: PAT jumped +35.8% YoY to ₹21.33 Cr (+77.6% QoQ); H1 OCF ₹63.5 Cr" },
+          margin: { score: 1.9, max: 2.0, label: "Operating Margin (ex-other inc): 29.81% (+313 bps YoY expansion, industry-leading ~30%)" },
+          solvency: { score: 2.0, max: 2.0, label: "Solvency: Pristine Net Cash balance sheet (+₹27.4 Cr net cash); total debt only ₹5.4 Cr" },
+          catalysts: { score: 1.9, max: 2.0, label: "Rail Megatrend: RDSO-approved supplier for Vande Bharat springs, ContiTech air springs & 6T forgings" }
+        },
+        guidance_records: [
+          { vector: "Revenue Execution", promise: "Scale production of railway coil springs and forgings", reported: "Q2 Revenue expanded +20.5% YoY to ₹99.73 Cr; H1 reached ₹178.2 Cr (+13.5% YoY)", status: "BEAT" },
+          { vector: "Operating Margins", promise: "Maintain 25-27% operating EBITDA margins", reported: "Operating margin surged to 29.81% (+313 bps YoY); PAT reached ₹21.33 Cr (21.4% net margin)", status: "BEAT" },
+          { vector: "Capacity Expansion", promise: "Commercialize 6-tonne forging hammer and air spring systems", reported: "New forging capabilities operational; cash balance grew 9x to ₹32.7 Cr; ROCE at 35.3%", status: "ON_TRACK" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Expand delivery rates for Vande Bharat sleeper trains, LHB coaches, and heavy freight wagons" },
+          { horizon: "FY27-28 Capex", stmt: "Maximize capacity utilization of the 6-tonne hammer forging unit and supply advanced bogie components" }
+        ],
+        positives: [
+          "Exceptional Profitability & Margins: Operating EBITDA margin reached 29.81% (+313 bps YoY) and net PAT margin hit 21.39%, delivering ₹21.33 Cr PAT in Q2",
+          "Fortress Net Cash Balance Sheet: Total borrowings of just ₹5.35 Cr against Cash & Bank balances of ₹32.73 Cr (+₹27.38 Cr Net Cash position)",
+          "High-Moat Railway Monopoly: 40+ years RDSO & IRIS certification; key sole/preferred supplier for Vande Bharat and LHB suspension springs, ContiTech air springs, and heavy couplings"
+        ],
+        watchouts: [
+          "Customer Concentration: Indian Railways, wagon builders (Titagarh, Texmaco) and locomotive plants represent primary demand sources",
+          "Raw Material Sensitivity: Chrome molly and chrome silicon alloy steel rod prices require disciplined inventory management"
         ]
       },
       {
