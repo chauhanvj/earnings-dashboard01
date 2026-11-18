@@ -32,7 +32,7 @@
         <div class="flex items-center gap-3">
           <span class="px-2.5 py-1 text-xs font-bold rounded-md bg-sky-500/10 text-sky-400 border border-sky-500/20 tracking-wider uppercase">Master Earnings Hub</span>
           <span class="inline-flex items-center gap-1 text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> 29 Verified Filings
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> 30 Verified Filings
           </span>
         </div>
         <h1 class="text-2xl md:text-3xl font-extrabold text-white mt-2 tracking-tight">Institutional Earnings & Say-to-Do Audit Dashboard</h1>
@@ -55,13 +55,13 @@
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
       <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
         <div class="text-xs font-medium text-slate-400">Total Scanned Results</div>
-        <div class="text-2xl font-black text-white mt-1" id="stat-total">29</div>
+        <div class="text-2xl font-black text-white mt-1" id="stat-total">30</div>
         <div class="text-[11px] text-sky-400 mt-1">100% extracted from PDF filings</div>
       </div>
       <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
         <div class="text-xs font-medium text-slate-400">Average Rating Score</div>
         <div class="text-2xl font-black text-emerald-400 mt-1">8.0 <span class="text-xs font-normal text-slate-400">/ 10.0</span></div>
-        <div class="text-[11px] text-emerald-400 mt-1">17 Grade A / A+ Leaders</div>
+        <div class="text-[11px] text-emerald-400 mt-1">18 Grade A / A+ Leaders</div>
       </div>
       <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
         <div class="text-xs font-medium text-slate-400">Top Execution Leaders</div>
@@ -82,12 +82,12 @@
       <!-- Search Input -->
       <div class="relative flex-1">
         <svg class="w-4 h-4 absolute left-3.5 top-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-        <input type="text" id="searchInput" oninput="renderDashboard()" placeholder="Search 29 stocks by name, ticker (e.g. SGFIN, SONACOMS, MARSONS), or keyword..." class="w-full bg-slate-900 border border-slate-700 text-white text-sm rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:border-sky-500 transition">
+        <input type="text" id="searchInput" oninput="renderDashboard()" placeholder="Search 30 stocks by name, ticker (e.g. SGFIN, SONACOMS, MARSONS), or keyword..." class="w-full bg-slate-900 border border-slate-700 text-white text-sm rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:border-sky-500 transition">
       </div>
 
       <!-- Sector Filter Tabs -->
       <div class="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0 text-xs">
-        <button onclick="setSectorFilter('ALL')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-sky-600 text-white transition whitespace-nowrap">All (29)</button>
+        <button onclick="setSectorFilter('ALL')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-sky-600 text-white transition whitespace-nowrap">All (30)</button>
         <button onclick="setSectorFilter('Power & Transformers')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Transformers &amp; Cables</button>
         <button onclick="setSectorFilter('Auto & EV Tech')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Auto &amp; EV</button>
         <button onclick="setSectorFilter('Heavy Engineering & Castings')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Heavy Eng &amp; Cranes</button>
@@ -687,6 +687,50 @@
         watchouts: [
           "Statutory dues qualification: Auditor flagged ₹70.52 Lakhs overdue PF & TDS (>6 months) and ₹60.13 Lakhs disputed sales/service tax",
           "Working capital lockup: Trade receivables increased from ₹20.96 Cr in March 2026 to ₹29.45 Cr in September 2026"
+        ]
+      },
+      {
+        ticker: "NDRAUTO",
+        name: "NDR Auto Components Limited",
+        sector: "Auto & EV Tech",
+        score: 8.4,
+        grade: "Grade A (Quality Growth)",
+        say_to_do: 88.0,
+        say_to_do_status: "On Track / Accelerating",
+        revenue_q2: "₹244.02 Cr",
+        revenue_yoy: "+22.0%",
+        revenue_qoq: "+10.2%",
+        revenue_h1: "₹465.47 Cr",
+        pat_q2: "₹19.78 Cr",
+        pat_yoy: "+33.2%",
+        pat_qoq: "+20.6%",
+        pat_h1: "₹36.18 Cr",
+        ebitda_margin: "9.68%",
+        margin_diff: "Contracted (-121 bps YoY)",
+        filePath: "file:///C:/Users/admin/Downloads/e685980c-5bb4-47bc-89ec-73d01464be22.pdf",
+        pillars: {
+          topline: { score: 1.8, max: 2.0, label: "Topline: Revenue grew +22.0% YoY to ₹244.02 Cr (+10.2% QoQ) on strong OEM volumes" },
+          bottomline: { score: 1.8, max: 2.0, label: "Bottomline: PAT rose +33.2% YoY to ₹19.78 Cr; JV profits jumped +82% to ₹5.2 Cr" },
+          margin: { score: 1.2, max: 2.0, label: "Operating Margin (ex-other inc): 9.68% (-121 bps YoY mild contraction on raw materials)" },
+          solvency: { score: 1.9, max: 2.0, label: "Solvency: Pristine Zero-Bank-Debt profile; Net worth ₹384.5 Cr; H1 OCF ₹23.9 Cr" },
+          catalysts: { score: 1.7, max: 2.0, label: "OEM Integration: Key seating partner for Maruti & Toyota EV/hybrid models" }
+        },
+        guidance_records: [
+          { vector: "Revenue Scaling", promise: "Maintain double-digit seating component growth for Maruti & Toyota", reported: "Revenue grew +22.0% YoY to ₹244.0 Cr; H1 reached ₹465.5 Cr (+20.9% YoY)", status: "BEAT" },
+          { vector: "JV Profitability", promise: "Expand profit contribution from joint venture operations", reported: "Share of JV profits surged +82.4% YoY to ₹5.20 Cr; PAT rose +33.2% YoY to ₹19.78 Cr", status: "BEAT" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Ramp up seating frame dispatches for upcoming Maruti Suzuki / Toyota EV (eVX) models" },
+          { horizon: "FY27 Capex", stmt: "Expand robotic welding lines in Gujarat and Bangalore plants to service new OEM platforms" }
+        ],
+        positives: [
+          "Strong Bottom-Line Growth: Consolidated Q2 PAT rose +33.2% YoY to ₹19.78 Cr (EPS ₹8.32), driven by operational volume leverage and JV earnings",
+          "Zero Bank Debt Balance Sheet: No long-term or short-term bank borrowings; net worth expanded to ₹384.5 Cr; positive H1 Operating Cash Flow of ₹23.89 Cr",
+          "Tier-1 OEM Partnerships: Strategic supplier to Maruti Suzuki and Toyota with long-term joint ventures (Toyota Boshoku, Toyo Shinnikkei, Bharat Seats)"
+        ],
+        watchouts: [
+          "Operating Margin Contraction: Core operating EBITDA margin softened by -121 bps YoY to 9.68% due to raw material input costs",
+          "Pending Tax Assessment: Disputed income tax assessment matter of ~₹4.14 Cr currently under appeal before ITAT"
         ]
       },
       {
