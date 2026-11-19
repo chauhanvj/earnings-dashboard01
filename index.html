@@ -32,7 +32,7 @@
         <div class="flex items-center gap-3">
           <span class="px-2.5 py-1 text-xs font-bold rounded-md bg-sky-500/10 text-sky-400 border border-sky-500/20 tracking-wider uppercase">Master Earnings Hub</span>
           <span class="inline-flex items-center gap-1 text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> 30 Verified Filings
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> 43 Verified Filings
           </span>
         </div>
         <h1 class="text-2xl md:text-3xl font-extrabold text-white mt-2 tracking-tight">Institutional Earnings & Say-to-Do Audit Dashboard</h1>
@@ -55,13 +55,13 @@
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
       <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
         <div class="text-xs font-medium text-slate-400">Total Scanned Results</div>
-        <div class="text-2xl font-black text-white mt-1" id="stat-total">30</div>
+        <div class="text-2xl font-black text-white mt-1" id="stat-total">43</div>
         <div class="text-[11px] text-sky-400 mt-1">100% extracted from PDF filings</div>
       </div>
       <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
         <div class="text-xs font-medium text-slate-400">Average Rating Score</div>
         <div class="text-2xl font-black text-emerald-400 mt-1">8.0 <span class="text-xs font-normal text-slate-400">/ 10.0</span></div>
-        <div class="text-[11px] text-emerald-400 mt-1">18 Grade A / A+ Leaders</div>
+        <div class="text-[11px] text-emerald-400 mt-1">30 Grade A / A+ Leaders</div>
       </div>
       <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
         <div class="text-xs font-medium text-slate-400">Top Execution Leaders</div>
@@ -82,16 +82,17 @@
       <!-- Search Input -->
       <div class="relative flex-1">
         <svg class="w-4 h-4 absolute left-3.5 top-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-        <input type="text" id="searchInput" oninput="renderDashboard()" placeholder="Search 30 stocks by name, ticker (e.g. SGFIN, SONACOMS, MARSONS), or keyword..." class="w-full bg-slate-900 border border-slate-700 text-white text-sm rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:border-sky-500 transition">
+        <input type="text" id="searchInput" oninput="renderDashboard()" placeholder="Search 43 stocks by name, ticker (e.g. SGFIN, SONACOMS, MARSONS), or keyword..." class="w-full bg-slate-900 border border-slate-700 text-white text-sm rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:border-sky-500 transition">
       </div>
 
       <!-- Sector Filter Tabs -->
       <div class="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0 text-xs">
-        <button onclick="setSectorFilter('ALL')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-sky-600 text-white transition whitespace-nowrap">All (30)</button>
+        <button onclick="setSectorFilter('ALL')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-sky-600 text-white transition whitespace-nowrap">All (43)</button>
         <button onclick="setSectorFilter('Power & Transformers')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Transformers &amp; Cables</button>
         <button onclick="setSectorFilter('Auto & EV Tech')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Auto &amp; EV</button>
         <button onclick="setSectorFilter('Heavy Engineering & Castings')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Heavy Eng &amp; Cranes</button>
         <button onclick="setSectorFilter('Defence & Aerospace')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Defence</button>
+        <button onclick="setSectorFilter('Medical Devices & Telemedicine')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Medical &amp; Telemed</button>
         <button onclick="setSectorFilter('Railways & Heavy Engineering')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Railways &amp; Heavy</button>
         <button onclick="setSectorFilter('EMS & Semiconductors')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">EMS &amp; Semicon</button>
         <button onclick="setSectorFilter('Sensors & EV Tech')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Sensors &amp; EV</button>
@@ -305,6 +306,50 @@
         watchouts: ["Rapid balance sheet growth requires constant access to bank wholesale credit lines"]
       },
       {
+        ticker: "METS",
+        name: "Maestros Electronics & Telecom Systems",
+        sector: "Medical Devices & Telemedicine",
+        score: 9.6,
+        grade: "Grade A+ (Compounder)",
+        say_to_do: 93.0,
+        say_to_do_status: "Beaten / Accelerated",
+        revenue_q2: "₹15.52 Cr",
+        revenue_yoy: "+162.7%",
+        revenue_qoq: "+59.7%",
+        revenue_h1: "₹25.09 Cr",
+        pat_q2: "₹2.71 Cr",
+        pat_yoy: "+309.2%",
+        pat_qoq: "+61.8%",
+        pat_h1: "₹4.38 Cr",
+        ebitda_margin: "19.90%",
+        margin_diff: "Expanded (+1,324 bps YoY)",
+        filePath: "file:///C:/Users/admin/Downloads/mets.pdf",
+        pillars: {
+          topline: { score: 2.0, max: 2.0, label: "Topline: Revenue surged +162.7% YoY to ₹15.52 Cr (+59.7% QoQ); Telemedicine exploded" },
+          bottomline: { score: 1.9, max: 2.0, label: "Bottomline: PAT jumped 4x YoY (+309.2%) to ₹2.71 Cr; Net margin hit 17.4%" },
+          margin: { score: 2.0, max: 2.0, label: "Operating Margin (ex-other inc): 19.90% (+1,324 bps YoY massive expansion; EBITDA jumped 8x)" },
+          solvency: { score: 1.9, max: 2.0, label: "Solvency: Virtually debt-free (D/E 0.07x; debt ₹3.3 Cr vs ₹46.5 Cr equity); clean audit" },
+          catalysts: { score: 1.8, max: 2.0, label: "HealthTech Megatrend: National telemedicine rollout, Ayushman Bharat PHC diagnostic kiosks" }
+        },
+        guidance_records: [
+          { vector: "Telemedicine Rollout", promise: "Scale remote diagnostic kiosks and telemedicine solutions", reported: "Telemedicine revenue expanded from ₹2 Lakhs to ₹6.39 Cr in Q2; Overall revenue grew +162.7% YoY", status: "BEAT" },
+          { vector: "Margin Expansion", promise: "Achieve operating leverage in medical electronics", reported: "Operating margin jumped +1,324 bps to 19.90%; Consolidated PAT rose +309.2% YoY to ₹2.71 Cr", status: "BEAT" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Expand telemedicine installations across primary health centers (PHCs) and government tenders" },
+          { horizon: "FY27-28 Capex", stmt: "Commercialize next-gen AI-enabled ECG algorithms and cloud-integrated ICU monitoring stations" }
+        ],
+        positives: [
+          "Explosive Revenue Acceleration: Revenue grew 2.6x YoY (+162.7%) to ₹15.52 Cr driven by multi-crore telemedicine contracts and +54% growth in medical devices",
+          "Spectacular Margin Expansion: Operating EBITDA margin expanded by +1,324 bps YoY from 6.66% to 19.90%, driving an 8x surge in core operating profit",
+          "Virtually Debt-Free HealthTech: Total debt of only ₹3.26 Cr against Net Worth of ₹46.55 Cr (Debt-to-Equity of 0.07x) with an unmodified audit opinion"
+        ],
+        watchouts: [
+          "Micro-Cap Volatility: Working capital tied up in institutional and government healthcare receivables",
+          "Tender Execution Timelines: Telemedicine revenue can be lumpy depending on state government deployment phases"
+        ]
+      },
+      {
         ticker: "PERMAGNET",
         name: "Permanent Magnets Limited",
         sector: "Sensors & EV Tech",
@@ -394,6 +439,138 @@
         ]
       },
       {
+        ticker: "STANDSUR",
+        name: "Standard Surfactants Limited",
+        sector: "Specialty Chemicals",
+        score: 9.3,
+        grade: "Grade A+ (Compounder)",
+        say_to_do: 91.0,
+        say_to_do_status: "Beaten / Accelerated",
+        revenue_q2: "₹113.57 Cr",
+        revenue_yoy: "+114.7%",
+        revenue_qoq: "+10.9%",
+        revenue_h1: "₹215.95 Cr",
+        pat_q2: "₹8.00 Cr",
+        pat_yoy: "Turnaround (from Loss)",
+        pat_qoq: "+27.0%",
+        pat_h1: "₹14.30 Cr",
+        ebitda_margin: "10.72%",
+        margin_diff: "Expanded (+814 bps YoY)",
+        filePath: "file:///C:/Users/admin/Downloads/standard surfactant.pdf",
+        pillars: {
+          topline: { score: 2.0, max: 2.0, label: "Topline: Revenue doubled (+114.7% YoY) to ₹113.57 Cr (+10.9% QoQ); surfactant sales +190%" },
+          bottomline: { score: 1.9, max: 2.0, label: "Bottomline: Massive turnaround to ₹8.00 Cr PAT vs loss YoY; H1 PAT exploded 45x to ₹14.3 Cr" },
+          margin: { score: 2.0, max: 2.0, label: "Operating Margin (ex-other inc): 10.72% (+814 bps YoY expansion; EBITDA grew nearly 9x)" },
+          solvency: { score: 1.6, max: 2.0, label: "Solvency: Long-term debt reduced to ₹23.8 Cr; Net worth grew to ₹48.1 Cr; clean audit" },
+          catalysts: { score: 1.8, max: 2.0, label: "Capital Infusion: Issued 8L convertible warrants @ ₹58/share to expand LABSA/SLES capacity" }
+        },
+        guidance_records: [
+          { vector: "Volume Scale-up", promise: "Expand chemical and surface active product dispatches", reported: "Surfactant segment revenue surged +190% YoY to ₹99.39 Cr; Total revenue hit ₹113.57 Cr", status: "BEAT" },
+          { vector: "Turnaround to Profit", promise: "Achieve operating leverage and reverse prior year losses", reported: "Operating margin expanded to 10.72% (+814 bps YoY); Q2 PAT hit ₹8.00 Cr (EPS ₹9.73)", status: "BEAT" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Sustain >₹100 Cr quarterly run-rate and finalize insurance claim settlement" },
+          { horizon: "FY27 Capex", stmt: "Deploy warrant growth capital into automated sulfonation lines and debt reduction" }
+        ],
+        positives: [
+          "Dramatic Top-Line Surge: Revenue more than doubled (+114.7% YoY) to ₹113.57 Cr, driven by booming FMCG detergent & surfactant demand",
+          "Spectacular Margin & PAT Turnaround: Operating EBITDA margin expanded by +814 bps YoY from 2.58% to 10.72%, swinging bottom line from a loss to ₹8.00 Cr profit",
+          "De-leveraging & Growth Equity: Long-term borrowings reduced by ~₹7.5 Cr during H1; equity warrants issued at ₹58/share (substantial premium) providing growth runway"
+        ],
+        watchouts: [
+          "Raw Material Volatility: Linear Alkyl Benzene (LAB) and crude-linked feedstock price fluctuations require continuous cost pass-through",
+          "Working Capital Utilization: Short-term bank borrowings stand at ₹46.56 Cr to support doubled inventory & trade receivable volumes"
+        ]
+      },
+      {
+        ticker: "HINDHARDY",
+        name: "Hindustan Hardy Limited",
+        sector: "Auto Ancillaries & Driveline Engineering",
+        score: 9.2,
+        grade: "Grade A+ (Compounder)",
+        say_to_do: 93.0,
+        say_to_do_status: "Beaten / Accelerated",
+        revenue_q2: "₹37.24 Cr",
+        revenue_yoy: "+47.0%",
+        revenue_qoq: "+52.9%",
+        revenue_h1: "₹61.59 Cr",
+        pat_q2: "₹3.05 Cr",
+        pat_yoy: "+57.6%",
+        pat_qoq: "+159.6%",
+        pat_h1: "₹4.23 Cr",
+        ebitda_margin: "12.72%",
+        margin_diff: "Expanded (+228 bps YoY)",
+        filePath: "file:///C:/Users/admin/Downloads/Hindustan Hardy Ltd.pdf",
+        pillars: {
+          topline: { score: 1.9, max: 2.0, label: "Topline: Revenue surged +47.0% YoY to ₹37.24 Cr (+52.9% QoQ); record quarterly propeller shaft volumes" },
+          bottomline: { score: 1.8, max: 2.0, label: "Bottomline: PAT jumped +57.6% YoY to ₹3.05 Cr (+159.6% QoQ); Quarterly EPS exploded to ₹20.37/share" },
+          margin: { score: 2.0, max: 2.0, label: "Operating Margin (ex-other inc): 12.72% (+228 bps YoY expansion; EBITDA surged +79.2% YoY to ₹4.74 Cr)" },
+          solvency: { score: 1.8, max: 2.0, label: "Solvency: Virtually debt-free (D/E 0.16x, Net Debt ₹6.6 Cr vs Equity ₹41.4 Cr); CWIP of ₹8.16 Cr; clean audit" },
+          catalysts: { score: 1.7, max: 2.0, label: "Operating Leverage: Tiny equity base (1.5M shares) driving massive EPS velocity as Nashik plant capex scales" }
+        },
+        guidance_records: [
+          { vector: "Propeller Shaft Expansion", promise: "Scale driveline assemblies for CVs, off-highway, and agri OEMs", reported: "Revenue surged +52.9% QoQ to ₹37.24 Cr led by driveline shipments", status: "BEAT" },
+          { vector: "Margin Expansion", promise: "Harness fixed-cost absorption from plant utilization", reported: "Operating margin expanded +228 bps to 12.72%; EBITDA rose +79.2% YoY", status: "BEAT" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Operationalize ongoing ₹8.16 Cr CWIP capex and expand high-torque driveline offerings" },
+          { horizon: "FY27-28 Capex", stmt: "Ramp up double cardan shafts for defense, agricultural, and industrial machinery applications" }
+        ],
+        positives: [
+          "Explosive Operating Leverage: Revenue up +47.0% YoY (+52.9% QoQ) delivering +79.2% YoY surge in EBITDA and +57.6% YoY growth in PAT",
+          "EPS Velocity on Micro Float: Tiny equity base (14.98 Lakh shares) drove quarterly EPS to ₹20.37 (annualized >₹80/share)",
+          "Low Leverage Fortress: Virtually debt-free (D/E of 0.16x) with ongoing plant modernization capex funded by operational cash flows"
+        ],
+        watchouts: [
+          "Cyclical Auto/CV Exposure: Medium & Heavy CV demand cycles directly influence propeller shaft off-take",
+          "Working Capital Intensity: Receivable and inventory cycles in industrial engineering require continuous monitoring"
+        ]
+      },
+      {
+        ticker: "KDDL",
+        name: "KDDL Limited",
+        sector: "Precision Engineering & Luxury Retail",
+        score: 9.1,
+        grade: "Grade A+ (Compounder)",
+        say_to_do: 96.0,
+        say_to_do_status: "Beaten / Accelerated",
+        revenue_q2: "₹685.32 Cr",
+        revenue_yoy: "+32.6%",
+        revenue_qoq: "+8.1%",
+        revenue_h1: "₹1,319.12 Cr",
+        pat_q2: "₹33.93 Cr",
+        pat_yoy: "+75.1%",
+        pat_qoq: "+15.6%",
+        pat_h1: "₹63.29 Cr",
+        ebitda_margin: "14.40%",
+        margin_diff: "Expanded (+43 bps YoY)",
+        filePath: "file:///C:/Users/admin/Downloads/KDDL Ltd.pdf",
+        pillars: {
+          topline: { score: 1.9, max: 2.0, label: "Topline: Revenue up +32.6% YoY to ₹685.3 Cr (~₹2,640 Cr run-rate); Standalone precision engineering grew +41.0% YoY" },
+          bottomline: { score: 1.9, max: 2.0, label: "Bottomline: Owner PAT surged +75.1% YoY to ₹33.93 Cr (Group PAT ₹48.18 Cr, +47.5% YoY); EPS reached ₹27.59/share" },
+          margin: { score: 1.6, max: 2.0, label: "Operating Margin (ex-other inc): 14.40% (+43 bps YoY expansion; Standalone manufacturing margin hit 21.79%)" },
+          solvency: { score: 1.8, max: 2.0, label: "Solvency: Net worth crossed ₹1,080 Cr; conservative leverage; strong cash generation; clean audit by Walker Chandiok" },
+          catalysts: { score: 1.9, max: 2.0, label: "Twin Moats: Global leader in Swiss watch dials/hands; majority control of Ethos Ltd capturing India luxury boom" }
+        },
+        guidance_records: [
+          { vector: "Consolidated Scale", promise: "Expand luxury horology retail and Swiss precision manufacturing", reported: "Revenue grew +32.6% YoY to ₹685.32 Cr; Standalone up +41% YoY", status: "BEAT" },
+          { vector: "Earnings & EPS Growth", promise: "Harness operating leverage across precision dials and retail", reported: "Owner PAT surged +75.1% YoY to ₹33.93 Cr; Quarterly EPS hit ₹27.59", status: "BEAT" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Drive festive/wedding luxury consumption at Ethos; scale high-end Swiss horology dial deliveries" },
+          { horizon: "FY27-28 Capex", stmt: "Ramp up micro-precision machining for medical, aerospace, and luxury accessories" }
+        ],
+        positives: [
+          "Dual Powerhouse Engine: Precision manufacturing grew +41% YoY at 21.8% operating margin, while Ethos retail grew +30% YoY",
+          "Explosive Bottomline Velocity: PAT to owners of KDDL leaped +75.1% YoY to ₹33.93 Cr, driving quarterly EPS to ₹27.59 (annualized >₹100/share)",
+          "Fortress Net Worth: Net worth exceeds ₹1,080 Cr with commanding economic control of India's preeminent luxury watch retail monopoly"
+        ],
+        watchouts: [
+          "Swiss Luxury Export Cycles: Global demand fluctuations for luxury Swiss horology may impact overseas dial exports",
+          "Working Capital Accretion: Festive inventory build-up requires working capital monitoring across retail stores"
+        ]
+      },
+      {
         ticker: "SONACOMS",
         name: "Sona BLW Precision Forgings",
         sector: "Auto & EV Tech",
@@ -467,6 +644,96 @@
         watchouts: ["Inventories rose to ₹76.2 Cr reflecting heavy WIP"]
       },
       {
+        ticker: "PLAZACABLE",
+        name: "Plaza Wires Limited",
+        sector: "Power & Transformers",
+        score: 9.0,
+        grade: "Grade A+ (Compounder)",
+        say_to_do: 94.0,
+        say_to_do_status: "Beaten / Accelerated",
+        revenue_q2: "₹117.03 Cr",
+        revenue_yoy: "+57.9%",
+        revenue_qoq: "+29.7%",
+        revenue_h1: "₹207.26 Cr",
+        pat_q2: "₹4.74 Cr",
+        pat_yoy: "+818.0%",
+        pat_qoq: "+5.3%",
+        pat_h1: "₹9.24 Cr",
+        ebitda_margin: "7.39%",
+        margin_diff: "Expanded (+524 bps YoY)",
+        filePath: "file:///C:/Users/admin/Downloads/Plaza%20Wires%20Ltd.pdf",
+        pillars: {
+          topline: { score: 1.9, max: 2.0, label: "Topline: Revenue surged +57.9% YoY to ₹117.03 Cr; QoQ up +29.7%; H1 reached ₹207.26 Cr (+48.0% YoY)" },
+          bottomline: { score: 1.9, max: 2.0, label: "Bottomline: PAT exploded +818.0% YoY to ₹4.74 Cr; H1 PAT surged +453.1% YoY to ₹9.24 Cr; EPS ₹1.08" },
+          margin: { score: 1.9, max: 2.0, label: "Operating Margin (ex-other inc): 7.39% (+524 bps YoY surge over 2.15% base on operating leverage)" },
+          solvency: { score: 1.6, max: 2.0, label: "Solvency: Low leverage with Debt-to-Equity at 0.17x; Total borrowings cut by -26.9% to ₹23.94 Cr" },
+          catalysts: { score: 1.7, max: 2.0, label: "Catalysts: Real estate electrification & infrastructure capex super-cycle driving house wire & LT cable demand" }
+        },
+        guidance_records: [
+          { vector: "Topline Scale", promise: "Expand dealer distribution and scale cable sales run-rate", reported: "Q2 Revenue surged +57.9% YoY to ₹117.03 Cr; H1 reached ₹207.26 Cr", status: "ACHIEVED" },
+          { vector: "Operating Turnaround", promise: "Restore profitability from low single-digit margins", reported: "Operating EBITDA expanded +524 bps YoY to 7.39% (₹8.65 Cr vs ₹1.60 Cr)", status: "ACHIEVED" },
+          { vector: "Deleveraging", promise: "Prudent working capital and borrowing rationalization", reported: "Total debt reduced to ₹23.94 Cr; D/E dropped to 0.17x", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Ramp up dispatches across northern and western dealer networks for building wires and solar submersible cables" },
+          { horizon: "FY28 Strategic", stmt: "Expand specialized cable range and pursue favorable resolution of GST tribunal matter" }
+        ],
+        positives: [
+          "Massive Bottomline Expansion: Q2 PAT jumped by +818.0% YoY to ₹4.74 Cr and H1 PAT grew +453.1% YoY to ₹9.24 Cr",
+          "Dramatic Operating Margin Rebound: Operating EBITDA margin expanded by +524 bps YoY to 7.39% (and 7.73% in H1) on strong operating leverage",
+          "Accelerating Topline Growth: Revenue surged +57.9% YoY to ₹117.03 Cr (+29.7% QoQ), crossing ₹200 Cr milestone in H1 FY27",
+          "Deleveraging & Conservative Capital Structure: Total debt reduced by -26.9% to ₹23.94 Cr with low Debt-to-Equity of 0.17x"
+        ],
+        watchouts: [
+          "Raw Material Volatility: Sensitivity to copper and aluminum price swings requiring dynamic pricing pass-through",
+          "Pending GST Dispute: ₹11.51 Cr tax demand under appeal before the GST Appellate Tribunal (Chandigarh)"
+        ]
+      },
+      {
+        ticker: "TIRUPATIFL",
+        name: "Tirupati Forge Limited",
+        sector: "Industrial Forging & Defense",
+        score: 8.9,
+        grade: "Grade A+ (Compounder)",
+        say_to_do: 92.0,
+        say_to_do_status: "Beaten / Accelerated",
+        revenue_q2: "₹57.32 Cr",
+        revenue_yoy: "+44.5%",
+        revenue_qoq: "+50.4%",
+        revenue_h1: "₹95.42 Cr",
+        pat_q2: "₹4.12 Cr",
+        pat_yoy: "+207.5%",
+        pat_qoq: "+237.7%",
+        pat_h1: "₹5.34 Cr",
+        ebitda_margin: "14.29%",
+        margin_diff: "Expanded (+370 bps YoY)",
+        filePath: "file:///C:/Users/admin/Downloads/Tirupati Forge Ltd.pdf",
+        pillars: {
+          topline: { score: 1.8, max: 2.0, label: "Topline: Revenue jumped +44.5% YoY to ₹57.32 Cr (+50.4% QoQ) on surging North American exports" },
+          bottomline: { score: 1.9, max: 2.0, label: "Bottomline: PAT surged 3x (+207.5% YoY) to ₹4.12 Cr (+238% QoQ); H1 PAT up +94.2% to ₹5.34 Cr" },
+          margin: { score: 2.0, max: 2.0, label: "Operating Margin (ex-other inc): 14.29% (+370 bps YoY expansion; EBITDA grew +95% YoY to ₹8.19 Cr)" },
+          solvency: { score: 1.5, max: 2.0, label: "Solvency: Gross Block doubled to ₹97.7 Cr (CWIP ₹43.0 Cr); active capex funded by cash flows" },
+          catalysts: { score: 1.7, max: 2.0, label: "Defense Entry: Secured DPIIT license; finished pilot batch of 200 units of 155mm M107 artillery shells" }
+        },
+        guidance_records: [
+          { vector: "North American Exports", promise: "Expand precision forged flanges and components in USA/Europe", reported: "Q2 revenue rose +50.4% QoQ to ₹57.32 Cr led by export traction", status: "BEAT" },
+          { vector: "Defense Indigenization", promise: "Enter defense shell forging with DPIIT approval", reported: "Secured DPIIT license and manufactured 200 units of 155mm artillery shells", status: "BEAT" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Commercialize 155mm artillery shell lines and complete ₹43 Cr CWIP commissioning" },
+          { horizon: "FY27-28 Capex", stmt: "Ramp up automated closed-die forging presses to capture export flange replacement demand" }
+        ],
+        positives: [
+          "Export Acceleration: Strong sequential revenue surge (+50.4% QoQ) driven by North American demand for forged flanges, rings, and auto gears",
+          "Defense Sector Entry: Received DPIIT industrial license and completed pilot batch of 200 units of 155mm M107 empty artillery shells",
+          "Massive Operating Leverage: Operating margin expanded by +370 bps YoY to 14.29%, driving PAT up 3x YoY (+207.5%) to ₹4.12 Cr"
+        ],
+        watchouts: [
+          "Capital Intensive Ramp-up: CWIP of ₹43 Cr and ongoing debt obligations require sustained high capacity utilization",
+          "Raw Material Exposure: Steel billet price volatility could impact gross spreads if not completely passed through"
+        ]
+      },
+      {
         ticker: "AMAL",
         name: "Amal Limited (Atul Group)",
         sector: "Agri & Chemicals",
@@ -503,39 +770,142 @@
         watchouts: ["Consolidated raw material costs can compress subsidiary margins"]
       },
       {
+        ticker: "UDAYJEW",
+        name: "Uday Jewellery Industries",
+        sector: "Luxury Retail & Premium Consumer",
+        score: 8.8,
+        grade: "Grade A (Quality Growth)",
+        say_to_do: 93.0,
+        say_to_do_status: "Beaten / Accelerated",
+        revenue_q2: "₹209.35 Cr",
+        revenue_yoy: "+29.3%",
+        revenue_qoq: "+46.1%",
+        revenue_h1: "₹352.62 Cr",
+        pat_q2: "₹14.00 Cr",
+        pat_yoy: "+57.8%",
+        pat_qoq: "+31.2%",
+        pat_h1: "₹24.67 Cr",
+        ebitda_margin: "10.19%",
+        margin_diff: "Expanded (+251 bps YoY)",
+        filePath: "file:///C:/Users/admin/Downloads/Uday%20Jewellery%20Industries%20Ltd.pdf",
+        pillars: {
+          topline: { score: 1.8, max: 2.0, label: "Topline: Revenue up +29.3% YoY to ₹209.35 Cr; QoQ jumped +46.1%; H1 reached ₹352.62 Cr (+19.3% YoY)" },
+          bottomline: { score: 1.8, max: 2.0, label: "Bottomline: PAT surged +57.8% YoY to ₹14.00 Cr; H1 PAT reached ₹24.67 Cr (69% of full FY26); EPS ₹4.17" },
+          margin: { score: 1.8, max: 2.0, label: "Operating Margin (ex-other inc): 10.19% (+251 bps YoY expansion on Polki/gemstone value mix)" },
+          solvency: { score: 1.7, max: 2.0, label: "Solvency: Net worth ₹237.28 Cr; Debt-to-Equity improved to 0.65x (vs 0.78x); H1 OCF positive at ₹14.57 Cr" },
+          catalysts: { score: 1.7, max: 2.0, label: "Catalysts: Narbada Gems merger consolidation, B2B retail job-work model, lightweight gold launch" }
+        },
+        guidance_records: [
+          { vector: "Merger Integration", promise: "Consolidate Narbada Gems and Jewellery manufacturing & client base", reported: "Merged platform operational; Q2 Revenue surged +46.1% QoQ to ₹209.35 Cr", status: "ACHIEVED" },
+          { vector: "Operating Margin Expansion", promise: "Drive operating leverage and higher Polki/gemstone mix", reported: "EBITDA margin expanded +251 bps YoY to 10.19% (₹21.33 Cr vs ₹12.44 Cr)", status: "ACHIEVED" },
+          { vector: "Deleveraging", promise: "Strengthen balance sheet and improve gearing ratios post merger", reported: "Debt-to-Equity reduced to 0.65x; Net worth expanded to ₹237.28 Cr", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Capitalize on festive and wedding quarter demand across top national retail jewelry chains" },
+          { horizon: "FY28 Strategic", stmt: "Scale B2B job-work model for organized retail accounts and expand lightweight plain gold jewelry line" }
+        ],
+        positives: [
+          "Superb Profit Acceleration: Q2 Net Profit up +57.8% YoY to ₹14.00 Cr; H1 PAT (₹24.67 Cr) already achieved 69% of FY26 total",
+          "Significant Operating Margin Expansion: EBITDA margin jumped by +251 bps YoY to 10.19% (and 10.55% in H1) backed by Nizam heritage Polki/Jadau mix",
+          "Scale via NCLT Merger: Narbada Gems amalgamation completed, creating a scaled ₹700-800 Cr revenue platform",
+          "Balance Sheet Strengthening: D/E ratio improved from 0.78x to 0.65x; generated ₹14.57 Cr in operating cash flow during H1 FY27"
+        ],
+        watchouts: [
+          "Gold Price Volatility: Bullion price fluctuations require dynamic hedging and raw material inventory monitoring",
+          "Working Capital Intensity: B2B wholesale jewelry distribution entails significant gold inventory and receivables backing"
+        ]
+      },
+      {
+        ticker: "RAMBHAJO",
+        name: "Advit Jewels (Rambhajo's)",
+        sector: "Luxury Retail & Premium Consumer",
+        score: 8.6,
+        grade: "Grade A (Quality Growth)",
+        say_to_do: 94.0,
+        say_to_do_status: "Beaten / Accelerated",
+        revenue_q2: "₹58.81 Cr",
+        revenue_yoy: "+23.3%",
+        revenue_qoq: "+66.5%",
+        revenue_h1: "₹94.13 Cr",
+        pat_q2: "₹12.76 Cr",
+        pat_yoy: "+28.0%",
+        pat_qoq: "+55.9%",
+        pat_h1: "₹20.95 Cr",
+        ebitda_margin: "27.43%",
+        margin_diff: "Contracted (-157 bps YoY)",
+        filePath: "file:///C:/Users/admin/Downloads/Advit%20Jewels%20Ltd.pdf",
+        pillars: {
+          topline: { score: 1.7, max: 2.0, label: "Topline: Revenue up +23.3% YoY to ₹58.81 Cr; QoQ jumped +66.5%; H1 reached ₹94.13 Cr" },
+          bottomline: { score: 1.8, max: 2.0, label: "Bottomline: PAT surged +28.0% YoY to ₹12.76 Cr; 21.69% PAT margin; H1 PAT ₹20.95 Cr (+31.7%)" },
+          margin: { score: 1.4, max: 2.0, label: "Operating Margin (ex-other inc): 27.43% (-157 bps YoY due to wedding season gold/gem inventory stocking)" },
+          solvency: { score: 1.9, max: 2.0, label: "Balance Sheet: Net Cash of ₹56.03 Cr; Total debt slashed -85.9% to ₹10.02 Cr post ₹165 Cr IPO" },
+          catalysts: { score: 1.8, max: 2.0, label: "Catalysts: Strong Q3 festive/bridal wedding season demand for Polki & Jadau bespoke jewellery" }
+        },
+        guidance_records: [
+          { vector: "IPO Debt Repayment", promise: "Utilize ₹65 Cr from IPO to retire costly short-term debt", reported: "Repaid ₹65.00 Cr; Finance cost plunged -68.3% YoY to ₹0.51 Cr", status: "ACHIEVED" },
+          { vector: "Working Capital Scaling", promise: "Deploy ₹65 Cr into bridal jewelry inventory and showrooms", reported: "Utilized ₹36.15 Cr; Inventories scaled to ₹169.5 Cr ahead of wedding peak", status: "ACHIEVED" },
+          { vector: "Topline Expansion", promise: "Capitalize on luxury bridal jewellery demand across metro markets", reported: "Q2 Revenue jumped +66.5% QoQ to ₹58.81 Cr; H1 reached ₹94.13 Cr", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "Q3 & H2 FY27", stmt: "Drive peak wedding and festive season bridal sales across Jaipur, Delhi, and Mumbai luxury flagship boutiques" },
+          { horizon: "FY28 Strategic", stmt: "Deploy remaining ₹39.4 Cr IPO funds into high-margin uncut diamond collections and boutique expansion" }
+        ],
+        positives: [
+          "Extraordinary Bottomline Margin: Net PAT margin of 21.69% (Q2 PAT ₹12.76 Cr, up +28.0% YoY and +55.9% QoQ)",
+          "Debt-Free Balance Sheet with Surplus Cash: Slashed borrowings by -85.9% to ₹10.02 Cr; Net Cash surplus of ₹56.03 Cr",
+          "Rich Operating EBITDA Margins: Operating margin at 27.43% in Q2 and 29.51% in H1 FY27, backed by handcrafted Polki/Jadau realizations",
+          "Net Worth Tripled: Net Worth expanded +201.6% to ₹279.26 Cr post-IPO; Finance costs collapsed by -68.3% YoY to just ₹0.51 Cr"
+        ],
+        watchouts: [
+          "High Seasonality: Business heavily skewed towards Q3/Q4 wedding season; Q1 is typically a lean quarter",
+          "Raw Gold & Gem Price Volatility: Fluctuations in international bullion and certified uncut diamond prices require tight working capital control"
+        ]
+      },
+      {
         ticker: "SHRIPISTON",
-        name: "Shriram Pistons & Rings",
+        name: "SPR Auto Technologies (Shriram Pistons)",
         sector: "Auto & EV Tech",
         score: 8.5,
         grade: "Grade A (Quality Growth)",
-        say_to_do: 90.0,
+        say_to_do: 92.0,
         say_to_do_status: "Beaten / Accelerated",
-        revenue_q2: "₹1,050.0 Cr",
-        revenue_yoy: "+17.0%",
-        revenue_qoq: "+9.1%",
-        revenue_h1: "₹2,012.7 Cr",
-        pat_q2: "₹115.0 Cr",
-        pat_yoy: "+21.0%",
-        pat_qoq: "+10.5%",
-        pat_h1: "₹219.0 Cr",
-        ebitda_margin: "18.20%",
-        margin_diff: "Expanded (+85 bps YoY)",
+        revenue_q2: "₹1,648.20 Cr",
+        revenue_yoy: "+62.1%",
+        revenue_qoq: "+11.8%",
+        revenue_h1: "₹3,122.60 Cr",
+        pat_q2: "₹162.30 Cr",
+        pat_yoy: "+14.2%",
+        pat_qoq: "+9.9%",
+        pat_h1: "₹310.00 Cr",
+        ebitda_margin: "16.62%",
+        margin_diff: "Contracted (-377 bps YoY)",
         filePath: "file:///C:/Users/admin/Downloads/SPR-Auto-tech.pdf",
         pillars: {
-          topline: { score: 1.7, max: 2.0, label: "Topline: Surpassed ₹1,000 Cr quarterly run-rate" },
-          bottomline: { score: 1.7, max: 2.0, label: "Bottomline: PAT up +21% YoY to ₹115 Cr" },
-          margin: { score: 1.7, max: 2.0, label: "Operating Margin (ex-other inc): 18.20% (+85 bps YoY operating expansion across OEM plants)" },
-          solvency: { score: 1.8, max: 2.0, label: "Balance Sheet: Low leverage, high ROCE >22%" },
-          catalysts: { score: 1.6, max: 2.0, label: "EV Transition: Diversified into motors and EV components" }
+          topline: { score: 1.9, max: 2.0, label: "Topline: Consolidated Revenue surged +62.1% YoY to ₹1,648.2 Cr; H1 reached ₹3,122.6 Cr (+57.7% YoY)" },
+          bottomline: { score: 1.7, max: 2.0, label: "Bottomline: Consolidated PAT up +14.2% YoY to ₹162.3 Cr; H1 PAT ₹310.0 Cr; Quarterly EPS ₹35.13" },
+          margin: { score: 1.2, max: 2.0, label: "Operating Margin (ex-other inc): 16.62% (-377 bps YoY due to Antolin interior integration, wages, & input costs)" },
+          solvency: { score: 1.9, max: 2.0, label: "Balance Sheet & Deleveraging: Raised ₹1,000 Cr via QIP; Debt-to-Equity fell from 0.58x to 0.29x; Net Worth ₹4,276 Cr" },
+          catalysts: { score: 1.8, max: 2.0, label: "Transformation & EV Catalysts: Antolin interiors integration, EV motors/controllers (EMF), & Sunsure solar PPA" }
         },
         guidance_records: [
-          { vector: "Diversification", promise: "Scale precision components for EV and non-auto engines", reported: "Topline crossed ₹1,000 Cr mark", status: "ACHIEVED" }
+          { vector: "Powertrain-Agnostic Expansion", promise: "Scale beyond ICE into auto lighting, interiors, and EV systems", reported: "Antolin acquisition added scale; Total income surged +60.6% YoY to ₹1,674.6 Cr", status: "ACHIEVED" },
+          { vector: "Institutional Capital Raising", promise: "Raise equity to repay acquisition debt and fund capex", reported: "Successfully closed ₹1,000 Cr QIP at ₹4,280/share in Aug 2026", status: "ACHIEVED" },
+          { vector: "Deleveraging", promise: "Restore conservative debt ratios post large-scale M&A", reported: "Debt-to-equity reduced from 0.58x to 0.29x; Net worth reached ₹4,276 Cr", status: "ACHIEVED" }
         ],
         forward_guidance: [
-          { horizon: "FY27", stmt: "Ramp up exports to global engine OEMs and expand Takahata precision acquisitions" }
+          { horizon: "H2 FY27", stmt: "Normalize Antolin acquisition finance costs, monetize interior/lighting order wins, and ramp up EV motor dispatches" },
+          { horizon: "FY28 Strategic", stmt: "Expand global OEM export footprints across 30+ countries, commercialize renewable power across Pathredi & Neemrana plants" }
         ],
-        positives: ["Market leadership in internal combustion engine and EV drivetrain components", "Consistent 18%+ operating margins", "Strong return on capital (ROCE >22%)"],
-        watchouts: ["Long-term ICE terminal value risks requiring continuous EV tech M&A"]
+        positives: [
+          "Consolidated Revenue Surge: Q2 Revenue up +62.1% YoY to ₹1,648.2 Cr (Total Income ₹1,674.6 Cr) driven by robust domestic auto demand and Antolin consolidation",
+          "Transformational ₹1,000 Cr QIP: Concluded ₹1,000 Cr institutional placement at ₹4,280/share, slashing Debt/Equity from 0.58x to 0.29x",
+          "Solid Net Worth Base: Consolidated Net Worth surged +57% YoY to ₹4,276 Cr with strong interest coverage at 9.41x",
+          "Aggressive Powertrain-Agnostic Diversification: Now spans pistons/valves, automotive lighting/interiors (Antolin), EV motors/controllers (EMF), and precision plastics (Takahata)"
+        ],
+        watchouts: [
+          "Margin Dilution from Integration: Operating EBITDA margin compressed by 377 bps YoY to 16.62% due to initial Antolin product mix, commodity costs, and minimum wage revisions",
+          "Elevated Finance Costs in H1: Interim debt service to bridge the Antolin acquisition added ₹23.4 Cr to Q2 finance costs (normalizing post-QIP debt paydown)"
+        ]
       },
       {
         ticker: "SIMPLEXCAS",
@@ -734,6 +1104,96 @@
         ]
       },
       {
+        ticker: "TRITONVALV",
+        name: "Triton Valves Limited",
+        sector: "Auto Components & Precision Engineering",
+        score: 8.4,
+        grade: "Grade A (Institutional Compounder)",
+        say_to_do: 94.0,
+        say_to_do_status: "Beaten / Accelerated",
+        revenue_q2: "₹200.02 Cr",
+        revenue_yoy: "+52.0%",
+        revenue_qoq: "+7.2%",
+        revenue_h1: "₹386.62 Cr",
+        pat_q2: "₹6.05 Cr",
+        pat_yoy: "+211.9%",
+        pat_qoq: "-38.2%",
+        pat_h1: "₹15.84 Cr",
+        ebitda_margin: "7.11%",
+        margin_diff: "Expanded (+35 bps YoY)",
+        filePath: "file:///C:/Users/admin/Downloads/Triton Valves Ltd.pdf",
+        pillars: {
+          topline: { score: 1.9, max: 2.0, label: "Topline: Revenue surged +52.0% YoY to ₹200.02 Cr (~₹800 Cr run-rate); Metals vertical up +77.0% YoY" },
+          bottomline: { score: 1.8, max: 2.0, label: "Bottomline: Q2 PAT jumped 3.1x (+211.9% YoY) to ₹6.05 Cr; H1 PAT jumped 4.6x to ₹15.84 Cr; PBT +152% YoY" },
+          margin: { score: 1.6, max: 2.0, label: "Operating Margin (ex-other inc): 7.11% (+35 bps YoY expansion; Core Operating EBITDA grew +59.9% YoY to ₹14.23 Cr)" },
+          solvency: { score: 1.4, max: 2.0, label: "Solvency: ROCE expanded to 12.70%; DSCR healthy at 2.36x; Net Worth ₹143.1 Cr; D/E at 1.25x due to commodity working capital" },
+          catalysts: { score: 1.7, max: 2.0, label: "Key Catalysts: TPMS tie-ups with Sensata & Aumovio; EV component supplies to Ather, River, Simple; defense precision alloys" }
+        },
+        guidance_records: [
+          { vector: "Automotive & Metals Topline", promise: "Scale tubeless valves and expand Future Tech precision alloys", reported: "Consolidated revenue grew +52.0% YoY to ₹200.02 Cr", status: "BEAT" },
+          { vector: "Earnings Acceleration", promise: "Expand margins via circular brass recycling between TVL & TVFT", reported: "PBT surged +152.0% YoY to ₹7.56 Cr; EBITDA grew +59.9% YoY", status: "BEAT" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Launch major TPMS valve programs with Aumovio and Sensata; roll out new climate control programs" },
+          { horizon: "FY27-28 Capex", stmt: "Expand EV platform component lines and commercialize defense and medical specialized alloys" }
+        ],
+        positives: [
+          "Hypergrowth Across Verticals: Revenue surged +52.0% YoY to ₹200.02 Cr driven by +77% YoY expansion in Metals and +36% YoY in Automotive",
+          "PBT & Earnings Explosion: Consolidated PBT soared +152.0% YoY to ₹7.56 Cr, driving Q2 PAT up 3.1x YoY to ₹6.05 Cr",
+          "Tier-1 Global Partnerships: Long-term TPMS contracts with Sensata Technologies & Aumovio, alongside EV component supplies for Ather and River"
+        ],
+        watchouts: [
+          "Commodity Working Capital: High inventory of ₹203 Cr due to elevated copper/brass costs increased short-term borrowings to ₹153 Cr (D/E 1.25x)",
+          "Margin Sensitivity: Overall operating margin is 7.11%, requiring disciplined commodity hedging against brass price swings"
+        ]
+      },
+      {
+        ticker: "DYCL",
+        name: "Dynamic Cables Limited",
+        sector: "Power & Transformers",
+        score: 8.4,
+        grade: "Grade A (Institutional Compounder)",
+        say_to_do: 91.0,
+        say_to_do_status: "On Track / Met",
+        revenue_q2: "₹363.19 Cr",
+        revenue_yoy: "+29.0%",
+        revenue_qoq: "+4.0%",
+        revenue_h1: "₹712.29 Cr",
+        pat_q2: "₹22.15 Cr",
+        pat_yoy: "+12.8%",
+        pat_qoq: "-11.2%",
+        pat_h1: "₹47.10 Cr",
+        ebitda_margin: "10.01%",
+        margin_diff: "Contracted (-94 bps YoY)",
+        filePath: "file:///C:/Users/admin/Downloads/Dynamic%20Cables%20Ltd.pdf",
+        pillars: {
+          topline: { score: 1.8, max: 2.0, label: "Topline: Revenue up +29.0% YoY to ₹363.19 Cr; H1 reached ₹712.3 Cr (+31.0% YoY); Order Book ₹829 Cr" },
+          bottomline: { score: 1.7, max: 2.0, label: "Bottomline: Q2 PAT up +12.8% YoY to ₹22.15 Cr; H1 PAT grew +24.5% to ₹47.10 Cr; Debtor days <60" },
+          margin: { score: 1.3, max: 2.0, label: "Operating Margin (ex-other inc): 10.01% (-94 bps YoY due to product mix variations; H1 margin 10.44%)" },
+          solvency: { score: 1.8, max: 2.0, label: "Solvency & Capex: Finance cost <15% EBITDA (~11.7%); ₹40-45 Cr new facility delivers 6x-7x asset turns" },
+          catalysts: { score: 1.8, max: 2.0, label: "Catalysts: New plant commissioning in H2 (₹240-250 Cr revenue ramp); Electron beam solar & data center cables" }
+        },
+        guidance_records: [
+          { vector: "Topline Execution", promise: "Maintain 20%+ long term CAGR on T&D expansion", reported: "Q2 Revenue grew +29.0% to ₹363.19 Cr; H1 grew +31.0% to ₹712.29 Cr", status: "ACHIEVED" },
+          { vector: "Receivables & Liquidity", promise: "Tight working capital and disciplined borrowing", reported: "Cum-GST receivable days at record low <60 days; finance cost <15% EBITDA", status: "ACHIEVED" },
+          { vector: "Capacity Expansion", promise: "Expand manufacturing bays for HV/MV power cables", reported: "Machinery installed at new unit; commercial production starting H2 FY27", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Commission new facility adding ₹240-250 Cr annual revenue potential (6-7x asset turnover on ₹45 Cr capex)" },
+          { horizon: "FY28 Strategic", stmt: "Scale electron beam solar cables and penetrate data center electrical infrastructure tenders" }
+        ],
+        positives: [
+          "Robust Topline Momentum: Q2 revenue up +29.0% YoY to ₹363.19 Cr and H1 revenue up +31.0% to ₹712.29 Cr",
+          "Order Book Visibility: ₹829 Cr backlog provides strong revenue runway across private (69%), utilities (23%), and exports (8%)",
+          "Working Capital & Solvency Discipline: Debtor days down to record low <60 days; finance cost contained at <15% of EBITDA",
+          "Growth Vector Commissioning: ₹40-45 Cr new plant commencing operations in H2 FY27 with 6x-7x asset turnover (₹240-250 Cr revenue potential)"
+        ],
+        watchouts: [
+          "Operating Margin Fluctuation: Q2 operating margin compressed by 94 bps YoY to 10.01% due to quarterly product mix variation",
+          "Raw Material & Freight Volatility: Higher sea freight and geopolitical disruption in export markets requiring cautious risk management"
+        ]
+      },
+      {
         ticker: "SEAMECLTD",
         name: "SEAMEC Limited",
         sector: "Logistics, Marine & Retail",
@@ -767,6 +1227,94 @@
         ],
         positives: ["Surging global and domestic day-rates for diving support vessels (DSVs)", "Multi-year charter visibility with state energy majors", "24.8% EBITDA margins reflect specialized subsea moats"],
         watchouts: ["Lumpy dry-docking capital expenditures and vessel inspection downtime"]
+      },
+      {
+        ticker: "SEDEMAC",
+        name: "Sedemac Mechatronics Limited",
+        sector: "Auto Electronics & Mechatronics",
+        score: 8.3,
+        grade: "Grade A (Institutional Leader)",
+        say_to_do: 94.0,
+        say_to_do_status: "Beaten / Accelerated",
+        revenue_q2: "₹401.0 Cr",
+        revenue_yoy: "+40.2%",
+        revenue_qoq: "+29.8%",
+        revenue_h1: "₹710.0 Cr",
+        pat_q2: "₹39.2 Cr",
+        pat_yoy: "+30.2%",
+        pat_qoq: "+19.5%",
+        pat_h1: "₹72.0 Cr",
+        ebitda_margin: "18.85%",
+        margin_diff: "Contracted (-251 bps YoY)",
+        filePath: "file:///C:/Users/admin/Downloads/Sedemac Mechatronics Ltd transcript.pdf",
+        pillars: {
+          topline: { score: 1.9, max: 2.0, label: "Topline: Revenue up +40.2% YoY to ₹401 Cr (~₹1,600 Cr run-rate); TTM ECU volume up +43.8% to 4.6M" },
+          bottomline: { score: 1.8, max: 2.0, label: "Bottomline: H1 PAT up +53.2% YoY to ₹72 Cr (Q2 PAT ₹39.2 Cr, +30.2% YoY); fully funded by internal cash" },
+          margin: { score: 0.9, max: 2.0, label: "Operating Margin (ex-other inc): 18.85% (contracted -251 bps YoY due to PCB inflation; absolute margin remains high)" },
+          solvency: { score: 1.8, max: 2.0, label: "Solvency: Self-funded ₹450 Cr capex via internal accruals & debt; zero dilution; working capital stable at 15-16%" },
+          catalysts: { score: 1.9, max: 2.0, label: "Innovation Moat: MF3 (3x capacity) in pilot; European OEM win; entry into MHCV ECUs and global power tools (H1 FY28)" }
+        },
+        guidance_records: [
+          { vector: "ISG & ISG+EFI Scale", promise: "Ramp up export 3W and motorcycle ISG+EFI deployments", reported: "Shipped >1M ISG+EFI units; 4.6M control ECUs sold in TTM (+44% YoY)", status: "BEAT" },
+          { vector: "MF3 Plant Expansion", promise: "Build 3x capacity plant in Pune to unlock growth", reported: "Pilot production started; full transition underway for FY27", status: "BEAT" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Hold EBITDA margins steady with H1 FY27 via volume leverage, price hikes, and new ISG controller generation" },
+          { horizon: "H1 FY28", stmt: "Begin series production for European OEM magneto kits, MHCV after-treatment ECUs, and global power tool controllers" }
+        ],
+        positives: [
+          "Hypergrowth at Scale: 40%+ revenue growth delivering ₹710 Cr in H1 FY27 (~₹1,600 Cr run-rate) with 3-year revenue CAGR of ~38%",
+          "Deep-Tech Innovation Moats: Proprietary sensorless motor control (SLC) with 100% in-house software, control algorithms, and zero foreign JV dependency",
+          "Capacity Quadrupling: MF3 mega-plant (3x built-up area of MF1) operationalizing, alongside Shoolagiri land acquisition for MF5"
+        ],
+        watchouts: [
+          "Input Cost Headwinds: PCB and semiconductor cost spikes compressed EBITDA margin by -251 bps YoY to 18.85%",
+          "OEM Concentration: Top customers comprise a significant revenue share, though new CV and power tool entries are broadening the base"
+        ]
+      },
+      {
+        ticker: "ETHOSLTD",
+        name: "Ethos Limited",
+        sector: "Luxury Retail & Premium Consumer",
+        score: 8.3,
+        grade: "Grade A (Institutional Leader)",
+        say_to_do: 94.0,
+        say_to_do_status: "Beaten / Accelerated",
+        revenue_q2: "₹498.90 Cr",
+        revenue_yoy: "+30.1%",
+        revenue_qoq: "+8.1%",
+        revenue_h1: "₹960.61 Cr",
+        pat_q2: "₹29.36 Cr",
+        pat_yoy: "+23.5%",
+        pat_qoq: "+1.6%",
+        pat_h1: "₹58.60 Cr",
+        ebitda_margin: "14.63%",
+        margin_diff: "Contracted (-112 bps YoY)",
+        filePath: "file:///C:/Users/admin/Downloads/Ethos Ltd.pdf",
+        pillars: {
+          topline: { score: 1.8, max: 2.0, label: "Topline: Revenue up +30.1% YoY to ₹498.9 Cr (~₹2,000 Cr run-rate); H1 reached ₹960.6 Cr (+31.6% YoY)" },
+          bottomline: { score: 1.7, max: 2.0, label: "Bottomline: Q2 PAT up +23.5% YoY to ₹29.36 Cr; H1 PAT grew +25.7% YoY to ₹58.6 Cr; clean retail cash flows" },
+          margin: { score: 1.1, max: 2.0, label: "Operating Margin (ex-other inc): 14.63% (-112 bps YoY dip due to 12 new boutique setups and ₹4.5 Cr GPHG exhibition)" },
+          solvency: { score: 1.8, max: 2.0, label: "Solvency: Pristine balance sheet with zero net debt, fast 18-24 month store paybacks, and high ROCE (~15%)" },
+          catalysts: { score: 1.9, max: 2.0, label: "Moats: 106 luxury boutiques in 35 cities; ASP ₹2.25L+; exclusive Rimowa luggage rollout and Favre Leuba Swiss brand" }
+        },
+        guidance_records: [
+          { vector: "Luxury Store Expansion", promise: "Expand boutique network to 100+ locations across 35 cities", reported: "Reaped 106 boutiques; revenue grew +30.1% YoY to ₹498.9 Cr", status: "BEAT" },
+          { vector: "Premiumization & CPO", promise: "Deepen Certified Pre-Owned luxury watch and lifestyle distribution", reported: "Maintained ASP at ₹2.25L+ and scaled Rimowa mono-brand boutiques", status: "BEAT" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Drive festive/wedding luxury consumption; expand certified pre-owned luxury watch lounges" },
+          { horizon: "FY27-28 Capex", stmt: "Ramp up Favre Leuba annual watch production to 8,000 units and expand mono-brand luxury boutiques" }
+        ],
+        positives: [
+          "India's Luxury Watch Monopoly: 106 boutiques across 35 cities capturing the Indian HNWI wealth and premiumization megatrend",
+          "High Topline Trajectory: Consolidated revenue up +30.1% YoY to ₹498.9 Cr with H1 tracking a ~₹2,000 Cr annualized run-rate",
+          "Multi-Pronged Growth Vectors: High ASPs (>₹2.25L), booming Certified Pre-Owned (CPO) market, exclusive Rimowa luggage, and Favre Leuba"
+        ],
+        watchouts: [
+          "Operating Cost Front-Loading: Employee costs up +46% YoY and one-time exhibition costs compressed EBITDA margin by -112 bps YoY to 14.63%",
+          "Discretionary Sensitivity: High luxury ticket sizes remain tied to urban consumer sentiment and high-end discretionary spend"
+        ]
       },
       {
         ticker: "INDOTECH",
@@ -805,41 +1353,6 @@
         watchouts: ["EBITDA margin compressed by ~400 bps YoY due to CRGO and copper cost inflation"]
       },
       {
-        ticker: "DYCL",
-        name: "Dynamic Cables Limited",
-        sector: "Power & Transformers",
-        score: 8.1,
-        grade: "Grade A- (Solid Compounder)",
-        say_to_do: 86.0,
-        say_to_do_status: "On Track / Met",
-        revenue_q2: "₹363.19 Cr",
-        revenue_yoy: "+29.0%",
-        revenue_qoq: "+4.0%",
-        revenue_h1: "₹712.29 Cr",
-        pat_q2: "₹14.80 Cr",
-        pat_yoy: "+22.4%",
-        pat_qoq: "+3.5%",
-        pat_h1: "₹29.10 Cr",
-        ebitda_margin: "9.20%",
-        margin_diff: "Expanded (+40 bps YoY)",
-        filePath: "file:///C:/Users/admin/Downloads/538521dd-f494-4f5b-9d05-45773ff89765.pdf",
-        pillars: {
-          topline: { score: 1.7, max: 2.0, label: "Topline: Revenue grew +29.0% YoY to ₹363.2 Cr" },
-          bottomline: { score: 1.6, max: 2.0, label: "Bottomline: PAT up +22.4% YoY to ₹14.8 Cr" },
-          margin: { score: 1.5, max: 2.0, label: "Operating Margin (ex-other inc): 9.20% (+40 bps YoY expansion in MV/HV cables)" },
-          solvency: { score: 1.6, max: 2.0, label: "Working Capital: Strong order book backing" },
-          catalysts: { score: 1.7, max: 2.0, label: "Grid Demand: High voltage HT/LT cable orders" }
-        },
-        guidance_records: [
-          { vector: "Order Inflows", promise: "Capitalize on RDSS distribution transformer and cable tenders", reported: "Revenue reached ₹363.2 Cr (+29% YoY)", status: "ACHIEVED" }
-        ],
-        forward_guidance: [
-          { horizon: "FY27 Full Year", stmt: "Deliver high execution across utility and railway signaling power cables" }
-        ],
-        positives: ["Direct beneficiary of government RDSS power distribution revamp", "Order book visibility exceeds ₹1,200 Cr", "Solid 29% topline expansion"],
-        watchouts: ["Aluminum and copper raw material price volatility", "Tender-based receivables cycle"]
-      },
-      {
         ticker: "JAYKAY",
         name: "Jaykay Enterprises",
         sector: "Defence & Aerospace",
@@ -875,6 +1388,50 @@
         ],
         positives: ["Secured milestone ₹60.01 Cr defense contract from BrahMos Aerospace", "Achieved AS9100D aerospace certification", "Fully capitalized defence expansion with ₹154 Cr equity"],
         watchouts: ["Defense order execution cycles can be protracted"]
+      },
+      {
+        ticker: "TPLPLASTEH",
+        name: "TPL Plastech Limited",
+        sector: "Industrial Packaging & Polymer Composites",
+        score: 8.1,
+        grade: "Grade A (Institutional Compounder)",
+        say_to_do: 94.0,
+        say_to_do_status: "Beaten / Accelerated",
+        revenue_q2: "₹149.52 Cr",
+        revenue_yoy: "+39.9%",
+        revenue_qoq: "+20.1%",
+        revenue_h1: "₹274.06 Cr",
+        pat_q2: "₹8.38 Cr",
+        pat_yoy: "+22.3%",
+        pat_qoq: "+25.6%",
+        pat_h1: "₹15.05 Cr",
+        ebitda_margin: "9.27%",
+        margin_diff: "Contracted (-185 bps YoY)",
+        filePath: "file:///C:/Users/admin/Downloads/TPL Plastech Ltd.pdf",
+        pillars: {
+          topline: { score: 1.8, max: 2.0, label: "Topline: Revenue up +39.9% YoY to ₹149.52 Cr (+20.1% QoQ); 15% volume growth led by Intermediate Bulk Containers" },
+          bottomline: { score: 1.7, max: 2.0, label: "Bottomline: Q2 PAT jumped +22.3% YoY to ₹8.38 Cr (+25.6% QoQ); H1 PAT up +22.2% to ₹15.05 Cr; ROCE hit 22.6%" },
+          margin: { score: 1.0, max: 2.0, label: "Operating Margin (ex-other inc): 9.27% (-185 bps YoY dip due to polymer raw material pass-through lag; +6 bps QoQ)" },
+          solvency: { score: 1.8, max: 2.0, label: "Solvency: High ROCE of 22.6% (+160 bps YoY); low debt; solar capex (₹5 Cr) pays back in 18 months saving ₹4 Cr/yr" },
+          catalysts: { score: 1.8, max: 2.0, label: "Merger & Expansion: Commenced Bhuj plant (₹100 Cr revenue potential); Board approved merger with parent Time Technoplast" }
+        },
+        guidance_records: [
+          { vector: "IBC Volume Expansion", promise: "Deliver 15% volume growth in industrial bulk containers", reported: "Volumes grew +15.0% YoY; Q2 revenue rose +39.9% YoY to ₹149.5 Cr", status: "BEAT" },
+          { vector: "Bhuj Plant Commissioning", promise: "Commission Bhuj facility on schedule to expand capacity", reported: "Commenced commercial operations at Bhuj on time (~₹100 Cr potential)", status: "BEAT" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Ramp up Bhuj IBC production; operationalize solar installation to save ₹4 Cr/year" },
+          { horizon: "FY27-28 Merger", stmt: "Finalize NCLT merger with parent Time Technoplast Ltd to create polymer packaging behemoth" }
+        ],
+        positives: [
+          "Volume & Topline Acceleration: 15% volume growth driving revenue up +39.9% YoY to ₹149.5 Cr on specialty chemical & pharma packaging demand",
+          "High Capital Efficiency: ROCE expanded +160 bps YoY to 22.6%, showcasing high capital turns on industrial blow-moulding assets",
+          "Major Catalysts: Bhuj facility commissioned on schedule (~₹100 Cr revenue upside) and landmark merger approved with parent Time Technoplast"
+        ],
+        watchouts: [
+          "Polymer Price Volatility: Raw material fluctuations compressed EBITDA margin by -185 bps YoY to 9.27%",
+          "Customer Concentration: Tied to chemical, pharma, and petrochemical export cycles"
+        ]
       },
       {
         ticker: "AVL",
@@ -1060,6 +1617,50 @@
         ],
         positives: ["Significant gross and EBITDA margin expansion (+316 bps YoY)", "H1 net profit doubled (+102.9% YoY) to ₹3.83 Cr", "Repaid ₹6.40 Cr of term debt"],
         watchouts: ["Major equity dilution (share capital grew from ₹23.4 Cr to ₹51.5 Cr)"]
+      },
+      {
+        ticker: "MEERA",
+        name: "Meera Industries Limited",
+        sector: "Textile Engineering & Technical Textiles",
+        score: 7.3,
+        grade: "Grade A (Steady Compounder)",
+        say_to_do: 87.0,
+        say_to_do_status: "Met / On-Track",
+        revenue_q2: "₹11.94 Cr",
+        revenue_yoy: "+23.3%",
+        revenue_qoq: "-3.2%",
+        revenue_h1: "₹24.29 Cr",
+        pat_q2: "₹0.67 Cr",
+        pat_yoy: "+26.4%",
+        pat_qoq: "-4.6%",
+        pat_h1: "₹1.61 Cr",
+        ebitda_margin: "10.40%",
+        margin_diff: "Contracted (-239 bps YoY)",
+        filePath: "file:///C:/Users/admin/Downloads/Meera Industries Ltd.pdf",
+        pillars: {
+          topline: { score: 1.6, max: 2.0, label: "Topline: Revenue up +23.3% YoY to ₹11.94 Cr; Plastic Division surged +91.5% YoY to ₹5.59 Cr" },
+          bottomline: { score: 1.5, max: 2.0, label: "Bottomline: Q2 PAT up +26.4% YoY to ₹0.67 Cr; H1 PAT grew +20.7% YoY to ₹1.61 Cr" },
+          margin: { score: 0.9, max: 2.0, label: "Operating Margin (ex-other inc): 10.40% (contracted -239 bps YoY due to inventory and material mix)" },
+          solvency: { score: 1.7, max: 2.0, label: "Solvency: Low leverage (Total liabilities ₹15.4 Cr vs Assets ₹46.9 Cr); conservative capital structure" },
+          catalysts: { score: 1.6, max: 2.0, label: "Specialty Niche: In-house DSIR-approved R&D for technical textile twisters; Plastic division turned around" }
+        },
+        guidance_records: [
+          { vector: "Plastic Division Expansion", promise: "Scale technical textile and plastic yarn offerings", reported: "Plastic division revenue doubled (+91.5% YoY) and swung from loss to profit", status: "BEAT" },
+          { vector: "Machine Export Scale", promise: "Expand yarn twisting machinery exports", reported: "H1 revenue reached ₹24.29 Cr (+20.2% YoY) with steady overseas order flows", status: "MET" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Expand export shipments of specialized cabling and twisting machines via US subsidiary" },
+          { horizon: "FY27-28 Capex", stmt: "Commercialize automated energy-efficient yarn processing machinery" }
+        ],
+        positives: [
+          "Plastic Division Turnaround: Merged Plastic/Technical Yarn division surged +91.5% YoY to ₹5.59 Cr and swung to positive PBIT",
+          "Conservative Solvency: Modest total debt and clean balance sheet with D/E below 0.35x and DSIR-approved R&D facility",
+          "Steady Topline Expansion: Consolidated H1 revenue reached ₹24.29 Cr (+20.2% YoY)"
+        ],
+        watchouts: [
+          "Margin Contraction: Operating EBITDA margin dipped by -239 bps YoY to 10.40% on material consumption costs",
+          "Small Scale: Absolute quarterly PAT remains under ₹1 Cr (₹0.67 Cr), requiring broader export client diversification"
+        ]
       },
       {
         ticker: "SANGHVIMOV",
