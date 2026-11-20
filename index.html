@@ -32,7 +32,7 @@
         <div class="flex items-center gap-3">
           <span class="px-2.5 py-1 text-xs font-bold rounded-md bg-sky-500/10 text-sky-400 border border-sky-500/20 tracking-wider uppercase">Master Earnings Hub</span>
           <span class="inline-flex items-center gap-1 text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> 50 Verified Filings
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> 51 Verified Filings
           </span>
         </div>
         <h1 class="text-2xl md:text-3xl font-extrabold text-white mt-2 tracking-tight">Institutional Earnings & Say-to-Do Audit Dashboard</h1>
@@ -55,7 +55,7 @@
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
       <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
         <div class="text-xs font-medium text-slate-400">Total Scanned Results</div>
-        <div class="text-2xl font-black text-white mt-1" id="stat-total">50</div>
+        <div class="text-2xl font-black text-white mt-1" id="stat-total">51</div>
         <div class="text-[11px] text-sky-400 mt-1">100% extracted from PDF filings</div>
       </div>
       <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
@@ -82,12 +82,12 @@
       <!-- Search Input -->
       <div class="relative flex-1">
         <svg class="w-4 h-4 absolute left-3.5 top-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-        <input type="text" id="searchInput" oninput="renderDashboard()" placeholder="Search 50 stocks by name, ticker (e.g. SGFIN, SONACOMS, MARSONS), or keyword..." class="w-full bg-slate-900 border border-slate-700 text-white text-sm rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:border-sky-500 transition">
+        <input type="text" id="searchInput" oninput="renderDashboard()" placeholder="Search 51 stocks by name, ticker (e.g. SGFIN, SONACOMS, MARSONS), or keyword..." class="w-full bg-slate-900 border border-slate-700 text-white text-sm rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:border-sky-500 transition">
       </div>
 
       <!-- Sector Filter Tabs -->
       <div class="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0 text-xs">
-        <button onclick="setSectorFilter('ALL')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-sky-600 text-white transition whitespace-nowrap">All (50)</button>
+        <button onclick="setSectorFilter('ALL')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-sky-600 text-white transition whitespace-nowrap">All (51)</button>
         <button onclick="setSectorFilter('Power & Transformers')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Transformers &amp; Cables</button>
         <button onclick="setSectorFilter('Auto & EV Tech')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Auto &amp; EV</button>
         <button onclick="setSectorFilter('Heavy Engineering & Castings')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Heavy Eng &amp; Cranes</button>
@@ -574,6 +574,53 @@
         watchouts: [
           "Customer & Segment Concentration: High dependence on automotive OEMs and commercial vehicle cycles creates cyclical volume sensitivity",
           "Raw Material Price Volatility: Fluctuations in sheet metal and steel coil costs require continuous contract price indexation"
+        ]
+      },
+      {
+        ticker: "KISSHT",
+        name: "OnEMI Technology Solutions Limited (Kissht)",
+        sector: "Non-Banking Financial (NBFC)",
+        score: 9.3,
+        grade: "Grade A (Fintech Outperformer)",
+        say_to_do: 95.0,
+        say_to_do_status: "Beaten / Accelerated",
+        revenue_q2: "₹731.81 Cr",
+        revenue_yoy: "+44.7%",
+        revenue_qoq: "+9.3%",
+        revenue_h1: "₹1,401.31 Cr",
+        pat_q2: "₹125.12 Cr",
+        pat_yoy: "+100.4%",
+        pat_qoq: "+31.6%",
+        pat_h1: "₹220.19 Cr",
+        ebitda_margin: "30.48%",
+        margin_diff: "Expanded (+117 bps YoY)",
+        filePath: "file:///C:/Users/admin/Downloads/Onemi.pdf",
+        pillars: {
+          topline: { score: 1.9, max: 2.0, label: "Topline: Revenue up +44.7% YoY to ₹731.8 Cr (+9.3% QoQ); H1 reached ₹1,401.3 Cr (+44.7%) on digital credit scale" },
+          bottomline: { score: 1.9, max: 2.0, label: "Bottomline: PAT doubled (+100.4% YoY) to ₹125.12 Cr (+31.6% QoQ); H1 PAT reached ₹220.19 Cr (+80.2%)" },
+          margin: { score: 1.7, max: 2.0, label: "Operating Margin (ex-other inc): 30.48% (+117 bps YoY expansion vs 29.31%); PPOP margin approaching 48.7%" },
+          solvency: { score: 1.9, max: 2.0, label: "Solvency: Net worth surged +77.1% to ₹2,377.5 Cr; Low gearing at 0.94x D/E; ₹832.2 Cr preferential issue added in Oct '26" },
+          catalysts: { score: 1.9, max: 2.0, label: "Catalysts: ₹624.1 Cr infused into Si Creva NBFC; AMFI mutual fund registration active; SEBI broking license applied" }
+        },
+        guidance_records: [
+          { vector: "Credit Scale", promise: "Expand digital consumer loans and merchant financing across tier-2/3 India", reported: "Revenue surged +44.7% YoY to ₹731.81 Cr; Loan book expanded +17.7% to ₹3,753.88 Cr", status: "ACHIEVED" },
+          { vector: "Profitability & RoE", promise: "Maintain ~30% operating margins and accelerate bottomline accretion", reported: "Operating EBITDA reached ₹223.08 Cr (30.48% margin); PAT doubled to ₹125.12 Cr", status: "ACHIEVED" },
+          { vector: "Capital Deployment", promise: "Capitalize NBFC subsidiary and expand into wealth management", reported: "Infused ₹624.15 Cr rights issue into Si Creva NBFC; AMFI distributor license secured", status: "ACHIEVED" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Utilize ₹624.15 Cr injected into Si Creva Capital Services to accelerate personal and merchant credit disbursements" },
+          { horizon: "FY28 Strategic", stmt: "Operationalize AMFI mutual fund distribution and rollout wealth-tech and stock broking services via Invincible Minds Private Limited" }
+        ],
+        positives: [
+          "Outstanding Earnings Acceleration: Consolidated Q2 PAT doubled (+100.4% YoY) to ₹125.12 Cr and +31.6% QoQ; H1 PAT jumped +80.2% to ₹220.19 Cr (H1 EPS: ₹13.75)",
+          "Strong Topline Expansion: Revenue from operations surged +44.7% YoY to ₹731.81 Cr and +9.3% QoQ, driven by rapid digital lending adoption",
+          "Fortified Capital Base & Conservative Gearing: Net worth expanded +77.1% to ₹2,377.47 Cr post-IPO; Total debt reduced to ₹2,226.98 Cr, driving Gross D/E down to 0.94x (Net D/E: 0.74x)",
+          "Massive Growth Capital Inflow: Realized ₹832.20 Cr preferential equity infusion in Oct '26, investing ₹624.15 Cr directly into Si Creva Capital Services NBFC to expand lending capacity",
+          "Diversification into Wealth Tech: AMFI registration secured and SEBI broking license applied under new subsidiary Invincible Minds"
+        ],
+        watchouts: [
+          "Credit Cost & Asset Quality: Quarterly impairment on financial instruments stood at ₹133.06 Cr (18.18% of revenue), requiring vigilant underwriting and collection cycles in unsecured credit",
+          "Regulatory Watch: Digital lending guidelines and capital adequacy mandates from the RBI require continuous compliance across digital apps (Kissht / RING)"
         ]
       },
       {
