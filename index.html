@@ -55,13 +55,13 @@
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
       <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
         <div class="text-xs font-medium text-slate-400">Total Scanned Results</div>
-        <div class="text-2xl font-black text-white mt-1" id="stat-total">51</div>
+        <div class="text-2xl font-black text-white mt-1" id="stat-total">54</div>
         <div class="text-[11px] text-sky-400 mt-1">100% extracted from PDF filings</div>
       </div>
       <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
         <div class="text-xs font-medium text-slate-400">Average Rating Score</div>
-        <div class="text-2xl font-black text-emerald-400 mt-1">8.0 <span class="text-xs font-normal text-slate-400">/ 10.0</span></div>
-        <div class="text-[11px] text-emerald-400 mt-1">31 Grade A / A+ Leaders</div>
+        <div class="text-2xl font-black text-emerald-400 mt-1">8.2 <span class="text-xs font-normal text-slate-400">/ 10.0</span></div>
+        <div class="text-[11px] text-emerald-400 mt-1">34 Grade A / A+ Leaders</div>
       </div>
       <div class="bg-slate-800/60 border border-slate-700/60 rounded-xl p-4">
         <div class="text-xs font-medium text-slate-400">Top Execution Leaders</div>
@@ -82,12 +82,12 @@
       <!-- Search Input -->
       <div class="relative flex-1">
         <svg class="w-4 h-4 absolute left-3.5 top-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-        <input type="text" id="searchInput" oninput="renderDashboard()" placeholder="Search 51 stocks by name, ticker (e.g. SGFIN, SONACOMS, MARSONS), or keyword..." class="w-full bg-slate-900 border border-slate-700 text-white text-sm rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:border-sky-500 transition">
+        <input type="text" id="searchInput" oninput="renderDashboard()" placeholder="Search 54 stocks by name, ticker (e.g. SGFIN, SONACOMS, MARSONS), or keyword..." class="w-full bg-slate-900 border border-slate-700 text-white text-sm rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:border-sky-500 transition">
       </div>
 
       <!-- Sector Filter Tabs -->
       <div class="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0 text-xs">
-        <button onclick="setSectorFilter('ALL')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-sky-600 text-white transition whitespace-nowrap">All (51)</button>
+        <button onclick="setSectorFilter('ALL')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-sky-600 text-white transition whitespace-nowrap">All (54)</button>
         <button onclick="setSectorFilter('Power & Transformers')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Transformers &amp; Cables</button>
         <button onclick="setSectorFilter('Auto & EV Tech')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Auto &amp; EV</button>
         <button onclick="setSectorFilter('Heavy Engineering & Castings')" class="sector-btn px-3 py-1.5 rounded-lg font-medium bg-slate-800 text-slate-300 hover:bg-slate-700 transition whitespace-nowrap">Heavy Eng &amp; Cranes</button>
@@ -305,7 +305,54 @@
         positives: ["Zero bad debt / 0.00% NPA with CRAR of 27.01%", "High-margin compounding (>36% net profit margin)", "GIFT City unit unlocks global trade financing"],
         watchouts: ["Rapid balance sheet growth requires constant access to bank wholesale credit lines"]
       },
-      {
+            {
+        ticker: "PCJEWELLER",
+        name: "PC Jeweller Limited",
+        sector: "Gems, Jewellery & Luxury Retail",
+        score: 9.8,
+        grade: "Grade A+ (Historic Turnaround / Mega Compounder)",
+        say_to_do: 98.0,
+        say_to_do_status: "Beaten / Accelerated Settlement",
+        revenue_q2: "₹1,054.47 Cr",
+        revenue_yoy: "+27.8%",
+        revenue_qoq: "+20.2%",
+        revenue_h1: "₹1,931.51 Cr",
+        pat_q2: "₹330.66 Cr",
+        pat_yoy: "+57.8%",
+        pat_qoq: "+49.0%",
+        pat_h1: "₹552.54 Cr",
+        ebitda_margin: "29.36%",
+        margin_diff: "Massive Expansion (+781 bps YoY)",
+        filePath: "file:///C:/Users/admin/Downloads/PC%20Jeweller%20Ltd.pdf",
+        pillars: {
+          topline: { score: 1.9, max: 2.0, label: "Topline: Consolidated sales crossed ₹1,000 Cr (+27.8% YoY, +20.2% QoQ) to ₹1,054.5 Cr; H1 reached ₹1,931.5 Cr (+24.6% YoY)" },
+          bottomline: { score: 2.0, max: 2.0, label: "Profitability: Operating PAT surged +107% YoY to ₹299 Cr (Reported PAT ₹330.7 Cr, +57.8% YoY & +49.0% QoQ); H1 PAT ₹552.5 Cr" },
+          margin: { score: 2.0, max: 2.0, label: "Operating Margin (ex-other inc): 29.36% (+781 bps YoY expansion); Gross profit jumped +68% YoY to ₹325 Cr on high-margin jewellery" },
+          solvency: { score: 2.0, max: 2.0, label: "Solvency: 100% debt-free bank status; Fully discharged 14 consortium banks ahead of schedule; Net Worth ₹9,299.7 Cr; OCF ₹253.2 Cr" },
+          catalysts: { score: 1.9, max: 2.0, label: "Strategic: 100-showroom rollout, 200k micro-franchise MoU (NSDC / CM YUVA), GEN-Z lab-grown brand, and Chad gold mining backward integration" }
+        },
+        guidance_records: [
+          { vector: "Consortium Debt Settlement", promise: "Discharge entire consortium bank debt ahead of schedule under settlement agreement", reported: "ACHIEVED: Repaid all 14 consortium banks on Sep 25, 2026; Zero bank debt; All charges, guarantees & mortgages released on Oct 8, 2026", status: "BEAT" },
+          { vector: "Operating Growth & Recovery", promise: "Expand retail showroom margins and resolve legacy export receivables", reported: "Operating EBITDA surged +74.1% YoY to ₹309.62 Cr (29.36% margin); Realised ~₹142 Cr long-pending export receivables", status: "BEAT" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27 - FY28", stmt: "Roll out up to 100 large-format showrooms across Tier 1, 2, and 3 cities over the next 12-18 months via own and franchise model" },
+          { horizon: "FY27-28 Strategic", stmt: "Scale micro-franchise partner network under signed MoUs with NSDC (up to 200,000 partners) and UP CM YUVA (up to 1,000 partners)" },
+          { horizon: "H2 FY27 Product", stmt: "Launch new GEN-Z lightweight & lab-grown diamond brand for higher gross margins and superior capital efficiency" },
+          { horizon: "FY27-28 Integration", stmt: "Operationalize semi-mechanized gold mining in Chad via PCJ Mining SARL for captive supply backward integration" }
+        ],
+        positives: [
+          "Officially debt-free from all 14 consortium banks ahead of schedule with zero bank debt and all charges/guarantees released",
+          "Consolidated revenue crossed ₹1,054 Cr (+27.8% YoY, +20.2% QoQ) with operating PAT more than doubling (+107% YoY) to ₹299 Cr",
+          "Operating EBITDA margin expanded +781 bps YoY to 29.36% backed by +68% jump in gross profit (₹325 Cr)",
+          "Net operating cash flow surged to ₹253.17 Cr in H1 FY27 and ~₹142 Cr long-pending export receivables successfully recovered"
+        ],
+        watchouts: [
+          "Substantial trade receivables book remaining (₹1,065.8 Cr non-current + ₹575.2 Cr current) requiring ongoing AD bank discount approvals",
+          "Procedural regulatory penalty of ₹40,000 paid for 2-day delay in preferential warrant trading approval"
+        ]
+      },
+{
         ticker: "METS",
         name: "Maestros Electronics & Telecom Systems",
         sector: "Medical Devices & Telemedicine",
@@ -667,7 +714,51 @@
           "Working Capital Intensity: Receivable and inventory cycles in industrial engineering require continuous monitoring"
         ]
       },
-      {
+            {
+        ticker: "ACSTECH",
+        name: "ACS Technologies Limited",
+        sector: "IT / ITeS & Cloud Solutions",
+        score: 9.2,
+        grade: "Grade A+ (Compounder / IT Scale)",
+        say_to_do: 93.0,
+        say_to_do_status: "Beaten / Scale Acceleration",
+        revenue_q2: "₹113.98 Cr",
+        revenue_yoy: "+136.2%",
+        revenue_qoq: "+19.8%",
+        revenue_h1: "₹209.10 Cr",
+        pat_q2: "₹6.58 Cr",
+        pat_yoy: "+177.7%",
+        pat_qoq: "+67.8%",
+        pat_h1: "₹10.50 Cr",
+        ebitda_margin: "10.12%",
+        margin_diff: "Stable / Mild Dip (-71 bps YoY, +219 bps QoQ)",
+        filePath: "file:///C:/Users/admin/Downloads/ACS%20Technologies%20Ltd.pdf",
+        pillars: {
+          topline: { score: 2.0, max: 2.0, label: "Topline: Consolidated revenue surged +136.2% YoY & +19.8% QoQ to ₹113.98 Cr; H1 reached ₹209.10 Cr (+175.6% YoY)" },
+          bottomline: { score: 1.9, max: 2.0, label: "Profitability: PAT expanded +177.7% YoY & +67.8% QoQ to ₹6.58 Cr; H1 PAT at ₹10.50 Cr exceeds full FY26" },
+          margin: { score: 1.7, max: 2.0, label: "Operating Margin (ex-other inc): 10.12% with robust +219 bps QoQ recovery (vs 7.94% in Q1); EBITDA up +120.8% YoY" },
+          solvency: { score: 1.8, max: 2.0, label: "Solvency: Low leverage with D/E of 0.38x; Net Worth strengthened to ₹161.75 Cr assisted by warrant proceeds" },
+          catalysts: { score: 1.8, max: 2.0, label: "Strategic: Scaling tech subsidiaries (Iotiq & Innovistas) in IoT/embedded tech with high-margin IT orderbook" }
+        },
+        guidance_records: [
+          { vector: "Topline Execution", promise: "Accelerate execution of IT/ITeS enterprise solutions and defense tech projects", reported: "Revenue grew +136.2% YoY to ₹113.98 Cr; H1 Revenue reached ₹209.10 Cr (+175.6% YoY)", status: "BEAT" },
+          { vector: "Operating Leverage", promise: "Deliver operational compounding across standalone business and tech subsidiaries", reported: "Operating EBITDA jumped +120.8% YoY to ₹11.54 Cr; PAT surged +177.7% YoY to ₹6.58 Cr", status: "BEAT" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Ramp up deliverables across subsidiary innovations (Iotiq & Innovistas) in IoT and embedded technology" },
+          { horizon: "FY27-28 Strategic", stmt: "Deploy strengthened equity base (Net Worth ₹161.75 Cr) for high-margin enterprise IT and defense contracts" }
+        ],
+        positives: [
+          "Consolidated revenue more than doubled (+136.2% YoY) to ₹113.98 Cr with +19.8% sequential growth",
+          "PAT up +177.7% YoY and +67.8% QoQ to ₹6.58 Cr; H1 PAT of ₹10.50 Cr already exceeds entire FY26 earnings",
+          "Healthy balance sheet with D/E ratio at 0.38x and Net Worth up +20.2% to ₹161.75 Cr"
+        ],
+        watchouts: [
+          "Working capital intensity elevated with trade receivables expanding to ₹103.20 Cr",
+          "Operating cash flow impacted by inventory buildup and project milestone billing cycles"
+        ]
+      },
+{
         ticker: "KDDL",
         name: "KDDL Limited",
         sector: "Precision Engineering & Luxury Retail",
@@ -1595,7 +1686,51 @@
           "Raw Material Inflation: Rising steel and aluminum input costs require continuous price escalations and productivity measures"
         ]
       },
-      {
+            {
+        ticker: "VEERHEALTH",
+        name: "Veerhealth Care Limited",
+        sector: "Ayurvedic & Healthcare FMCG",
+        score: 8.2,
+        grade: "Grade A- (High-Growth Turnaround / FMCG Health)",
+        say_to_do: 85.0,
+        say_to_do_status: "Execution on Track / Turnaround",
+        revenue_q2: "₹22.35 Cr",
+        revenue_yoy: "+461.7%",
+        revenue_qoq: "-10.3%",
+        revenue_h1: "₹47.28 Cr",
+        pat_q2: "₹1.21 Cr",
+        pat_yoy: "+379.4%",
+        pat_qoq: "-1.7%",
+        pat_h1: "₹2.44 Cr",
+        ebitda_margin: "8.09%",
+        margin_diff: "Contraction (-1029 bps YoY)",
+        filePath: "file:///C:/Users/admin/Downloads/Veerhealth%20Care%20Ltd.pdf",
+        pillars: {
+          topline: { score: 1.9, max: 2.0, label: "Topline: Revenue surged +461.7% YoY to ₹22.35 Cr; H1 Revenue reached ₹47.28 Cr exceeding full FY26" },
+          bottomline: { score: 1.8, max: 2.0, label: "Profitability: PAT surged nearly 5x (+379.4% YoY) to ₹1.21 Cr; H1 PAT grew to ₹2.44 Cr (+394.4% YoY)" },
+          margin: { score: 1.1, max: 2.0, label: "Operating Margin (ex-other inc): 8.09% (-1029 bps YoY contraction due to rapid stock-in-trade mix expansion)" },
+          solvency: { score: 1.7, max: 2.0, label: "Solvency: Low debt leverage with D/E of 0.20x; Net Worth expanded +32.7% to ₹30.42 Cr assisted by warrant money" },
+          catalysts: { score: 1.7, max: 2.0, label: "Strategic: Scaling institutional supply partnerships and pan-India retail footprint for Ayurvedic wellness" }
+        },
+        guidance_records: [
+          { vector: "Topline Scale", promise: "Expand Ayurvedic FMCG and institutional healthcare supply reach", reported: "Revenue grew +461.7% YoY to ₹22.35 Cr; H1 revenue at ₹47.28 Cr exceeds full FY26 revenue of ₹32.48 Cr", status: "BEAT" },
+          { vector: "Turnaround & Equity Base", promise: "Scale operations profitably and fortify working capital through warrant issue", reported: "Net Profit up +379.4% YoY to ₹1.21 Cr; Raised ₹5.06 Cr warrant proceeds taking Net Worth to ₹30.42 Cr", status: "BEAT" }
+        ],
+        forward_guidance: [
+          { horizon: "H2 FY27", stmt: "Expand institutional supply partnerships for Ayurvedic personal care and wellness products across retail & e-commerce" },
+          { horizon: "FY27-28 Strategic", stmt: "Deploy warrant proceeds for Ayurvedic manufacturing debottlenecking and brand marketing" }
+        ],
+        positives: [
+          "Revenue surged +461.7% YoY to ₹22.35 Cr; H1 FY27 revenue (₹47.28 Cr) already beats full FY26",
+          "PAT grew +379.4% YoY to ₹1.21 Cr; H1 PAT up +394.4% to ₹2.44 Cr",
+          "Low leverage with D/E at 0.20x and Net Worth up +32.7% to ₹30.42 Cr"
+        ],
+        watchouts: [
+          "Operating EBITDA margin compressed -1029 bps YoY to 8.09% due to high trading/stock-in-trade volume",
+          "QoQ revenue dipped -10.3% following strong Q1 dispatch cycles"
+        ]
+      },
+{
         ticker: "INDOTECH",
         name: "Indo-Tech Transformers",
         sector: "Power & Transformers",
